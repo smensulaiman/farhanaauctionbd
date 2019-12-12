@@ -1,3 +1,4 @@
+<%@page import="com.farhana.db.QueryHelper"%>
 <%@page import="com.farhana.db.DBHelper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -8,11 +9,23 @@
 <!DOCTYPE html>
 <html lang="en">
     
-    <%
+    <%!
+        String websiteName = null;
+        String websiteTitle = null;
+        String websiteSlogan = null;
+    %>
     
+    <%
     Connection conn = DBHelper.getConnection();
     PreparedStatement pst;
     ResultSet rs;
+    pst = conn.prepareStatement(QueryHelper.WEB_SITE_INFO);
+    rs = pst.executeQuery();
+    if(rs.next()){
+        websiteName = rs.getString("name");
+        websiteTitle = rs.getString("slogan");
+        websiteSlogan = rs.getString("title");
+    }
     
     %>
     
@@ -30,7 +43,7 @@
                         <div class="text mt-5">
 
                             <p class="mb-4 mt-5 pt-5"><span>We</span> have <span class="number" data-number="135">0</span> great auction offers you deserve!</p>
-                            <h1 class="mb-5"><%= Constant.WEB_SITE_SLOGAN%></h1>
+                            <h1 class="mb-5"><%= websiteName %></h1>
 
                             <div class="ftco-search">
                                 <div class="row">

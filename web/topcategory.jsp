@@ -1,3 +1,6 @@
+
+<
+
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -10,7 +13,7 @@
             <div class="col-md-3 ftco-animate">
                 <ul class="category">
                     <li><a href="#">Web Development <br><span class="number">35</span> <span>Open auction</span><i class="ion-ios-arrow-forward"></i></a></li>
-                    <li><a href="#">Graphic Designer <br><span class="number">14</span> <span>Open auction</span><i class="ion-ios-arrow-forward"></i></a></li>
+                    <li><a href="#">Graphic Design <br><span class="number">14</span> <span>Open auction</span><i class="ion-ios-arrow-forward"></i></a></li>
                     <li><a href="#">Multimedia <br><span class="number">10</span> <span>Open auction</span><i class="ion-ios-arrow-forward"></i></a></li>
                     <li><a href="#">Advertising <br><span class="number">9</span> <span>Open auction</span><i class="ion-ios-arrow-forward"></i></a></li>
                 </ul>
