@@ -8,27 +8,34 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <%!
         String websiteName = null;
         String websiteTitle = null;
         String websiteSlogan = null;
     %>
-    
+
     <%
-    Connection conn = DBHelper.getConnection();
-    PreparedStatement pst;
-    ResultSet rs;
-    pst = conn.prepareStatement(QueryHelper.WEB_SITE_INFO);
-    rs = pst.executeQuery();
-    if(rs.next()){
-        websiteName = rs.getString("name");
-        websiteTitle = rs.getString("slogan");
-        websiteSlogan = rs.getString("title");
-    }
-    
+        try{
+        Connection conn = DBHelper.getConnection();
+        PreparedStatement pst;
+        ResultSet rs;
+        pst = conn.prepareStatement(QueryHelper.WEB_SITE_INFO);
+        rs = pst.executeQuery();
+        if (rs.next()) {
+            websiteName = rs.getString("name");
+            websiteTitle = rs.getString("slogan");
+            websiteSlogan = rs.getString("title");
+        }
+        pst.close();
+        rs.close();
+        conn.close();
+        }catch(Exception e){
+            out.print(e.toString());
+        }
+
     %>
-    
+
     <jsp:include page="head.jsp"/>
     <body>
 
@@ -43,7 +50,7 @@
                         <div class="text mt-5">
 
                             <p class="mb-4 mt-5 pt-5"><span>We</span> have <span class="number" data-number="135">0</span> great auction offers you deserve!</p>
-                            <h1 class="mb-5"><%= websiteName %></h1>
+                            <h1 class="mb-5"><%= websiteTitle%></h1>
 
                             <div class="ftco-search">
                                 <div class="row">
