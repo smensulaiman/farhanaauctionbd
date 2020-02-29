@@ -15,5 +15,7 @@ public class Constant {
                                                                 "Internship",
                                                                 "Temporary"
                                                               };
+    
+    public static final String ADDRESS_AND_NUMBER      = "NUB, BANANI, DHAKA, BANGLADESH  -  Hotline: 804-377-3580 - 804-399-3580"; 
   
 }

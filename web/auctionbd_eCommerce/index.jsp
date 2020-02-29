@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index.jsp
-    Created on : Dec 14, 2019, 6:36:56 PM
-    Author     : farhana
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -11,173 +5,22 @@
 
     <jsp:include page="head/head.jsp"></jsp:include>
 
-    <body class="ps-loading">
-        <div class="header--sidebar"></div>
-        <header class="header">
-            <div class="header__top">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
-                            <p>NUB, BANANI, DHAKA, BANGLADESH  -  Hotline: 804-377-3580 - 804-399-3580</p>
-                        </div>
-                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
-                            <div class="header__actions"><a href="#">Login & Regiser</a>
-                                <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TK<i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"><img src="images/flag/usa.svg" alt=""> BD</a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language<i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bangla</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav class="navigation">
-                <div class="container-fluid">
-                    <div class="navigation__column left">
-                        <div class="header__logo"><a class="ps-logo" href="index.html"><img src="images/logo.png" alt=""></a></div>
-                    </div>
-                    <div class="navigation__column center">
-                        <ul class="main-menu menu">
-                            <li class="menu-item menu-item-has-children dropdown"><a href="index.html">Home</a>
-                                <!--                        <ul class="sub-menu">
-                                                          <li class="menu-item"><a href="index.html">Homepage #1</a></li>
-                                                          <li class="menu-item"><a href="#">Homepage #2</a></li>
-                                                          <li class="menu-item"><a href="#">Homepage #3</a></li>
-                                                        </ul>-->
-                            </li>
-                            <li class="menu-item menu-item-has-children has-mega-menu"><a href="#">Men</a>
-                                <div class="mega-menu">
-                                    <div class="mega-wrap">
-                                        <div class="mega-column">
-                                            <ul class="mega-item mega-features">
-                                                <li><a href="product-listing.html">NEW RELEASES</a></li>
-                                                <li><a href="product-listing.html">FEATURES SHOES</a></li>
-                                                <li><a href="product-listing.html">BEST SELLERS</a></li>
-                                                <li><a href="product-listing.html">NOW TRENDING</a></li>
-                                                <li><a href="product-listing.html">SUMMER ESSENTIALS</a></li>
-                                                <li><a href="product-listing.html">MOTHER'S DAY COLLECTION</a></li>
-                                                <li><a href="product-listing.html">FAN GEAR</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-column">
-                                            <h4 class="mega-heading">Shoes</h4>
-                                            <ul class="mega-item">
-                                                <li><a href="product-listing.html">All Shoes</a></li>
-                                                <li><a href="product-listing.html">Running</a></li>
-                                                <li><a href="product-listing.html">Training & Gym</a></li>
-                                                <li><a href="product-listing.html">Basketball</a></li>
-                                                <li><a href="product-listing.html">Football</a></li>
-                                                <li><a href="product-listing.html">Soccer</a></li>
-                                                <li><a href="product-listing.html">Baseball</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-column">
-                                            <h4 class="mega-heading">CLOTHING</h4>
-                                            <ul class="mega-item">
-                                                <li><a href="product-listing.html">Compression & Nike Pro</a></li>
-                                                <li><a href="product-listing.html">Tops & T-Shirts</a></li>
-                                                <li><a href="product-listing.html">Polos</a></li>
-                                                <li><a href="product-listing.html">Hoodies & Sweatshirts</a></li>
-                                                <li><a href="product-listing.html">Jackets & Vests</a></li>
-                                                <li><a href="product-listing.html">Pants & Tights</a></li>
-                                                <li><a href="product-listing.html">Shorts</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-column">
-                                            <h4 class="mega-heading">Accessories</h4>
-                                            <ul class="mega-item">
-                                                <li><a href="product-listing.html">Compression & Nike Pro</a></li>
-                                                <li><a href="product-listing.html">Tops & T-Shirts</a></li>
-                                                <li><a href="product-listing.html">Polos</a></li>
-                                                <li><a href="product-listing.html">Hoodies & Sweatshirts</a></li>
-                                                <li><a href="product-listing.html">Jackets & Vests</a></li>
-                                                <li><a href="product-listing.html">Pants & Tights</a></li>
-                                                <li><a href="product-listing.html">Shorts</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="mega-column">
-                                            <h4 class="mega-heading">BRAND</h4>
-                                            <ul class="mega-item">
-                                                <li><a href="product-listing.html">NIKE</a></li>
-                                                <li><a href="product-listing.html">Adidas</a></li>
-                                                <li><a href="product-listing.html">Dior</a></li>
-                                                <li><a href="product-listing.html">B&G</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="menu-item"><a href="#">Women</a></li>
-                            <li class="menu-item"><a href="#">Kids</a></li>
-                            <li class="menu-item menu-item-has-children dropdown"><a href="#">News</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-has-children dropdown"><a href="blog-grid.html">Blog-grid</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="blog-grid.html">Blog Grid 1</a></li>
-                                            <li class="menu-item"><a href="blog-grid-2.html">Blog Grid 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item"><a href="blog-list.html">Blog List</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-has-children dropdown"><a href="#">Contact</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="contact-us.html">Contact Us #1</a></li>
-                                    <li class="menu-item"><a href="contact-us.html">Contact Us #2</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="navigation__column right">
-                        <form class="ps-search--header" action="do_action" method="post">
-                            <input class="form-control" type="text" placeholder="Search Product…">
-                            <button><i class="ps-icon-search"></i></button>
-                        </form>
-                        <div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i>20</i></span><i class="ps-icon-shopping-cart"></i></a>
-                            <div class="ps-cart__listing">
-                                <div class="ps-cart__content">
-                                    <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                        <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/cart-preview/1.jpg" alt=""></div>
-                                        <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html">Amazin’ Glazin’</a>
-                                            <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                                        </div>
-                                    </div>
-                                    <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                        <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/cart-preview/2.jpg" alt=""></div>
-                                        <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html">The Crusty Croissant</a>
-                                            <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                                        </div>
-                                    </div>
-                                    <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                        <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img src="images/cart-preview/3.jpg" alt=""></div>
-                                        <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.html">The Rolling Pin</a>
-                                            <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ps-cart__total">
-                                    <p>Number of items:<span>36</span></p>
-                                    <p>Item Total:<span>£528.00</span></p>
-                                </div>
-                                <div class="ps-cart__footer"><a class="ps-btn" href="cart.html">Check out<i class="ps-icon-arrow-left"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="menu-toggle"><span></span></div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="header-services">
-            <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
+        <body class="ps-loading">
+            <div class="header--sidebar"></div>
+        <jsp:include page="header/header.jsp"></jsp:include>
+            <div class="header-services">
+                <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
+
+                <%
+                    for (int i = 0; i < 3; i++) {
+                %>
+
                 <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Free delivery</strong>: Get free standard delivery on every order with AuctionBD Store</p>
-                <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Free delivery</strong>: Get free standard delivery on every order with AuctionBD Store</p>
-                <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Free delivery</strong>: Get free standard delivery on every order with AuctionBD Store</p>
+
+                <%
+                    }
+                %>
+
             </div>
         </div>
         <main class="ps-main">
@@ -215,7 +58,7 @@
                         <h3 class="ps-section__title" data-mask="features">- Features Products</h3>
                         <ul class="ps-masonry__filter">
                             <li class="current"><a href="#" data-filter="*">All <sup>8</sup></a></li>
-                            <li><a href="#" data-filter=".nike">Nike <sup>1</sup></a></li>
+                            <li><a href="#" data-filter=".ok">OK <sup>1</sup></a></li>
                             <li><a href="#" data-filter=".adidas">Adidas <sup>1</sup></a></li>
                             <li><a href="#" data-filter=".men">Men <sup>1</sup></a></li>
                             <li><a href="#" data-filter=".women">Women <sup>1</sup></a></li>
@@ -226,16 +69,22 @@
                         <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
                             <div class="ps-masonry">
                                 <div class="grid-sizer"></div>
+
+                                <%
+                                    for (int i = 0; i < 10; i++) {
+
+                                %>
+
                                 <div class="grid-item kids">
                                     <div class="grid-item__content-wrapper">
                                         <div class="ps-shoe mb-30">
                                             <div class="ps-shoe__thumbnail">
                                                 <div class="ps-badge"><span>New</span></div>
-                                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>20%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
+                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""></div>
                                                     <select class="ps-rating ps-shoe__rating">
                                                         <option value="1">1</option>
                                                         <option value="1">2</option>
@@ -246,175 +95,15 @@
                                                 </div>
                                                 <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
                                                     <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price">
-                                                        <del>£220</del> £ 120</span>
+                                                        <del>Tk. 220</del> Tk. 120</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-item nike">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/2.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item adidas">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/3.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item kids">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail">
-                                                <div class="ps-badge ps-badge--sale"><span>-35%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/4.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price">
-                                                        <del>£220</del> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item men">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item women">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/6.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item kids">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/7.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item kids">
-                                    <div class="grid-item__content-wrapper">
-                                        <div class="ps-shoe mb-30">
-                                            <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/8.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
-                                            </div>
-                                            <div class="ps-shoe__content">
-                                                <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
-                                                    <select class="ps-rating ps-shoe__rating">
-                                                        <option value="1">1</option>
-                                                        <option value="1">2</option>
-                                                        <option value="1">3</option>
-                                                        <option value="1">4</option>
-                                                        <option value="2">5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <%}%>
+
                             </div>
                         </div>
                     </div>
@@ -480,7 +169,7 @@
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -503,7 +192,7 @@
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
                                         <div class="ps-badge"><span>New</span></div>
-                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/2.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/2.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -526,7 +215,7 @@
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/3.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/3.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -547,7 +236,7 @@
                             </div>
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/4.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/4.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -569,7 +258,7 @@
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -590,7 +279,7 @@
                             </div>
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/6.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/6.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -617,7 +306,7 @@
                 <div class="container">
                     <div class="owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/1.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -626,14 +315,14 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Logan May - CEO & Founder Invision</p>
+                                <p>Farhana - CEO & Founder AuctionBD</p>
                             </header>
                             <footer>
-                                <p>“Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear claw sugar plum croissant. “</p>
+                                <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/2.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -642,14 +331,14 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Logan May - CEO & Founder Invision</p>
+                                <p>Farhana - CEO & Founder AuctionBD</p>
                             </header>
                             <footer>
-                                <p>“Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear claw sugar plum croissant. “</p>
+                                <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/3.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -658,10 +347,10 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Logan May - CEO & Founder Invision</p>
+                                <p>Farhana - CEO & Auction BD</p>
                             </header>
                             <footer>
-                                <p>“Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear claw sugar plum croissant. “</p>
+                                <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                     </div>
@@ -677,8 +366,17 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                                 <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/1.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">An Inside Look at the Breaking2 Kit</a>
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
+                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title One</a>
+                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
+                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                <div class="ps-post">
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
+                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title Two</a>
                                         <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
                                         <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
                                     </div>
@@ -686,17 +384,8 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                                 <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Unpacking the Breaking2 Race Strategy</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                                <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/3.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Nike’s Latest Football Cleat Breaks the Mold</a>
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
+                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title Three</a>
                                         <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
                                         <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
                                     </div>
@@ -851,6 +540,6 @@
             </div>
         </main>
 
-    <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
+        <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
     </body>
 </html>
