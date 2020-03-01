@@ -8,6 +8,10 @@
         <servlet-name>SignUpController</servlet-name>
         <servlet-class>com.farhana.controllers.SignUpController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Manager</servlet-name>
+        <servlet-class>Manager</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>SignUpController</servlet-name>
         <url-pattern>/SignUpController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Manager</servlet-name>
+        <url-pattern>/Manager</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

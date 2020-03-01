@@ -1,5 +1,6 @@
 package com.farhana.controllers;
 
+import com.farhana.db.QueryHelper;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -8,17 +9,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class SignUpController extends HttpServlet {
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
+            
+                       
+            String fullName =  request.getParameter("fullname");
             String email =  request.getParameter("email");
             String password =  request.getParameter("pass");
             
             if(!email.isEmpty() && !password.isEmpty()){
-                System.out.println(email+" "+password);
+                System.out.println(fullName+"\n"+email+"\n"+password);
+                
+                QueryHelper queryHelper = new QueryHelper();
+                if(queryHelper.signUpUser(email, fullName, password)>0){
+                    out.write("Success");
+                }else{
+                    out.write("Faild");
+                }
+   
             }
             
         }
