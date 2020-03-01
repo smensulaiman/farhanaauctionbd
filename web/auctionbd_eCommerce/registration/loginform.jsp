@@ -1,16 +1,8 @@
-<form class="login100-form validate-form" action="../../SignUpController" method="POST">
+<form class="login100-form validate-form" action="../../Manager">
     <span class="login100-form-title">
-        Member Sign Up
+        Member Login
     </span>
 
-    <div class="wrap-input100 validate-input">
-        <input class="input100" type="text" name="fullname" placeholder="Full Name">
-        <span class="focus-input100"></span>
-        <span class="symbol-input100">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-        </span>
-    </div>
-    
     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
         <input class="input100" type="text" name="email" placeholder="Email">
         <span class="focus-input100"></span>
@@ -29,22 +21,22 @@
 
     <div class="container-login100-form-btn">
         <button class="login100-form-btn">
-            Sign Up
+            Login
         </button>
     </div>
 
     <div class="text-center p-t-12">
         <span class="txt1">
-            Already
+            Forgot
         </span>
         <a class="txt2" href="#">
-            have an account?
+            Username / Password?
         </a>
     </div>
 
     <div class="text-center p-t-136">
-        <a class="txt2" href="login.jsp">
-            Click here to login
+        <a class="txt2" href="signup.jsp">
+            Create your Account
             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
         </a>
     </div>

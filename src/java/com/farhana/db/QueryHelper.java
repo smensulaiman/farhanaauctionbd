@@ -3,8 +3,6 @@ package com.farhana.db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class QueryHelper {
     
@@ -23,7 +21,6 @@ public class QueryHelper {
             }
         return conn;
     }
-    
     
     public int signUpUser(String email, String name, String password){
         
