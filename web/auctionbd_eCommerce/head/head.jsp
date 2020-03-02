@@ -18,6 +18,8 @@
     <meta name="keywords" content="Default Description">
     <meta name="description" content="Default keyword">
     <title>AuctionBD - Homepage</title>
+    <!--Icon-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">

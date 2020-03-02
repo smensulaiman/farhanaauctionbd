@@ -1,13 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
 
     <jsp:include page="head/head.jsp"></jsp:include>
-
         <body class="ps-loading">
             <div class="header--sidebar"></div>
         <jsp:include page="header/header.jsp"></jsp:include>
+
             <div class="header-services">
                 <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
 
@@ -23,19 +22,21 @@
 
             </div>
         </div>
+
         <main class="ps-main">
+
             <div class="ps-banner">
                 <div class="rev_slider fullscreenbanner" id="home-banner">
                     <ul>
                         <li class="ps-banner" data-index="rs-2972" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg" src="images/slider/3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
                             <div class="tp-caption ps-banner__header" id="layer-1" data-x="left" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['-150','-120','-150','-170']" data-width="['none','none','none','400']" data-type="text" data-responsive_offset="on" data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                                <p>March 2002 <br> Nike SB Dunk Low Pro</p>
+                                <p>March 2020 <br> Nike Collection Auction</p>
                             </div>
                             <div class="tp-caption ps-banner__title" id="layer21" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['-60','-40','-50','-70']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                                <p class="text-uppercase">SUBA</p>
+                                <p class="text-uppercase">Mirpur 10</p>
                             </div>
                             <div class="tp-caption ps-banner__description" id="layer211" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['30','50','50','50']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                                <p>Supa wanted something that was going to rep his East Coast <br> roots and, more specifically, his hometown of <br/> New York City in  a big way.</p>
+                                <p>Nike Bangladesh wanted something that was going to<br>make cyclone to his hometown<br/>Dhaka City in  a big way.</p>
                             </div><a class="tp-caption ps-btn" id="layer31" href="#" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['120','140','200','200']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">Purchase Now<i class="ps-icon-next"></i></a>
                         </li>
                         <li class="ps-banner ps-banner--white" data-index="rs-100" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg" src="images/slider/2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
@@ -46,14 +47,16 @@
                                 <p class="text-uppercase">Recovery</p>
                             </div>
                             <div class="tp-caption ps-banner__description" id="layer2-14" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['30','50','50','50']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">
-                                <p>Supa wanted something that was going to rep his East Coast <br> roots and, more specifically, his hometown of <br/> New York City in  a big way.</p>
+                                <p>Shopno wanted something that was going to rep his East Coast <br> roots and, more specifically, his hometown of <br/> Dhaka City in  a big way.</p>
                             </div><a class="tp-caption ps-btn" id="layer364" href="#" data-x="['left','left','left','left']" data-hoffset="['-60','15','15','15']" data-y="['middle','middle','middle','middle']" data-voffset="['120','140','200','200']" data-type="text" data-responsive_offset="on" data-textAlign="['center','center','center','center']" data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]">Purchase Now<i class="ps-icon-next"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
+
             <div class="ps-section--features-product ps-section masonry-root pt-100 pb-100">
                 <div class="ps-container">
+
                     <div class="ps-section__header mb-50">
                         <h3 class="ps-section__title" data-mask="features">- Features Products</h3>
                         <ul class="ps-masonry__filter">
@@ -65,6 +68,7 @@
                             <li><a href="#" data-filter=".kids">Kids <sup>4</sup></a></li>
                         </ul>
                     </div>
+
                     <div class="ps-section__content pb-50">
                         <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
                             <div class="ps-masonry">
@@ -80,7 +84,7 @@
                                         <div class="ps-shoe mb-30">
                                             <div class="ps-shoe__thumbnail">
                                                 <div class="ps-badge"><span>New</span></div>
-                                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>20%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>20%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
@@ -169,7 +173,7 @@
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -192,7 +196,7 @@
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
                                         <div class="ps-badge"><span>New</span></div>
-                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/2.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/2.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -215,7 +219,7 @@
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/3.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/3.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -236,7 +240,7 @@
                             </div>
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/4.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/4.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -258,7 +262,7 @@
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
                                     <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                        <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -279,7 +283,7 @@
                             </div>
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/6.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
+                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/6.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
@@ -436,7 +440,7 @@
                             </form>
                         </div>
                         <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 ">
-                            <p>...and receive  <span>$20</span>  coupon for first shopping.</p>
+                            <p>...and receive  <span>Tk. 200</span>  coupon for first bidding.</p>
                         </div>
                     </div>
                 </div>
@@ -447,7 +451,7 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                                 <aside class="ps-widget--footer ps-widget--info">
-                                    <header><a class="ps-logo" href="index.html"><img src="images/logo-white.png" alt=""></a>
+                                    <header>
                                         <h3 class="ps-widget__title">Address Office 1</h3>
                                     </header>
                                     <footer>
@@ -464,7 +468,7 @@
                                         <h3 class="ps-widget__title">Address Office 2</h3>
                                     </header>
                                     <footer>
-                                        <p><strong>PO Box 16122 Collins  Victoria 3000 Australia</strong></p>
+                                        <p><strong>NUB, BANANI, DHAKA, BANGLADESH</strong></p>
                                         <p>Email: <a href='mailto:support@auctionbd.com'>support@auctionbd.com</a></p>
                                         <p>Phone: +880 1640 138 206</p>
                                         <p></p>
