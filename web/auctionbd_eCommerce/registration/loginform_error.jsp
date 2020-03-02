@@ -1,6 +1,6 @@
 <form class="login100-form validate-form" action="../../LoginController">
-    <span class="login100-form-title">
-        Member Login
+    <span class="login100-form-title" style="color: tomato">
+        Error Login
     </span>
 
     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

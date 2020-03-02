@@ -1,11 +1,13 @@
 package com.farhana.controllers;
 
+import com.farhana.db.QueryHelper;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class LoginController extends HttpServlet {
 
@@ -14,7 +16,24 @@ public class LoginController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String email =  request.getParameter("");
+            String email    =  request.getParameter("email");
+            String password =  request.getParameter("pass");
+            
+            QueryHelper helper = new QueryHelper();
+            String name;
+            
+            if((name = helper.logInUser(email, password)) != null){
+                out.print("Welcome "+name);
+                
+                HttpSession session=request.getSession();  
+                session.setAttribute("username",name); 
+                
+                response.sendRedirect("auctionbd_eCommerce/index.jsp");
+                
+            }else{
+                request.setAttribute("error", "Invalid email or password !!!");
+                response.sendRedirect("auctionbd_eCommerce/registration/login_error.jsp");
+            }
             
         }
     }
