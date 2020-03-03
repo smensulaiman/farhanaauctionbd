@@ -1,31 +1,21 @@
+<%@page import="com.farhana.values.Constant"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
-    <%
-    String name = (String) request.getSession().getAttribute("username");
-    request.getSession().removeAttribute("username");
-    %>
-    
-    <%=name%>
-    
     <jsp:include page="head/head.jsp"></jsp:include>
         <body class="ps-loading">
             <div class="header--sidebar"></div>
         <jsp:include page="header/header.jsp"></jsp:include>
-        
+
             <div class="header-services">
                 <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
 
-                <%
-                    for (int i = 0; i < 3; i++) {
-                %>
+                <% for (int i = 0; i < 3; i++) { %>
 
                 <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Free delivery</strong>: Get free standard delivery on every order with AuctionBD Store</p>
 
-                <%
-                    }
-                %>
+                <% } %>
 
             </div>
         </div>
@@ -91,11 +81,24 @@
                                         <div class="ps-shoe mb-30">
                                             <div class="ps-shoe__thumbnail">
                                                 <div class="ps-badge"><span>New</span></div>
-                                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>20%</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
+                                                <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                    <span>20%</span>
+                                                </div>
+                                                <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
+                                                <img src="images/shoe/1.jpg" alt="">
+                                                <a class="ps-shoe__overlay" href="about.jsp"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
-                                                    <div class="ps-shoe__variant normal"><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""></div>
+                                                    <div class="ps-shoe__variant normal">
+                                                        
+                                                        <% for(int j=0; j<4; j++){ %>
+                                                        
+                                                        <img src="images/shoe/1.jpg" alt="">
+                                                        
+                                                        <% } %>
+                                                        
+                                                    </div>
                                                     <select class="ps-rating ps-shoe__rating">
                                                         <option value="1">1</option>
                                                         <option value="1">2</option>
@@ -105,7 +108,11 @@
                                                     </select>
                                                 </div>
                                                 <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price">
+                                                    <p class="ps-shoe__categories">
+                                                        <a href="#">Men shoes</a>,
+                                                        <a href="#"> Nike</a>,
+                                                        <a href="#"> Jordan</a>
+                                                    </p><span class="ps-shoe__price">
                                                         <del>Tk. 220</del> Tk. 120</span>
                                                 </div>
                                             </div>
@@ -456,32 +463,10 @@
                 <div class="ps-footer__content">
                     <div class="ps-container">
                         <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--info">
-                                    <header>
-                                        <h3 class="ps-widget__title">Address Office 1</h3>
-                                    </header>
-                                    <footer>
-                                        <p><strong>NUB, BANANI, DHAKA, BANGLADESH</strong></p>
-                                        <p>Email: <a href='mailto:support@auctionbd.com'>support@auctionbd.com</a></p>
-                                        <p>Phone: +880 1640 138 206</p>
-                                        <p></p>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--info second">
-                                    <header>
-                                        <h3 class="ps-widget__title">Address Office 2</h3>
-                                    </header>
-                                    <footer>
-                                        <p><strong>NUB, BANANI, DHAKA, BANGLADESH</strong></p>
-                                        <p>Email: <a href='mailto:support@auctionbd.com'>support@auctionbd.com</a></p>
-                                        <p>Phone: +880 1640 138 206</p>
-                                        <p></p>
-                                    </footer>
-                                </aside>
-                            </div>
+                            
+                            <%= Constant.ADDRESS_FOOTER %>
+                            <%= Constant.ADDRESS_FOOTER %>
+                            
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
                                 <aside class="ps-widget--footer ps-widget--link">
                                     <header>

@@ -1,5 +1,6 @@
 package com.farhana.db;
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,7 +41,7 @@ public class QueryHelper {
             if(a>0){
                 pst.close();
                 System.out.println("Data Inserted Successfully");
-                return a;
+                return 1;
             }else{
                 pst.close();
                 System.out.println("Faild");
@@ -48,6 +49,10 @@ public class QueryHelper {
             
         } catch (SQLException ex) {
             ex.printStackTrace();
+            if(ex.getMessage().contains("Duplicate entry")){
+                System.out.println("error : "+ex.getMessage());
+                return 2;
+            }
         }
         
         return 0;

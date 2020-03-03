@@ -1,6 +1,5 @@
 package com.farhana.controllers;
 
-import com.farhana.db.QueryHelper;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -8,39 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SignUpController extends HttpServlet {
+public class LogoutController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
-            String fullName = request.getParameter("fullname");
-            String email = request.getParameter("email");
-            String password = request.getParameter("pass");
-
-            if (!email.isEmpty() && !password.isEmpty()) {
-                System.out.println(fullName + "\n" + email + "\n" + password);
-
-                QueryHelper queryHelper = new QueryHelper();
-                int x = 0;
-                if ((x = queryHelper.signUpUser(email, fullName, password)) > 0) {
-                    if (x == 2) {
-                        request.getSession().setAttribute("email_validation","Email Already In Use");
-                        out.write("Email Already In Use");
-                        response.sendRedirect("auctionbd_eCommerce/registration/signup.jsp");
-                    } else {
-                        out.write("Success");
-                        response.sendRedirect("auctionbd_eCommerce/index.jsp");
-                    }
-                } else {
-                    request.getSession().setAttribute("email_validation","Faild");
-                    out.write("Faild");
-                    response.sendRedirect("auctionbd_eCommerce/registration/signup.jsp");
-                }
-
-            }
-
+            /* TODO output your page here. You may use following sample code. */
+            
+            request.getSession().setAttribute("username", null);
+            response.sendRedirect("auctionbd_eCommerce/index.jsp");
+            
         }
     }
 

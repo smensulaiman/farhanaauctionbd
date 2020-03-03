@@ -1,6 +1,12 @@
 <%@page import="com.farhana.values.Constant"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+    String name = (String) request.getSession().getAttribute("username");
+    //request.getSession().removeAttribute("username");
+%>
+
 <header class="header">
     <div class="header__top">
         <div class="container-fluid">
@@ -9,7 +15,25 @@
                     <p><%= Constant.ADDRESS_AND_NUMBER%></p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
-                    <div class="header__actions"><a href="registration/login.jsp">Login & Regiser</a>
+                    <div class="header__actions">
+
+                        <% if (name == null) { %>
+
+                        <a href="registration/login.jsp">Login & Regiser</a>
+
+                        <% } else { %>
+                        
+                         <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=name%><i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Farhana/LogoutController"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                            </ul>
+                        </div>
+
+                        <% 
+                            }
+                        %>
+
+
                         <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TK<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><img src="images/flag/bd.svg" alt=""> BD</a></li>

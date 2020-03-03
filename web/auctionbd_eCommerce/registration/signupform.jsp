@@ -1,7 +1,23 @@
 <form class="login100-form validate-form" action="../../SignUpController" method="POST">
+
+    <%
+        String emailValidation = (String) request.getSession().getAttribute("email_validation");
+
+        if (emailValidation != null) {
+            out.write("<span class=\"login100-form-title\" style = \" color: tomato; \">" + emailValidation + "</span>");
+            
+            request.getSession().removeAttribute("email_validation");
+            
+        } else {
+    %>
+
     <span class="login100-form-title">
         Member Sign Up
     </span>
+
+    <%
+        }
+    %>
 
     <div class="wrap-input100 validate-input">
         <input class="input100" type="text" name="fullname" placeholder="Full Name">
@@ -10,7 +26,7 @@
             <i class="fa fa-envelope" aria-hidden="true"></i>
         </span>
     </div>
-    
+
     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
         <input class="input100" type="text" name="email" placeholder="Email">
         <span class="focus-input100"></span>
