@@ -9,10 +9,6 @@
         <servlet-class>com.farhana.controllers.SignUpController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Manager</servlet-name>
-        <servlet-class>Manager</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>com.farhana.controllers.LogoutController</servlet-class>
     </servlet>
@@ -23,10 +19,6 @@
     <servlet-mapping>
         <servlet-name>SignUpController</servlet-name>
         <url-pattern>/SignUpController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Manager</servlet-name>
-        <url-pattern>/Manager</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>

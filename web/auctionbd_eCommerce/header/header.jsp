@@ -21,15 +21,15 @@
 
                         <a href="registration/login.jsp">Login & Regiser</a>
 
-                        <% } else { %>
-                        
-                         <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=name%><i class="fa fa-angle-down"></i></a>
+                        <% } else {%>
+
+                        <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=name%><i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/Farhana/LogoutController"><i class="fa fa-sign-out"></i>Log Out</a></li>
                             </ul>
                         </div>
 
-                        <% 
+                        <%
                             }
                         %>
 
@@ -176,4 +176,17 @@
             </div>
         </div>
     </nav>
+
+    <div class="header-services">
+        <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
+
+            <% for (int i = 0; i < 3; i++) { %>
+
+            <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Free delivery</strong>: Get free standard delivery on every order with AuctionBD Store</p>
+
+            <% }%>
+
+        </div>
+    </div>
+
 </header>

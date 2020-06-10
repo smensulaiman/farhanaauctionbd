@@ -1,4 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.farhana.model.ProductModel"%>
 <%@page import="com.farhana.values.Constant"%>
+<%@page import="com.farhana.manager.Manager"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,18 +12,6 @@
         <body class="ps-loading">
             <div class="header--sidebar"></div>
         <jsp:include page="header/header.jsp"></jsp:include>
-
-            <div class="header-services">
-                <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
-
-                <% for (int i = 0; i < 3; i++) { %>
-
-                <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Free delivery</strong>: Get free standard delivery on every order with AuctionBD Store</p>
-
-                <% } %>
-
-            </div>
-        </div>
 
         <main class="ps-main">
 
@@ -55,14 +48,14 @@
                 <div class="ps-container">
 
                     <div class="ps-section__header mb-50">
-                        <h3 class="ps-section__title" data-mask="features">- Features Products</h3>
+                        <h3 class="ps-section__title" data-mask="features">- Running Auction Products</h3>
                         <ul class="ps-masonry__filter">
-                            <li class="current"><a href="#" data-filter="*">All <sup>8</sup></a></li>
-                            <li><a href="#" data-filter=".ok">OK <sup>1</sup></a></li>
-                            <li><a href="#" data-filter=".adidas">Adidas <sup>1</sup></a></li>
-                            <li><a href="#" data-filter=".men">Men <sup>1</sup></a></li>
-                            <li><a href="#" data-filter=".women">Women <sup>1</sup></a></li>
-                            <li><a href="#" data-filter=".kids">Kids <sup>4</sup></a></li>
+                            <li class="current"><a href="#" data-filter="*">A <sup>8</sup></a></li>
+                            <li><a href="#" data-filter=".ok">B <sup>1</sup></a></li>
+                            <li><a href="#" data-filter=".adidas">C <sup>1</sup></a></li>
+                            <li><a href="#" data-filter=".men">D <sup>1</sup></a></li>
+                            <li><a href="#" data-filter=".women">E <sup>1</sup></a></li>
+                            <li><a href="#" data-filter=".kids">F <sup>4</sup></a></li>
                         </ul>
                     </div>
 
@@ -72,8 +65,13 @@
                                 <div class="grid-sizer"></div>
 
                                 <%
-                                    for (int i = 0; i < 10; i++) {
+                                    Manager manager = new Manager();
+                                    List<ProductModel> productModels = new ArrayList();
+                                    manager.getDemoProducts(productModels);
 
+                                    request.getSession().setAttribute("products", productModels);
+
+                                    for (ProductModel model : productModels) {
                                 %>
 
                                 <div class="grid-item kids">
@@ -85,19 +83,19 @@
                                                     <span>20%</span>
                                                 </div>
                                                 <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
-                                                <img src="images/shoe/1.jpg" alt="">
-                                                <a class="ps-shoe__overlay" href="about.jsp"></a>
+                                                <img src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt="">
+                                                <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
                                                     <div class="ps-shoe__variant normal">
-                                                        
-                                                        <% for(int j=0; j<4; j++){ %>
-                                                        
-                                                        <img src="images/shoe/1.jpg" alt="">
-                                                        
-                                                        <% } %>
-                                                        
+
+                                                        <% for (int j = 0; j < 4; j++) { %>
+
+                                                        <img src="images/product/ppe/1.jpg" alt="">
+
+                                                        <% }%>
+
                                                     </div>
                                                     <select class="ps-rating ps-shoe__rating">
                                                         <option value="1">1</option>
@@ -107,13 +105,10 @@
                                                         <option value="2">5</option>
                                                     </select>
                                                 </div>
-                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
+                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
                                                     <p class="ps-shoe__categories">
-                                                        <a href="#">Men shoes</a>,
-                                                        <a href="#"> Nike</a>,
-                                                        <a href="#"> Jordan</a>
-                                                    </p><span class="ps-shoe__price">
-                                                        <del>Tk. 220</del> Tk. 120</span>
+                                                        <a href="#"><%=model.getProductCategory()%></a>
+                                                    </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -463,10 +458,10 @@
                 <div class="ps-footer__content">
                     <div class="ps-container">
                         <div class="row">
-                            
-                            <%= Constant.ADDRESS_FOOTER %>
-                            <%= Constant.ADDRESS_FOOTER %>
-                            
+
+                            <%= Constant.ADDRESS_FOOTER%>
+                            <%= Constant.ADDRESS_FOOTER%>
+
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
                                 <aside class="ps-widget--footer ps-widget--link">
                                     <header>
