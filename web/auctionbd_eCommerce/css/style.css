@@ -3101,7 +3101,7 @@ textarea.form-control {
           max-width: 60px; } }
 
 .ps-review {
-  margin-bottom: 40px; }
+  margin-bottom: 2px; }
   .ps-review::after {
     clear: both;
     content: "";

@@ -75,48 +75,40 @@
                                     </ul>
                                 </div>
                                 <div class="mega-column">
-                                    <h4 class="mega-heading">Shoes</h4>
+                                    <h4 class="mega-heading">COVID-19</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">All Shoes</a></li>
-                                        <li><a href="#">Running</a></li>
-                                        <li><a href="#">Training & Gym</a></li>
-                                        <li><a href="#">Basketball</a></li>
-                                        <li><a href="#">Football</a></li>
-                                        <li><a href="#">Soccer</a></li>
-                                        <li><a href="#">Baseball</a></li>
+                                        <li><a href="#">MASK</a></li>
+                                        <li><a href="#">PPE</a></li>
+                                        <li><a href="#">Hand Gloves</a></li>
+                                        <li><a href="#">Hand Sanitizer</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
-                                    <h4 class="mega-heading">CLOTHING</h4>
+                                    <h4 class="mega-heading">IT and Graphics</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">Compression & Nike Pro</a></li>
+                                        <li><a href="#">HTML Design</a></li>
+                                        <li><a href="#">Logo Design</a></li>
+                                        <li><a href="#">Plug Ins</a></li>
+                                        <li><a href="#">Graesmonkey Scripts</a></li>
+                                        <li><a href="#">Bots</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-column">
+                                    <h4 class="mega-heading">Garments</h4>
+                                    <ul class="mega-item">
+                                        <li><a href="#">Shirts</a></li>
                                         <li><a href="#">Tops & T-Shirts</a></li>
-                                        <li><a href="#">Polos</a></li>
+                                        <li><a href="#">Pants</a></li>
                                         <li><a href="#">Hoodies & Sweatshirts</a></li>
                                         <li><a href="#">Jackets & Vests</a></li>
-                                        <li><a href="#">Pants & Tights</a></li>
                                         <li><a href="#">Shorts</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
-                                    <h4 class="mega-heading">Accessories</h4>
+                                    <h4 class="mega-heading">Writting</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">Compression & Nike Pro</a></li>
-                                        <li><a href="#">Tops & T-Shirts</a></li>
-                                        <li><a href="#">Polos</a></li>
-                                        <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                        <li><a href="#">Jackets & Vests</a></li>
-                                        <li><a href="#">Pants & Tights</a></li>
-                                        <li><a href="#">Shorts</a></li>
-                                    </ul>
-                                </div>
-                                <div class="mega-column">
-                                    <h4 class="mega-heading">BRAND</h4>
-                                    <ul class="mega-item">
-                                        <li><a href="#">NIKE</a></li>
-                                        <li><a href="#">Adidas</a></li>
-                                        <li><a href="#">Dior</a></li>
-                                        <li><a href="#">B&G</a></li>
+                                        <li><a href="#">Notes</a></li>
+                                        <li><a href="#">Assignments</a></li>
                                     </ul>
                                 </div>
                             </div>
