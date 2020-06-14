@@ -4,11 +4,19 @@
     Author     : Farhana
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="com.farhana.model.ProductModel"%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <html lang="en">
+    
+    
+    <%
+        List<ProductModel> productModels = (List<ProductModel>)request.getSession().getAttribute("products");
+        ProductModel model = productModels.get(Integer.parseInt(request.getParameter("id")));
+    %>
 
     <jsp:include page="head/head.jsp"></jsp:include>
         <body class="ps-loading">
@@ -34,13 +42,11 @@
                             <div class="col-lg-10 col-md-12 col-lg-offset-1">
                                 <div class="ps-product__thumbnail">
                                     <div class="ps-product__image">
-                                        <div class="item"><img class="zoom" src="images/shoe-detail/1.jpg" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
-                                        <div class="item"><img class="zoom" src="images/shoe-detail/2.jpg" alt="" data-zoom-image="images/shoe-detail/2.jpg"></div>
-                                        <div class="item"><img class="zoom" src="images/shoe-detail/3.jpg" alt="" data-zoom-image="images/shoe-detail/3.jpg"></div>
+                                        <div class="item"><img class="zoom" src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
                                     </div>
                                 </div>
                                 <div class="ps-product__thumbnail--mobile">
-                                    <div class="ps-product__main-img"><img src="images/shoe-detail/1.jpg" alt=""></div>
+                                    <div class="ps-product__main-img"><img src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt=""></div>
                                     <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"><img src="images/shoe-detail/1.jpg" alt=""><img src="images/shoe-detail/2.jpg" alt=""><img src="images/shoe-detail/3.jpg" alt=""></div>
                                 </div>
                                 <div class="ps-product__info">
@@ -53,9 +59,10 @@
                                             <option value="2">5</option>
                                         </select><a href="#">(Read all 8 reviews)</a>
                                     </div>
-                                    <h1>Air strong  training</h1>
-                                    <p class="ps-product__category"><a href="#"> PPE</a>,<a href="#"> MASK</a>
-                                    <h3 class="ps-product__price">Tk. 115</h3>
+                                    <h1><%=model.getProductName() %></h1>
+                                    <p class="ps-product__category"><a href="#"> <%=model.getProductSeller()%></a>,<a href="#"> MASK</a>
+                                    <h3 class="ps-product__price"><%= "Taka "+model.getProductPrice()%></h3>
+                                    1,00,000 pcs
                                     <div class="ps-product__block ps-product__quickview">
                                         <h4>QUICK REVIEW</h4>
                                         <p>Short description</p>
@@ -68,9 +75,6 @@
                                             <option value="3">+5,000</option>
                                             <option value="4">+10,000</option>
                                         </select>
-                                        <div class="form-group">
-                                            <input class="form-control" type="number" value="1">
-                                        </div>
                                     </div>
                                     <div class="ps-product__shopping"><a class="ps-btn mb-10" href="#">Place Bid<i class="ps-icon-next"></i></a>
                                     </div>

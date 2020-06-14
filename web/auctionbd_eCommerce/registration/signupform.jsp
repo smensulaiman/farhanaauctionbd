@@ -57,8 +57,13 @@
             have an account?
         </a>
     </div>
-
+    
     <div class="text-center p-t-136">
+        <a class="txt2" href="../index.jsp">
+            Go Home
+            <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
+        </a>
+        <br>
         <a class="txt2" href="login.jsp">
             Click here to login
             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>

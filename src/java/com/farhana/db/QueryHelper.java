@@ -32,8 +32,8 @@ public class QueryHelper {
         try {
             
             pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_USER);
-            pst.setString(1, email);
-            pst.setString(2, name);
+            pst.setString(1, name);
+            pst.setString(2, email);
             pst.setString(3, password);
             
             int a = pst.executeUpdate();
