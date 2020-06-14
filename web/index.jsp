@@ -10,29 +10,29 @@
 <html lang="en">
 
     <%!
-        String websiteName = null;
-        String websiteTitle = null;
-        String websiteSlogan = null;
+        String websiteName = "Auction BD";
+        String websiteTitle = "";
+        String websiteSlogan = "";
     %>
 
     <%
-        try{
-        Connection conn = DBHelper.getConnection();
-        PreparedStatement pst;
-        ResultSet rs;
-        pst = conn.prepareStatement(QueryHelper.WEB_SITE_INFO);
-        rs = pst.executeQuery();
-        if (rs.next()) {
-            websiteName = rs.getString("name");
-            websiteTitle = rs.getString("slogan");
-            websiteSlogan = rs.getString("title");
-        }
-        pst.close();
-        rs.close();
-        conn.close();
-        }catch(Exception e){
-            out.print(e.toString());
-        }
+//        try{
+//        Connection conn = DBHelper.getConnection();
+//        PreparedStatement pst;
+//        ResultSet rs;
+//        pst = conn.prepareStatement(QueryHelper.WEB_SITE_INFO);
+//        rs = pst.executeQuery();
+//        if (rs.next()) {
+//            websiteName = rs.getString("name");
+//            websiteTitle = rs.getString("slogan");
+//            websiteSlogan = rs.getString("title");
+//        }
+//        pst.close();
+//        rs.close();
+//        conn.close();
+//        }catch(Exception e){
+//            out.print(e.toString());
+//        }
 
     %>
 
