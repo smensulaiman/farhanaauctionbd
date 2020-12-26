@@ -31,7 +31,7 @@ public class SignUpController extends HttpServlet {
                         response.sendRedirect("auctionbd_eCommerce/registration/signup.jsp");
                     } else {
                         out.write("Success");
-                        response.sendRedirect("auctionbd_eCommerce/index.jsp");
+                        response.sendRedirect("auctionbd_eCommerce/registration/login.jsp");
                     }
                 } else {
                     request.getSession().setAttribute("email_validation","Faild");

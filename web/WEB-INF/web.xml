@@ -12,6 +12,10 @@
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>com.farhana.controllers.LogoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BidController</servlet-name>
+        <servlet-class>com.farhana.controllers.BidController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/LogoutController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BidController</servlet-name>
+        <url-pattern>/BidController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
