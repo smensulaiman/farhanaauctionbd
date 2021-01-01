@@ -15,26 +15,33 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            String email    =  request.getParameter("email");
-            String password =  request.getParameter("pass");
-            
-            QueryHelper helper = new QueryHelper();
-            String name;
-            
-            if((name = helper.logInUser(email, password)) != null){
-                out.print("Welcome "+name);
-                
-                HttpSession session=request.getSession();  
-                session.setAttribute("username",name); 
-                
-                response.sendRedirect("auctionbd_eCommerce/index.jsp");
-                
-            }else{
-                request.setAttribute("error", "Invalid email or password !!!");
-                response.sendRedirect("auctionbd_eCommerce/registration/login_error.jsp");
+
+            String email = request.getParameter("email");
+            String password = request.getParameter("pass");
+
+            if (email.equals("admin@gmail.com") && password.equals("admin")) {
+                HttpSession session = request.getSession();
+                session.setAttribute("username", "Admin");
+
+                response.sendRedirect("admin/index.jsp");
+            } else {
+                QueryHelper helper = new QueryHelper();
+                String name;
+
+                if ((name = helper.logInUser(email, password)) != null) {
+                    out.print("Welcome " + name);
+
+                    HttpSession session = request.getSession();
+                    session.setAttribute("username", name);
+
+                    response.sendRedirect("auctionbd_eCommerce/index.jsp");
+
+                } else {
+                    request.setAttribute("error", "Invalid email or password !!!");
+                    response.sendRedirect("auctionbd_eCommerce/registration/login_error.jsp");
+                }
             }
-            
+
         }
     }
 
