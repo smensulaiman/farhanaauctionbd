@@ -1,6 +1,7 @@
 package com.farhana.db;
 
 import com.farhana.model.BidsModel;
+import com.farhana.model.ProductModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -112,9 +113,76 @@ public class QueryHelper {
             pst.close();
             rs.close();
         }
-
+        
         return bidsModels;
+    }
 
+    public int insertProduct(ProductModel productModel) {
+
+        try {
+            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_PRODUCT);
+            pst.setString(1, productModel.getProductName());
+            pst.setInt(2, productModel.getProductPrice());
+            pst.setInt(3, productModel.getProductStock());
+            pst.setString(4, productModel.getProductSeller());
+            pst.setString(5, productModel.getProductStartTime());
+            pst.setString(6, productModel.getProductEndTime());
+            pst.setInt(7, productModel.getProductCategoryID());
+            pst.setString(8, productModel.getProductImage());
+
+            int a = pst.executeUpdate();
+
+            if (a > 0) {
+                pst.close();
+                System.out.println("Data Inserted Successfully");
+                return 1;
+            } else {
+                pst.close();
+                System.out.println("Faild");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            if (ex.getMessage().contains("Duplicate entry")) {
+                System.out.println("error : " + ex.getMessage());
+                return 2;
+            }
+        }
+
+        return 0;
+    }
+
+    public List<ProductModel> getAllProducts() throws SQLException {
+
+        List<ProductModel> productModels = new ArrayList<>();
+
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                productModels.add(new ProductModel(
+                        rs.getInt("id"),
+                        rs.getString("productName"),
+                        rs.getInt("productPrice"),
+                        rs.getInt("productStock"),
+                        rs.getString("productSeller"),
+                        rs.getString("productStartTime"),
+                        rs.getString("productEndTime"),
+                        rs.getInt("productCategoryID"),
+                        rs.getString("productImage")
+                ));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            pst.close();
+            rs.close();
+        }
+        System.out.println("Retrive siz: " + productModels.size());
+        return productModels;
     }
 
     public boolean postBid(String name, int amount, String date, int productid) throws SQLException {
@@ -142,7 +210,7 @@ public class QueryHelper {
             if (ex.getMessage().contains("Duplicate entry")) {
                 System.out.println("error : " + ex.getMessage());
                 status = false;
-            }       
+            }
         } finally {
             pst.close();
         }

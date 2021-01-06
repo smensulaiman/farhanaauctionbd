@@ -68,7 +68,7 @@
                                     Manager manager = new Manager();
                                     List<ProductModel> productModels = new ArrayList();
                                     manager.getDemoProducts(productModels);
-
+                                    System.out.println("Total Products: "+productModels.size());
                                     request.getSession().setAttribute("products", productModels);
 
                                     for (ProductModel model : productModels) {
@@ -107,7 +107,7 @@
                                                 </div>
                                                 <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
                                                     <p class="ps-shoe__categories">
-                                                        <a href="#"><%=model.getProductCategory()%></a>
+                                                        <a href="#"><%=model.getProductCategoryID()%></a>
                                                     </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
                                                 </div>
                                             </div>
@@ -380,7 +380,6 @@
                     <div class="ps-container">
                         <div class="row">
 
-                            <%= Constant.ADDRESS_FOOTER%>
                             <%= Constant.ADDRESS_FOOTER%>
 
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">

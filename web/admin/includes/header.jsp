@@ -39,18 +39,14 @@
                         <a href="#" data-toggle="dropdown">English <span class="caret"></span></a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)">French</a></li>
-                            <li><a href="javascript:void(0)">German</a></li>
-                            <li><a href="javascript:void(0)">Italian</a></li>
+        
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">Pages <span class="caret"></span></a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)">Analytics</a></li>
-                            <li><a href="javascript:void(0)">Visits</a></li>
-                            <li><a href="javascript:void(0)">Changelog</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -82,7 +78,7 @@
 
                     <li class="dropdown dropdown-profile">
                         <a href="javascript:void(0)" data-toggle="dropdown">
-                            <span class="m-r-sm">John Doe <span class="caret"></span></span>
+                            <span class="m-r-sm">Admin<span class="caret"></span></span>
                             <img class="img-avatar img-avatar-48" src="assets/img/avatars/avatar3.jpg" alt="User profile pic" />
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -90,13 +86,7 @@
                                 Pages
                             </li>
                             <li>
-                                <a href="base_pages_profile.html">Profile</a>
-                            </li>
-                            <li>
-                                <a href="base_pages_profile.html"><span class="badge badge-success pull-right">3</span> Blog</a>
-                            </li>
-                            <li>
-                                <a href="frontend_login_signup.html">Logout</a>
+                                <a href="../auctionbd_eCommerce/index.jsp">Logout</a>
                             </li>
                         </ul>
                     </li>

@@ -16,7 +16,6 @@
     <%
         List<ProductModel> productModels = (List<ProductModel>) request.getSession().getAttribute("products");
         ProductModel model = productModels.get(Integer.parseInt(request.getParameter("id")));
-        request.getSession().setAttribute("id", request.getParameter("id"));
     %>
 
     <jsp:include page="head/head.jsp"></jsp:include>
