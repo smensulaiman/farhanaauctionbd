@@ -1,5 +1,7 @@
 package com.farhana.controllers;
 
+import com.farhana.db.QueryHelper;
+import com.farhana.model.ProductModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,16 +19,24 @@ public class UploadServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UploadServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UploadServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            
+            String productTitle = request.getParameter("productTitle");
+            String productPrice = request.getParameter("productPrice");
+            String productStock = request.getParameter("productStock");
+            String productSeller = request.getParameter("productSeller");
+            String productTime = request.getParameter("productTime");
+            String productCategory = request.getParameter("productCategory");
+            String img = request.getParameter("img");
+            String productStartTime = String.valueOf(System.currentTimeMillis());
+            String productEndTime = String.valueOf(System.currentTimeMillis() + (long)Integer.parseInt(productTime)*60*60*1000);
+            
+            System.out.println("title : "+productTitle+" price : "+productPrice+" stock : "+productStock+" : "+productSeller+" : "+productTime+" category : "+productCategory+" img : "+img);
+            
+            ProductModel productModel =  new ProductModel( 0, productTitle, Integer.parseInt(productPrice), Integer.parseInt(productStock), productSeller,  productStartTime,  productEndTime, Integer.parseInt(productCategory),  img);
+            QueryHelper helper = new QueryHelper();
+            helper.insertProduct(productModel);
+            
+            response.sendRedirect("admin/addproduct.jsp");
         }
     }
 

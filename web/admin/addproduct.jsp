@@ -29,8 +29,7 @@
                                         </ul>
                                     </div>
                                     <div class="card-block">
-                                        <form class="form-horizontal" action = "../UploadServlet" method = "post"
-                                              enctype = "multipart/form-data" onsubmit="return false;">
+                                        <form class="form-horizontal" action = "../UploadServlet" method = "post">
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-username">Product Title</label>
                                                 <div class="col-xs-12">
@@ -70,7 +69,7 @@
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-password2">Product Category</label>
                                                 <div class="col-xs-12">
-                                                    <select class="js-select2 form-control select2-hidden-accessible" id="example-select2" name="example-select2" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
+                                                    <select class="js-select2 form-control select2-hidden-accessible" id="example-select2" name="productCategory" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
                                                         <option></option>
                                                         <option value="1">COVID-19</option>
                                                         <option value="2">IT AND GRAPHICS</option>
