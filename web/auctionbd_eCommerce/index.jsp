@@ -83,7 +83,7 @@
                                                     <span>20%</span>
                                                 </div>
                                                 <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
                                                 <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>"></a>
                                             </div>
                                             <div class="ps-shoe__content">
@@ -92,7 +92,7 @@
 
                                                         <% for (int j = 0; j < 4; j++) {%>
 
-                                                        <img src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
 
                                                         <% }%>
 
