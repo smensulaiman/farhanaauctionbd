@@ -42,7 +42,7 @@
                             <div class="col-lg-10 col-md-12 col-lg-offset-1">
                                 <div class="ps-product__thumbnail">
                                     <div class="ps-product__image">
-                                        <div class="item"><img class="zoom" src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
+                                        <div class="item"><img class="zoom" src="images/product/ppe/<%=model.getProductImage()%>" alt="" data-zoom-image="images/product/ppe/<%=model.getProductImage()%>"></div>
                                 </div>
                             </div>
                             <div class="ps-product__thumbnail--mobile">

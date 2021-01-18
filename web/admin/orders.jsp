@@ -1,6 +1,3 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.text.DateFormat"%>
-<%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="com.farhana.model.ProductModel"%>
 <%@page import="com.farhana.db.QueryHelper"%>
@@ -46,24 +43,21 @@
                                             <% 
                                                 
                                                 QueryHelper helper = new QueryHelper();
-                                                SimpleDateFormat formater = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
                                                 List<ProductModel> allProducts = helper.getAllProducts();
                                                 
-                                                for(ProductModel model : allProducts){     
-
-                                            %> 
+                                                for(ProductModel model : allProducts){ %>
                                             
                                             <tr>
                                                 <td class="text-center">
                                                     <img class="img-avatar img-avatar-48" src="../auctionbd_eCommerce/images/product/ppe/<%=model.getProductImage()%>" alt="">
                                                 </td>
                                                 <td class="font-500"><%= model.getProductName() %></td>
-                                                <td class="font-500"><%= model.getProductSeller()%></td>
-                                                <td class="font-500"><%= formater.format(new Date(Long.valueOf(model.getProductStartTime()))) %></td>
-                                                <td class="font-500"><%= formater.format(new Date(Long.valueOf(model.getProductEndTime()))) %></td>
-                                                <td class="font-500"><%= model.getProductCategoryID()%></td>
-                                                <td class="font-500">Pcs. <%= model.getProductStock()%></td>
-                                                <td class="font-500">Tk. <%= model.getProductPrice()%></td>
+                                                <td class="font-500">Shohag pk Pharmacy Limited</td>
+                                                <td class="font-500">10:00 am</td>
+                                                <td class="font-500">08:00 pm</td>
+                                                <td class="font-500">Covid-19</td>
+                                                <td class="font-500">1,00,000</td>
+                                                <td class="font-500">Tk. 30</td>
                                                
                                                 <td class="text-center">
                                                     <div class="btn-group">
