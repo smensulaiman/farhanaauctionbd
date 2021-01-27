@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
-                    <p><%= Constant.ADDRESS_AND_NUMBER%></p>
+                    <p><%= Constant.ADDRESS_AND_NUMBER %></p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
                     <div class="header__actions">
@@ -29,9 +29,7 @@
                             </ul>
                         </div>
 
-                        <%
-                            }
-                        %>
+                        <% } %>
 
 
                         <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TK<i class="fa fa-angle-down"></i></a>
@@ -115,7 +113,7 @@
                         </div>
                     </li>
                     <li class="menu-item"><a href="#">TOP 10 AUCTIONS</a></li>
-                    <li class="menu-item"><a href="#">COMPARE</a></li>
+                    <li class="menu-item"><a href="about.jsp">ABOUT US</a></li>
                     <li class="menu-item menu-item-has-children dropdown"><a href="#">Blog</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="blog-list.jsp">Blog List</a></li>
@@ -123,9 +121,7 @@
                     </li>
                     <li class="menu-item menu-item-has-children dropdown"><a href="#">Contact</a>
                         <ul class="sub-menu">
-                            <!--                            <li class="menu-item"><a href="contact-us.html">Contact Us</a></li>-->
                             <li class="menu-item"><a href="#">Contact Us</a></li>
-
                         </ul>
                     </li>
                 </ul>

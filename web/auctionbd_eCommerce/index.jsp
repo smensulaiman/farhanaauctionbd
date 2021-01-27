@@ -68,7 +68,7 @@
                                     Manager manager = new Manager();
                                     List<ProductModel> productModels = new ArrayList();
                                     manager.getDemoProducts(productModels);
-                                    System.out.println("Total Products: "+productModels.size());
+                                    System.out.println("Total Products: " + productModels.size());
                                     request.getSession().setAttribute("products", productModels);
 
                                     for (ProductModel model : productModels) {
