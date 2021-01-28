@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2021 at 10:24 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Jan 28, 2021 at 02:11 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -66,26 +65,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `productName`, `productPrice`, `productStock`, `productSeller`, `productStartTime`, `productEndTime`, `productCategoryID`, `productImage`) VALUES
-(41, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924577657', '1609924577657', 1, '1'),
-(42, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578098', '1609924578098', 1, '2'),
-(43, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578100', '1609924578100', 1, '3'),
-(44, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578102', '1609924578102', 1, '4'),
-(45, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578104', '1609924578104', 1, '5'),
-(46, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578106', '1609924578106', 1, '1'),
-(47, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578108', '1609924578108', 1, '2'),
-(48, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578110', '1609924578110', 1, '3'),
-(49, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578112', '1609924578112', 1, '4'),
-(50, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578115', '1609924578115', 1, '5'),
-(51, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578118', '1609924578118', 1, '1'),
-(52, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578124', '1609924578124', 1, '2'),
-(53, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578132', '1609924578132', 1, '3'),
-(54, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578135', '1609924578135', 1, '4'),
-(55, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578140', '1609924578140', 1, '5'),
-(56, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578143', '1609924578143', 1, '1'),
-(57, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578149', '1609924578149', 1, '2'),
-(58, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578152', '1609924578152', 1, '3'),
-(59, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578156', '1609924578156', 1, '4'),
-(60, 'MSAAEX Disposable Face Mask', 12, 10000, 'Farhana', '1609924578158', '1609924578158', 1, '5');
+(65, 'KN5 mask', 1200000, 100000, 'Pk Shohag', '1611833498339', '1611837098339', 1, '3.jpg');
 
 -- --------------------------------------------------------
 
@@ -146,7 +126,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -22,11 +22,11 @@ public class BidController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
            
+            int id = Integer.parseInt(request.getParameter("id"));
             int value = Integer.parseInt(request.getParameter("item"));
             String name = (String) request.getSession().getAttribute("username");
-            int id = Integer.parseInt((String)request.getSession().getAttribute("id"));
             
-            System.out.println("Name : "+name+", Value : "+value+" id : "+id);
+            System.out.println("Id : "+id+"Name : "+name+", Value : "+value+" id : "+id);
            
             QueryHelper helper = new QueryHelper();
             

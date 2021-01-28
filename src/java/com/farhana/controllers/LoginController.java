@@ -33,6 +33,7 @@ public class LoginController extends HttpServlet {
 
                     HttpSession session = request.getSession();
                     session.setAttribute("username", name);
+                    session.setAttribute("email", email);
 
                     response.sendRedirect("auctionbd_eCommerce/index.jsp");
 

@@ -19,7 +19,7 @@ public class UploadServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             String productTitle = request.getParameter("productTitle");
             String productPrice = request.getParameter("productPrice");
             String productStock = request.getParameter("productStock");
@@ -30,7 +30,9 @@ public class UploadServlet extends HttpServlet {
             String productStartTime = String.valueOf(System.currentTimeMillis());
             String productEndTime = String.valueOf(System.currentTimeMillis() + (long)Integer.parseInt(productTime)*60*60*1000);
             
-            System.out.println("title : "+productTitle+" price : "+productPrice+" stock : "+productStock+" : "+productSeller+" : "+productTime+" category : "+productCategory+" img : "+img);
+            productPrice = String.valueOf(Integer.parseInt(productPrice) * Integer.parseInt(productStock));
+            
+            System.out.println(" title : "+productTitle+" price : "+productPrice+" stock : "+productStock+" : "+productSeller+" : "+productTime+" category : "+productCategory+" img : "+img);
             
             ProductModel productModel =  new ProductModel( 0, productTitle, Integer.parseInt(productPrice), Integer.parseInt(productStock), productSeller,  productStartTime,  productEndTime, Integer.parseInt(productCategory),  img);
             QueryHelper helper = new QueryHelper();

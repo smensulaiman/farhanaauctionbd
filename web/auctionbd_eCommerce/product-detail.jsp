@@ -61,15 +61,17 @@
                                 </div>
                                 <h1><%=model.getProductName()%></h1>
                                 <p class="ps-product__category"><a href="#"> <%=model.getProductSeller()%></a>,<a href="#"> MASK</a>
-                                <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice()%></h3>
-                                1,00,000 pcs
+                                <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice() %></h3>
+                                <%= model.getProductStock() %> pcs
                                 <div class="ps-product__block ps-product__quickview">
                                     <h4>QUICK REVIEW</h4>
                                     <p>Short description</p>
                                 </div>
                                 <form action="../BidController" method="POST">
+                                    <input type="hidden" name = "id" value="<%= model.getId() %>"/>
                                     <div class="ps-product__block ps-product__size">
                                         <h4>CHOOSE OFFER</h4>
+                                       
                                         <select class="ps-select selectpicker" name="item">
                                             <option value="1">Select Price</option>
                                             <option value="1000">+1,000</option>
@@ -256,21 +258,25 @@
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
             <script src="js/jquery.time-to.js"></script> 
 
-            <script>
+        <%
+            Date date = new Date();
+        %>
 
-            <%
-                Date date = new Date();
-            %>
+        <script>
 
-                console.log('<%=date.toString()%>')
+            console.log('<%=date.toString()%>')
 
-                $('#countdown').timeTo({
-                    seconds: 3600,
-                    theme: "black",
-                    displayCaptions: true,
-                    fontSize: 48,
-                    captionSize: 14
-                });
+            $('#countdown').timeTo({
+                seconds: 10,
+                theme: "black",
+                displayCaptions: true,
+                fontSize: 48,
+                captionSize: 14
+            }, ()=>{
+                alert("Finish");
+            });
+            
         </script>
+        
     </body>
 </html>
