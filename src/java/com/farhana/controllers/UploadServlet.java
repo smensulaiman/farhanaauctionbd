@@ -20,6 +20,10 @@ public class UploadServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
+            if(request.getSession().getAttribute("username") == null){
+                response.sendRedirect("auctionbd_eCOmmerce/registration/login.jsp");
+            }
+            
             String productTitle = request.getParameter("productTitle");
             String productPrice = request.getParameter("productPrice");
             String productStock = request.getParameter("productStock");

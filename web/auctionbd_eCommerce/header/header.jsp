@@ -4,7 +4,6 @@
 
 <%
     String name = (String) request.getSession().getAttribute("username");
-    //request.getSession().removeAttribute("username");
 %>
 
 <header class="header">

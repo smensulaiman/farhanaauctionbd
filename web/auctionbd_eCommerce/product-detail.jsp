@@ -12,7 +12,6 @@
 
 <html lang="en">
 
-
     <%
         List<ProductModel> productModels = (List<ProductModel>) request.getSession().getAttribute("products");
         ProductModel model = productModels.get(Integer.parseInt(request.getParameter("id")));
