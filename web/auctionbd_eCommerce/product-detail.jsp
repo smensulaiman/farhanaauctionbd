@@ -266,7 +266,7 @@
             console.log('<%=date.toString()%>')
 
             $('#countdown').timeTo({
-                seconds: 10,
+                seconds: 60,
                 theme: "black",
                 displayCaptions: true,
                 fontSize: 48,

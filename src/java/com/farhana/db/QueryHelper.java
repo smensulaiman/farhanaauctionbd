@@ -1,6 +1,7 @@
 package com.farhana.db;
 
 import com.farhana.model.BidsModel;
+import com.farhana.model.OrderModel;
 import com.farhana.model.ProductModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -217,4 +218,40 @@ public class QueryHelper {
         return status;
     }
 
+        public List<OrderModel> getAllOrders() throws SQLException {
+
+        List<OrderModel> productModels = new ArrayList<>();
+
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
+            rs = pst.executeQuery();
+            
+            while (rs.next()) {
+                productModels.add(new OrderModel(
+                        rs.getString("name"),
+                        rs.getInt("amount"),
+                        rs.getString("date"),
+                        rs.getInt("productid"),
+                        rs.getString("productName"),
+                        rs.getInt("productPrice"),
+                        rs.getInt("productStock"),
+                        rs.getString("productSeller"),
+                        rs.getString("productStartTime"),
+                        rs.getString("productEndTime"),
+                        rs.getInt("productCategoryID"),
+                        rs.getString("productImage")
+                ));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            pst.close();
+            rs.close();
+        }
+        System.out.println("Retrive siz: " + productModels.size());
+        return productModels;
+    }
+    
 }

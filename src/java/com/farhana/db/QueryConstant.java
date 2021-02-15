@@ -7,7 +7,7 @@ public class QueryConstant {
     public static final String SELECT_ALL_PRODUCTS      = "select * from products";
     
     /*              INSERT              */
-    public static final String INSERT_NEW_USER      = "insert into users(name,email,password) values(default,?,?,?)";
+    public static final String INSERT_NEW_USER      = "insert into users values(default,?,?,?)";
     public static final String INSERT_NEW_BID       = "insert into bids values(default,?,?,?,?)";
     public static final String INSERT_NEW_PRODUCT   = "INSERT INTO products VALUES (default,?,?,?,?,?,?,?,?)";
     
