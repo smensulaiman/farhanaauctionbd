@@ -48,9 +48,16 @@
                                                 QueryHelper helper = new QueryHelper();
                                                 SimpleDateFormat formater = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
                                                 List<OrderModel> allOrders = helper.getAllOrders();
-                                                
+                                                int index = 0;
+                                                int temp = 0; 
+                                                if(allOrders.size() > 0){
+                                                    temp = allOrders.get(0).getProductid();
+                                                }
                                                 for(OrderModel model : allOrders){     
-
+                                                   if(model.getProductid() != temp){
+                                                       temp = model.getProductid();
+                                                       index = 0;
+                                                   }
                                             %> 
                                             
                                             <tr>
@@ -58,11 +65,15 @@
                                                     <img class="img-avatar img-avatar-48" src="../auctionbd_eCommerce/images/product/ppe/<%=model.getProductImage()%>" alt="">
                                                 </td>
                                                 <td class="font-500"><%= model.getProductName() %></td>
-                                                <td class="font-500"><%= model.getName()%></td>
+                                                <td class="font-500"><%= model.getName()%>
+                                                    <% if(index == 0) { %>
+                                                    <span style="background-color: tomato; color: white;margin-left: 5px; padding: 2px 5px; font-family: sans-serif; font-size: 12px;">Top</span>
+                                                    <% index++; } %>
+                                                </td>
                                                 <td class="font-500"><%= model.getProductSeller()%></td>
                                                 <td class="font-500"><%= formater.format(new Date(Long.valueOf(model.getProductStartTime()))) %></td>
                                                 <td class="font-500"><%= formater.format(new Date(Long.valueOf(model.getProductEndTime()))) %></td>
-                                                <td class="font-500"><%= (double)(model.getProductPrice() * model.getAmount()) %></td>
+                                                <td class="font-500"><%= (double)(model.getProductPrice() + model.getAmount()) %></td>
                                                 <td class="text-center">
                                                     <div class="btn-group">
                                                         <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Edit Client"><i class="ion-edit"></i></button>

@@ -101,13 +101,17 @@
                                         QueryHelper helper = new QueryHelper();
                                         List<BidsModel> bids = helper.getBids(model.getId());
                                         if(bids != null){
-                                        for (BidsModel b : bids) {
+                                            int index = 0;
+                                            for (BidsModel b : bids) {
                                     %>
                                     <div class="ps-review">
                                         <div class="ps-review__thumbnail"><img src="images/user/1.jpg" alt=""></div>
                                         <div class="ps-review__content">
                                             <header>
                                                 <p>By<a href=""> <%= b.getName()%> </a> - <%= b.getDate()%></p>
+                                                <% if(index == 0) { %>
+                                                <span style="background-color: tomato; color: white; padding: 0px 10px;"> Top Bid </span>
+                                                <% index++; } %>
                                             </header>
                                             <p>bids <%= b.getAmount()%> Taka</p>
                                         </div>
