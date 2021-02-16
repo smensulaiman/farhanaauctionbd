@@ -36,7 +36,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a href="addproduct.jsp"><i class="ion-ios-list-outline"></i> Auction Orders</a>
+                    <a href="orders.jsp"><i class="ion-ios-list-outline"></i> Auction Orders</a>
                 </li>
 
                 <li class="nav-item nav-drawer-header">Components</li>

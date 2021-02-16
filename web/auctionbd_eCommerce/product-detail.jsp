@@ -4,6 +4,8 @@
     Author     : Farhana
 --%>
 
+<%@page import="com.farhana.model.BidsModel"%>
+<%@page import="com.farhana.db.QueryHelper"%>
 <%@page import="java.util.List"%>
 <%@page import="com.farhana.model.ProductModel"%>
 <%@page import="java.util.Date"%>
@@ -60,17 +62,17 @@
                                 </div>
                                 <h1><%=model.getProductName()%></h1>
                                 <p class="ps-product__category"><a href="#"> <%=model.getProductSeller()%></a>,<a href="#"> MASK</a>
-                                <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice() %></h3>
-                                <%= model.getProductStock() %> pcs
+                                <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice()%></h3>
+                                <%= model.getProductStock()%> pcs
                                 <div class="ps-product__block ps-product__quickview">
                                     <h4>QUICK REVIEW</h4>
                                     <p>Short description</p>
                                 </div>
                                 <form action="../BidController" method="POST">
-                                    <input type="hidden" name = "id" value="<%= model.getId() %>"/>
+                                    <input type="hidden" name = "id" value="<%= model.getId()%>"/>
                                     <div class="ps-product__block ps-product__size">
                                         <h4>CHOOSE OFFER</h4>
-                                       
+
                                         <select class="ps-select selectpicker" name="item">
                                             <option value="1">Select Price</option>
                                             <option value="1000">+1,000</option>
@@ -95,20 +97,28 @@
                                 <div class="tab-pane" role="tabpanel" id="tab_02">
                                     <p class="mb-20">bid for <strong>Product Name</strong></p>
                                     <%
-                                        for (int i = 1; i < 5; i++) {
+
+                                        QueryHelper helper = new QueryHelper();
+                                        List<BidsModel> bids = helper.getBids(model.getId());
+                                        if(bids != null){
+                                        for (BidsModel b : bids) {
                                     %>
                                     <div class="ps-review">
                                         <div class="ps-review__thumbnail"><img src="images/user/1.jpg" alt=""></div>
                                         <div class="ps-review__content">
                                             <header>
-                                                <p>By<a href=""> Farhana</a> - <%= new Date().toString()%></p>
+                                                <p>By<a href=""> <%= b.getName()%> </a> - <%= b.getDate()%></p>
                                             </header>
-                                            <p>bids <%=i%>000 Taka</p>
+                                            <p>bids <%= b.getAmount()%> Taka</p>
                                         </div>
                                     </div>
                                     <%
-                                        }
+                                        }}else{
                                     %>
+                                    <div class="ps-review">
+                                       
+                                    </div>
+                                    <% } %>
                                 </div>
                             </div>
 
@@ -271,11 +281,11 @@
                 displayCaptions: true,
                 fontSize: 48,
                 captionSize: 14
-            }, ()=>{
+            }, () => {
                 alert("Finish");
             });
-            
+
         </script>
-        
+
     </body>
 </html>

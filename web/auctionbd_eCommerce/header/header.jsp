@@ -7,22 +7,22 @@
 %>
 
 <header class="header">
-    <div class="header__top">
+    <div class="header__top"  style="background-color:  tomato">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
-                    <p><%= Constant.ADDRESS_AND_NUMBER %></p>
+                    <p style="color: white"><%= Constant.ADDRESS_AND_NUMBER %></p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
                     <div class="header__actions">
 
                         <% if (name == null) { %>
 
-                        <a href="registration/login.jsp">Login & Regiser</a>
+                        <a href="registration/login.jsp" style="color: white">Login & Regiser</a>
 
                         <% } else {%>
 
-                        <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=name%><i class="fa fa-angle-down"></i></a>
+                        <div class="btn-group ps-dropdown" ><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white"><%=name%><i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/Farhana/LogoutController"><i class="fa fa-sign-out"></i>Log Out</a></li>
                             </ul>
@@ -31,12 +31,12 @@
                         <% } %>
 
 
-                        <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TK<i class="fa fa-angle-down"></i></a>
+                        <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">TK<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><img src="images/flag/bd.svg" alt=""> BD</a></li>
+                                <li><a href="#"><img src="images/flag/bd.svg" alt="" style="color: white"> BD</a></li>
                             </ul>
                         </div>
-                        <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language<i class="fa fa-angle-down"></i></a>
+                        <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">Language<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Bangla</a></li>
                             </ul>

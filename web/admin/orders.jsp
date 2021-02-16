@@ -1,3 +1,7 @@
+<%@page import="com.farhana.model.OrderModel"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="java.util.List"%>
 <%@page import="com.farhana.model.ProductModel"%>
 <%@page import="com.farhana.db.QueryHelper"%>
@@ -16,7 +20,7 @@
 
                 <main class="app-layout-content">
                     <div class="container-fluid p-y-md">
-                        <h2 class="section-title">Product Entry forms</h2>
+                        <h2 class="section-title" style="color: tomato">All Orders</h2>
                         <div class="card">
                             
                             <div class="card-block">
@@ -24,15 +28,14 @@
                                 <div class="table-responsive">
                                     <table class="table table-striped table-borderless table-vcenter">
                                         
-                                        <thead style="background-color: #20c997; color: white">
+                                        <thead style="background-color: #0062cc; color: white">
                                             <tr>                                                  
                                                 <th class="text-center w-10"><i class="ion-person"></i></th>
-                                                <th>Title</th>
-                                                <th>Seller</th>
+                                                <th>Product Name</th>
+                                                <th>Buyer Name</th>
+                                                <th>Seller Name</th>
                                                 <th>Start Time</th>
                                                 <th>End Time</th>
-                                                <th>Category</th>
-                                                <th>Stock</th>
                                                 <th>Price</th>
                                                 <th class="text-center" style="width: 100px;">Actions</th>
                                             </tr>
@@ -43,22 +46,23 @@
                                             <% 
                                                 
                                                 QueryHelper helper = new QueryHelper();
-                                                List<ProductModel> allProducts = helper.getAllProducts();
+                                                SimpleDateFormat formater = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
+                                                List<OrderModel> allOrders = helper.getAllOrders();
                                                 
-                                                for(ProductModel model : allProducts){ %>
+                                                for(OrderModel model : allOrders){     
+
+                                            %> 
                                             
                                             <tr>
                                                 <td class="text-center">
                                                     <img class="img-avatar img-avatar-48" src="../auctionbd_eCommerce/images/product/ppe/<%=model.getProductImage()%>" alt="">
                                                 </td>
                                                 <td class="font-500"><%= model.getProductName() %></td>
-                                                <td class="font-500">Shohag pk Pharmacy Limited</td>
-                                                <td class="font-500">10:00 am</td>
-                                                <td class="font-500">08:00 pm</td>
-                                                <td class="font-500">Covid-19</td>
-                                                <td class="font-500">1,00,000</td>
-                                                <td class="font-500">Tk. 30</td>
-                                               
+                                                <td class="font-500"><%= model.getName()%></td>
+                                                <td class="font-500"><%= model.getProductSeller()%></td>
+                                                <td class="font-500"><%= formater.format(new Date(Long.valueOf(model.getProductStartTime()))) %></td>
+                                                <td class="font-500"><%= formater.format(new Date(Long.valueOf(model.getProductEndTime()))) %></td>
+                                                <td class="font-500"><%= (double)(model.getProductPrice() * model.getAmount()) %></td>
                                                 <td class="text-center">
                                                     <div class="btn-group">
                                                         <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Edit Client"><i class="ion-edit"></i></button>
@@ -68,7 +72,6 @@
                                             </tr>
                                             
                                             <%
-                                            
                                             }
                                             %>
                                            

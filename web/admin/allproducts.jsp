@@ -19,7 +19,7 @@
 
                 <main class="app-layout-content">
                     <div class="container-fluid p-y-md">
-                        <h2 class="section-title">Product Entry forms</h2>
+                        <h2 class="section-title">All Products</h2>
                         <div class="card">
                             
                             <div class="card-block">

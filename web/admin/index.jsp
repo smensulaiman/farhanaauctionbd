@@ -30,7 +30,7 @@
                                         <div class="card-block clearfix">
                                             <div class="pull-right">
                                                 <p class="h6 text-muted m-t-0 m-b-xs">Revenue</p>
-                                                <p class="h3 text-blue m-t-sm m-b-0">$120.9k</p>
+                                                <p class="h3 text-blue m-t-sm m-b-0">Tk. 120.9k</p>
                                             </div>
                                             <div class="pull-left m-r">
                                                 <span class="img-avatar img-avatar-48 bg-blue bg-inverse"><i class="ion-ios-bell fa-1-5x"></i></span>
@@ -60,7 +60,7 @@
                                         <div class="card-block clearfix">
                                             <div class="pull-right">
                                                 <p class="h6 text-muted m-t-0 m-b-xs">Revenue</p>
-                                                <p class="h3 m-t-sm m-b-0">$340.5k</p>
+                                                <p class="h3 m-t-sm m-b-0">Tk. 340.5k</p>
                                             </div>
                                             <div class="pull-left m-r">
                                                 <span class="img-avatar img-avatar-48 bg-gray-light-o"><i class="ion-ios-speedometer fa-1-5x"></i></span>
@@ -115,7 +115,7 @@
                                                 </div>
                                                 <div class="col-xs-6 col-lg-3 b-r visible-lg">
                                                     <p class="h6 small text-muted">Shares trade</p>
-                                                    <p class="h3 m-t-0 m-b-md">$28.74M</p>
+                                                    <p class="h3 m-t-0 m-b-md">Tk. 28.74M</p>
                                                     <div class="progress progress-mini m-b-sm">
                                                         <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84%"></div>
                                                     </div>
@@ -129,7 +129,7 @@
                                                 </div>
                                                 <div class="col-xs-6 col-lg-3">
                                                     <p class="h6 small text-muted">Total revenue</p>
-                                                    <p class="h3 m-t-0 m-b-md">$74.23M</p>
+                                                    <p class="h3 m-t-0 m-b-md">Tk. 74.23M</p>
                                                     <div class="progress progress-mini m-b-sm">
                                                         <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
                                                     </div>
@@ -300,7 +300,7 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <p class="h6 small text-muted">Shares trade</p>
-                                                    <p class="h3 m-t-0">$28.74M</p>
+                                                    <p class="h3 m-t-0">Tk. 28.74M</p>
                                                     <!-- Chart.js Charts (initialized in js/pages/base_pages_dashboard.js), for more examples please check http://www.chartjs.org/docs/ -->
                                                     <div style="height: 120px;"><canvas class="js-chartjs-lines5"></canvas></div>
                                                 </div>

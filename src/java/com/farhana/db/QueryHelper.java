@@ -96,18 +96,15 @@ public class QueryHelper {
         List<BidsModel> bidsModels = new ArrayList<>();
 
         try {
-
+            System.out.println("Product ID : "+productid);
             pst = dbConnection().prepareStatement(QueryConstant.SELECT_BIDS);
             pst.setInt(1, productid);
             rs = pst.executeQuery();
-
-            if (rs.next()) {
+                
+            while (rs.next()) {
                 bidsModels.add(new BidsModel(rs.getString("name"), rs.getInt("amount"), rs.getString("date"), rs.getInt("productid")));
-            } else {
-                System.out.println("Faild");
-                return null;
             }
-
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -224,7 +221,7 @@ public class QueryHelper {
 
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
+            pst = dbConnection().prepareStatement(QueryConstant.JOIN_PRODUCT_WITH_BID);
             rs = pst.executeQuery();
             
             while (rs.next()) {
