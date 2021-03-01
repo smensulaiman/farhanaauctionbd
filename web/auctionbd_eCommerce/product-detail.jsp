@@ -80,7 +80,7 @@
                                             <option value="10000">+10,000</option>
                                         </select>
                                     </div>
-                                    <button class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
+                                    <button id="btnPlaceBid" class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
                                     </button>
                                 </form>
                             </div>
@@ -286,7 +286,8 @@
                 fontSize: 48,
                 captionSize: 14
             }, () => {
-                alert("Finish");
+                //alert("Finish");
+                document.getElementById("btnPlaceBid").style.visibility = 'hidden';
             });
 
         </script>
