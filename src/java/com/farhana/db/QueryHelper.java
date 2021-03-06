@@ -96,22 +96,22 @@ public class QueryHelper {
         List<BidsModel> bidsModels = new ArrayList<>();
 
         try {
-            System.out.println("Product ID : "+productid);
+            System.out.println("Product ID : " + productid);
             pst = dbConnection().prepareStatement(QueryConstant.SELECT_BIDS);
             pst.setInt(1, productid);
             rs = pst.executeQuery();
-                
+
             while (rs.next()) {
                 bidsModels.add(new BidsModel(rs.getString("name"), rs.getInt("amount"), rs.getString("date"), rs.getInt("productid")));
             }
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
         }
-        
+
         return bidsModels;
     }
 
@@ -215,7 +215,7 @@ public class QueryHelper {
         return status;
     }
 
-        public List<OrderModel> getAllOrders() throws SQLException {
+    public List<OrderModel> getAllOrders() throws SQLException {
 
         List<OrderModel> productModels = new ArrayList<>();
 
@@ -223,7 +223,7 @@ public class QueryHelper {
 
             pst = dbConnection().prepareStatement(QueryConstant.JOIN_PRODUCT_WITH_BID);
             rs = pst.executeQuery();
-            
+
             while (rs.next()) {
                 productModels.add(new OrderModel(
                         rs.getString("name"),
@@ -250,5 +250,39 @@ public class QueryHelper {
         System.out.println("Retrive siz: " + productModels.size());
         return productModels;
     }
-    
+
+    public boolean inserSeller(String sellerName, String sellerEmail, String sellerAddress, String sellerPhone) throws SQLException {
+
+        boolean status = false;
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_SELLER);
+            pst.setString(1, sellerName);
+            pst.setString(2, sellerEmail);
+            pst.setString(3, sellerAddress);
+            pst.setString(4, sellerPhone);
+
+            int a = pst.executeUpdate();
+
+            if (a > 0) {
+                System.out.println("Seller Inserted Successfully");
+                status = true;
+            } else {
+                status = false;
+                System.out.println("Faild");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            if (ex.getMessage().contains("Duplicate entry")) {
+                System.out.println("error : " + ex.getMessage());
+                status = false;
+            }
+        } finally {
+            pst.close();
+        }
+        return status;
+
+    }
+
 }

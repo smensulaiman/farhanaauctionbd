@@ -24,6 +24,10 @@
                 </li>
                 
                 <li class="nav-item">
+                    <a href="addseller.jsp"><i class="ion-ios-monitor-outline"></i> Add Seller</a>
+                </li>
+                
+                <li class="nav-item">
                     <a href="#"><i class="ion-ios-monitor-outline"></i> Add Category</a>
                 </li>
 

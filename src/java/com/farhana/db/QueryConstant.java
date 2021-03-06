@@ -10,6 +10,7 @@ public class QueryConstant {
     public static final String INSERT_NEW_USER      = "insert into users values(default,?,?,?)";
     public static final String INSERT_NEW_BID       = "insert into bids values(default,?,?,?,?)";
     public static final String INSERT_NEW_PRODUCT   = "INSERT INTO products VALUES (default,?,?,?,?,?,?,?,?)";
+    public static final String INSERT_NEW_SELLER    = "INSERT INTO seller VALUES (default,?,?,?,?)";
     
     /*              JOIN              */
     public static final String JOIN_PRODUCT_WITH_BID = "select * from bids as b inner join products as p on b.productId = p.id order by p.id, b.amount DESC";
