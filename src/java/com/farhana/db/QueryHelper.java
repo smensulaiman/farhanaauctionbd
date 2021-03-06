@@ -3,6 +3,7 @@ package com.farhana.db;
 import com.farhana.model.BidsModel;
 import com.farhana.model.OrderModel;
 import com.farhana.model.ProductModel;
+import com.farhana.model.SellerModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -284,5 +285,33 @@ public class QueryHelper {
         return status;
 
     }
+    
+      public List<SellerModel> getAllSeller() throws SQLException {
+
+        List<SellerModel> sellerModels = new ArrayList<>();
+
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                sellerModels.add(new SellerModel(
+                        rs.getString("sellerName"),
+                        rs.getString("sellerEmail"),
+                        rs.getString("sellerAddress"),
+                        rs.getString("sellerPhone")
+                ));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            pst.close();
+            rs.close();
+        }
+        System.out.println("Retrive siz: " + sellerModels.size());
+        return sellerModels;
+    } 
 
 }

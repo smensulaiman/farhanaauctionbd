@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2021 at 02:07 PM
+-- Generation Time: Mar 06, 2021 at 01:59 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -40,7 +40,12 @@ CREATE TABLE `bids` (
 --
 
 INSERT INTO `bids` (`id`, `name`, `amount`, `date`, `productId`) VALUES
-(1, 'Mohammad Solaiman', 1000, 'Thu Feb 11 17:09:36 BDT 2021', 65);
+(3, 'Mohammad Solaiman', 5000, 'Tue Feb 16 13:48:59 BDT 2021', 65),
+(4, 'Mohammad Solaiman', 1000, 'Tue Feb 16 13:54:16 BDT 2021', 66),
+(5, 'Naim@gmail.com', 5000, 'Tue Feb 16 13:55:04 BDT 2021', 66),
+(6, 'aaa@gmail.com', 10000, 'Tue Feb 16 14:02:39 BDT 2021', 66),
+(7, 'Mohammad Solaiman', 10000, 'Sat Mar 06 16:17:13 BDT 2021', 66),
+(8, 'naimur@gmail.com', 10000, 'Sat Mar 06 16:20:09 BDT 2021', 65);
 
 -- --------------------------------------------------------
 
@@ -86,7 +91,29 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `productName`, `productPrice`, `productStock`, `productSeller`, `productStartTime`, `productEndTime`, `productCategoryID`, `productImage`) VALUES
-(65, 'KN5 mask', 1200000, 100000, 'Pk Shohag', '1611833498339', '1611837098339', 1, '3.jpg');
+(65, 'KN5 mask', 1200, 100000, 'Pk Shohag', '1611833498339', '1611837098339', 1, '3.jpg'),
+(66, 'Product Two', 12000, 1200, 'Mafuz Vai', '1613461996592', '1613465596592', 3, '1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seller`
+--
+
+CREATE TABLE `seller` (
+  `id` int(11) NOT NULL,
+  `sellerName` varchar(255) DEFAULT NULL,
+  `sellerEmail` varchar(255) DEFAULT NULL,
+  `sellerAddress` varchar(255) DEFAULT NULL,
+  `sellerPhone` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `seller`
+--
+
+INSERT INTO `seller` (`id`, `sellerName`, `sellerEmail`, `sellerAddress`, `sellerPhone`) VALUES
+(1, 'Niloy', 'niloy@gmail.com', 'Nadda , Dhaka, Bangladesh', '010101001');
 
 -- --------------------------------------------------------
 
@@ -106,6 +133,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `name`, `password`) VALUES
+(14, 'aaa@gmail.com', 'aaa@gmail.com', 'aaa@gmail.com'),
+(13, 'Naim@gmail.com', 'Naim@gmail.com', 'Naim@gmail.com'),
+(15, 'naimur@gmail.com', 'naimur@gmail.com', 'naimur@gmail.com'),
 (10, 'smensulaiman0007@gmail.com', 'Mohammad Solaiman', 'l.kjljkl'),
 (1, 'smensulaiman007@gmail.com', 'Mohammad Solaiman', 'tepsa'),
 (5, 'smensulaiman05@gmail.com', 'Mohammad Solaiman', 'mnlkjnk');
@@ -133,6 +163,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `seller`
+--
+ALTER TABLE `seller`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -147,7 +183,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bids`
 --
 ALTER TABLE `bids`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -159,13 +195,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
+-- AUTO_INCREMENT for table `seller`
+--
+ALTER TABLE `seller`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
