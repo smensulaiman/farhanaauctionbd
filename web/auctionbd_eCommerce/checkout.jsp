@@ -4,6 +4,7 @@
     Author     : Farhana
 --%>
 
+<%@page import="com.farhana.model.ProductModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,13 @@
     <body class="ps-loading">
         <div class="header--sidebar"></div>
     <jsp:include page="header/header.jsp"></jsp:include>
+    
+    <%
+    
+    ProductModel model = (ProductModel) request.getParameter("model");
+    
+    %>
+    
         <main class="ps-main">
             <div class="ps-checkout pt-80 pb-80">
                 <div class="ps-container">

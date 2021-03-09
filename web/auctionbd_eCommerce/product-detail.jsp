@@ -17,6 +17,8 @@
     <%
         List<ProductModel> productModels = (List<ProductModel>) request.getSession().getAttribute("products");
         ProductModel model = productModels.get(Integer.parseInt(request.getParameter("id")));
+        String currentUser = (String) request.getSession().getAttribute("username");
+        boolean isWinner = false;
     %>
 
     <jsp:include page="head/head.jsp"></jsp:include>
@@ -43,11 +45,13 @@
                             <div class="col-lg-10 col-md-12 col-lg-offset-1">
                                 <div class="ps-product__thumbnail">
                                     <div class="ps-product__image">
-                                        <div class="item"><img class="zoom" src="images/product/ppe/<%=model.getProductImage()%>" alt="" data-zoom-image="images/product/ppe/<%=model.getProductImage()%>"></div>
+                                        <div class="item">
+                                            <img class="zoom" src="images/product/ppe/<%= model.getProductImage()%>" alt="" data-zoom-image="images/product/ppe/<%= model.getProductImage()%>">
+                                    </div>
                                 </div>
                             </div>
                             <div class="ps-product__thumbnail--mobile">
-                                <div class="ps-product__main-img"><img src="images/product/ppe/<%=model.getProductImage()%>.jpg" alt=""></div>
+                                <div class="ps-product__main-img"><img src="images/product/ppe/<%= model.getProductImage()%>.jpg" alt=""></div>
                                 <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"><img src="images/shoe-detail/1.jpg" alt=""><img src="images/shoe-detail/2.jpg" alt=""><img src="images/shoe-detail/3.jpg" alt=""></div>
                             </div>
                             <div class="ps-product__info">
@@ -60,8 +64,8 @@
                                         <option value="2">5</option>
                                     </select><a href="#">(Read all 8 reviews)</a>
                                 </div>
-                                <h1><%=model.getProductName()%></h1>
-                                <p class="ps-product__category"><a href="#"> <%=model.getProductSeller()%></a>,<a href="#"> MASK</a>
+                                <h1><%= model.getProductName()%></h1>
+                                <p class="ps-product__category"><a href="#"> <%= model.getProductSeller()%></a>,<a href="#"> MASK</a>
                                 <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice()%></h3>
                                 <%= model.getProductStock()%> pcs
                                 <div class="ps-product__block ps-product__quickview">
@@ -78,11 +82,15 @@
                                             <option value="1000">+1,000</option>
                                             <option value="5000">+5,000</option>
                                             <option value="10000">+10,000</option>
+                                            <option value="20000">+20,000</option>
+                                            <option value="50000">+50,000</option>
+                                            <option value="100000">+1,00,000</option>
                                         </select>
                                     </div>
                                     <button id="btnPlaceBid" class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
                                     </button>
                                 </form>
+                                    <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName() %>&productImage=<%= model.getProductImage() %>&productPrice=<%= model.getProductPrice() %>&productStock=<%= model.getProductStock() %>&productSeller=<%= model.getProductSeller() %>">GOTO CHECKOUT</a>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ps-product__content mt-50">
@@ -97,10 +105,9 @@
                                 <div class="tab-pane" role="tabpanel" id="tab_02">
                                     <p class="mb-20">bid for <strong>Product Name</strong></p>
                                     <%
-
                                         QueryHelper helper = new QueryHelper();
                                         List<BidsModel> bids = helper.getBids(model.getId());
-                                        if(bids != null){
+                                        if (bids != null) {
                                             int index = 0;
                                             for (BidsModel b : bids) {
                                     %>
@@ -109,18 +116,19 @@
                                         <div class="ps-review__content">
                                             <header>
                                                 <p>By<a href=""> <%= b.getName()%> </a> - <%= b.getDate()%></p>
-                                                <% if(index == 0) { %>
+                                                <% if (index == 0) { if (currentUser == b.getName()) { isWinner = true; }
+                                                %>
                                                 <span style="background-color: tomato; color: white; padding: 0px 10px;"> Top Bid </span>
-                                                <% index++; } %>
+                                                <% index++; }%>
                                             </header>
                                             <p>bids <%= b.getAmount()%> Taka</p>
                                         </div>
                                     </div>
                                     <%
-                                        }}else{
+                                        }
+                                    } else {
                                     %>
                                     <div class="ps-review">
-                                       
                                     </div>
                                     <% } %>
                                 </div>
@@ -172,11 +180,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <%
-                                }
-                            %>
-
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -267,28 +271,26 @@
                 </div>
             </div>
         </main>
-        <!-- JS Library-->
+
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
+
             <script src="js/jquery.time-to.js"></script> 
-
-        <%
-            Date date = new Date();
-        %>
-
-        <script>
-
-            console.log('<%=date.toString()%>')
-
-            $('#countdown').timeTo({
-                seconds: 60,
-                theme: "black",
-                displayCaptions: true,
-                fontSize: 48,
-                captionSize: 14
-            }, () => {
-                //alert("Finish");
-                document.getElementById("btnPlaceBid").style.visibility = 'hidden';
-            });
+            <script>
+                $('#countdown').timeTo({
+                    seconds: 10,
+                    theme: "black",
+                    displayCaptions: true,
+                    fontSize: 48,
+                    captionSize: 14
+                }, () => {
+                    document.getElementById("btnPlaceBid").style.visibility = 'hidden';
+                    if (<%= isWinner%>) {
+//                        alert('<%= isWinner%>');
+                        document.getElementById("btnCheckout").style.visibility = 'visible';
+                    } else {
+                        document.getElementById("btnCheckout").style.visibility = 'visible';
+                    }
+                });
 
         </script>
 
