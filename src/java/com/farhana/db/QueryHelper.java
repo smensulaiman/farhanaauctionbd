@@ -93,6 +93,36 @@ public class QueryHelper {
         return "";
     }
 
+    
+        public String logInSeller(String email) {
+
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.SELECT_SELLER);
+            pst.setString(1, email);
+
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+                System.out.println("Data Retrived Successfully");
+                String name = rs.getString("sellerName");
+                pst.close();
+                rs.close();
+                return name;
+            } else {
+                pst.close();
+                rs.close();
+                System.out.println("Faild");
+                return null;
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return "";
+    }
+    
     public List<BidsModel> getBids(int productid) throws SQLException {
         List<BidsModel> bidsModels = new ArrayList<>();
 

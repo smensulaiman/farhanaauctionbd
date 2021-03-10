@@ -174,7 +174,7 @@
                                                 <option value="2">5</option>
                                             </select>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
+                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Appex Shoe</a>
                                             <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> Tk. 1200</span>
                                         </div>
                                     </div>
@@ -273,7 +273,6 @@
         </main>
 
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
-
             <script src="js/jquery.time-to.js"></script> 
             <script>
                 $('#countdown').timeTo({
@@ -285,9 +284,6 @@
                 }, () => {
                     document.getElementById("btnPlaceBid").style.visibility = 'hidden';
                     if (<%= isWinner%>) {
-//                        alert('<%= isWinner%>');
-                        document.getElementById("btnCheckout").style.visibility = 'visible';
-                    } else {
                         document.getElementById("btnCheckout").style.visibility = 'visible';
                     }
                 });
