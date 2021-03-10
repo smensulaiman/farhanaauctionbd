@@ -13,12 +13,6 @@
         <div class="header--sidebar"></div>
     <jsp:include page="header/header.jsp"></jsp:include>
     
-    <%
-    
-    ProductModel model = (ProductModel) request.getParameter("model");
-    
-    %>
-    
         <main class="ps-main">
             <div class="ps-checkout pt-80 pb-80">
                 <div class="ps-container">
@@ -90,16 +84,16 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>HABITANT x1</td>
-                                                    <td>$300.00</td>
+                                                    <td>NUB</td>
+                                                    <td>Tk. 00</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Card Subtitle</td>
-                                                    <td>$300.00</td>
+                                                    <td>NUB</td>
+                                                    <td>Tk. 00</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Order Total</td>
-                                                    <td>$300.00</td>
+                                                    <td>NUB</td>
+                                                    <td>Tk. 00</td>
                                                 </tr>
                                             </tbody>
                                         </table>

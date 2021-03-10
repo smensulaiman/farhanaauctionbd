@@ -113,9 +113,9 @@
                     </li>
                     <li class="menu-item"><a href="#">TOP 10 AUCTIONS</a></li>
                     <li class="menu-item"><a href="about.jsp">ABOUT US</a></li>
-                    <li class="menu-item menu-item-has-children dropdown"><a href="#">Blog</a>
+                    <li class="menu-item menu-item-has-children dropdown"><a href="#">JOBS</a>
                         <ul class="sub-menu">
-                            <li class="menu-item"><a href="blog-list.jsp">Blog List</a></li>
+                            <li class="menu-item"><a href="joblist.jsp">Job List</a></li>
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children dropdown"><a href="#">Contact</a>

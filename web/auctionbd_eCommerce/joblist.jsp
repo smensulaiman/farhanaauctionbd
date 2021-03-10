@@ -1,14 +1,7 @@
-<%-- 
-    Document   : cart
-    Created on : Feb 10, 2020, 9:57:57 PM
-    Author     : Farhana
---%>
-
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
-
     <jsp:include page="head/head.jsp"></jsp:include>
 
         <body class="ps-loading">
@@ -16,64 +9,40 @@
 
         <jsp:include page="header/header.jsp"></jsp:include>
 
-        <%
-            String productName = request.getParameter("productName");
-            String productImage = request.getParameter("productImage");
-            String productPrice = request.getParameter("productPrice");
-            String productStock = request.getParameter("productStock");
-            String productSeller = request.getParameter("productSeller");
-        %>
-
         <main class="ps-main">
-            <div class="ps-content pt-80 pb-80">
+            <div class="ps-blog-grid pt-80 pb-80">
                 <div class="ps-container">
-                    <div class="ps-cart-listing">
-                        <table class="table ps-cart__table">
-                            <thead>
-                                <tr>
-                                    <th>Product Name</th>                                 
-                                    <th>Product Quantity</th>
-                                    <th>Total</th>
-                                    <th>Seller</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a class="ps-product__preview" href="#">
-                                            <img class="mr-15" style="height: 100px; width: 100px" src="images/product/ppe/<%= productImage %>" alt=""> <%= productName %>
-                                        </a>
-                                    </td>
-                                    <td><%= productStock %></td>
-                                    <td>
-                                        <div class="form-group--number">
-                                            <button class="minus"><span>-</span></button>
-                                            <input class="form-control" type="text" value="2">
-                                            <button class="plus"><span>+</span></button>
-                                        </div>
-                                    </td>
-                                    <td><%= productSeller %></td>
-                                    <td>
-                                        <div class="ps-remove"></div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="ps-cart__actions">
-                            <div class="ps-cart__promotion">
-                                <div class="form-group">
-                                    <div class="ps-form--icon"><i class="fa fa-angle-right"></i>
-                                        <input class="form-control" type="text" placeholder="Promo Code">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button class="ps-btn ps-btn--gray">Continue Shopping</button>
+                    <div class="row">
+                       
+                        <%
+                        for(int i=0; i<10; i++){
+                        %>
+                        
+                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                            <div class="ps-post mb-30">
+                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/jobs/1.jpg" alt=""></div>
+                                <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">New Job Offer for Daraz.com.bd</a>
+                                    <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5"><%= new Date().toString() %></span></p>
+                                    <p>Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
-                            <div class="ps-cart__total">
-                                <h3>Total Price: <span> <%= productPrice %> </span></h3><a class="ps-btn" href="checkout.jsp">Process to checkout<i class="ps-icon-next"></i></a>
-                            </div>
+                        </div>
+                        
+                        <%
+                        }
+                        %>
+                        
+                    </div>
+                    <div class="mt-30">
+                        <div class="ps-pagination">
+                            <ul class="pagination">
+                                <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -194,8 +163,29 @@
                 </div>
             </div>
         </main>
-
-        <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
-
+        <!-- JS Library-->
+        <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+        <script type="text/javascript" src="plugins/owl-carousel/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="plugins/gmap3.min.js"></script>
+        <script type="text/javascript" src="plugins/imagesloaded.pkgd.js"></script>
+        <script type="text/javascript" src="plugins/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="plugins/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="plugins/slick/slick/slick.min.js"></script>
+        <script type="text/javascript" src="plugins/elevatezoom/jquery.elevatezoom.js"></script>
+        <script type="text/javascript" src="plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script><script type="text/javascript" src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <!-- Custom scripts-->
+        <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
