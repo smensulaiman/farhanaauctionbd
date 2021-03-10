@@ -28,7 +28,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a href="#"><i class="ion-ios-monitor-outline"></i> Add Category</a>
+                    <a href="addjob.jsp"><i class="ion-ios-monitor-outline"></i> Add Job</a>
                 </li>
 
                 <li class="nav-item">

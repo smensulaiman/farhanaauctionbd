@@ -16,7 +16,6 @@
                     <span class="icon-bar"></span>
                 </button>
                 <span class="navbar-page-title">
-
                     Dashboard
                 </span>
             </div>
