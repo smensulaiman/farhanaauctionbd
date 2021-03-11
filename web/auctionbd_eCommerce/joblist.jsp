@@ -1,3 +1,6 @@
+<%@page import="com.farhana.model.JobsModel"%>
+<%@page import="java.util.List"%>
+<%@page import="com.farhana.db.QueryHelper"%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,29 +12,34 @@
 
         <jsp:include page="header/header.jsp"></jsp:include>
 
-        <main class="ps-main">
-            <div class="ps-blog-grid pt-80 pb-80">
-                <div class="ps-container">
-                    <div class="row">
-                       
+            <main class="ps-main">
+                <div class="ps-blog-grid pt-80 pb-80">
+                    <div class="ps-container">
+                        <div class="row">
+
                         <%
-                        for(int i=0; i<10; i++){
+                            List<JobsModel> jobsModels = new QueryHelper().getAllJobs();
+                            for (JobsModel model : jobsModels) {
                         %>
-                        
-                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                             <div class="ps-post mb-30">
-                                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/jobs/1.jpg" alt=""></div>
-                                <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">New Job Offer for Daraz.com.bd</a>
-                                    <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5"><%= new Date().toString() %></span></p>
-                                    <p>Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.Job Descriptions will be shown here.</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
+                                <div class="ps-post__thumbnail">
+                                    <a class="ps-post__overlay" href="blog-detail.html"></a>
+                                    <img src="images/jobs/1.jpg" alt="">
+                                </div>
+                                <div class="ps-post__content">
+                                    <a class="ps-post__title" href="blog-detail.html"><%= model.getJobTitle() %></a>
+                                    <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html"><%= model.getPoser()%></a></span> -<span class="ml-5"><%= model.getJobTitle() %></span></p>
+                                    <p><%= model.getJobDescription()%></p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <%
-                        }
+                            }
                         %>
-                        
+
                     </div>
                     <div class="mt-30">
                         <div class="ps-pagination">

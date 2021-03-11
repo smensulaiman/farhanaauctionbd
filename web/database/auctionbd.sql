@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2021 at 12:58 PM
+-- Generation Time: Mar 11, 2021 at 11:18 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -67,6 +67,30 @@ INSERT INTO `category` (`id`, `categoryname`) VALUES
 (2, 'IT AND GRAPHICS'),
 (3, 'GARMENTS'),
 (4, 'WRITTING');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` int(11) NOT NULL,
+  `jobTitle` varchar(255) NOT NULL,
+  `jobType` varchar(255) NOT NULL,
+  `jobLocation` varchar(255) NOT NULL,
+  `jobDescription` text NOT NULL,
+  `skills` varchar(255) NOT NULL,
+  `salary` varchar(255) NOT NULL,
+  `poser` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `jobTitle`, `jobType`, `jobLocation`, `jobDescription`, `skills`, `salary`, `poser`) VALUES
+(4, 'Job One', 'Full Time', 'Dhaka', 'Description', '1', '10,000 - 20,000', 'Niloy');
 
 -- --------------------------------------------------------
 
@@ -157,6 +181,12 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -189,6 +219,12 @@ ALTER TABLE `bids`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --

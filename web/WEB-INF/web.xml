@@ -20,6 +20,10 @@
         <servlet-name>SellerController</servlet-name>
         <servlet-class>com.farhana.controllers.SellerController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>JobController</servlet-name>
+        <servlet-class>com.farhana.controllers.JobController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>SellerController</servlet-name>
         <url-pattern>/SellerController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JobController</servlet-name>
+        <url-pattern>/JobController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -6,10 +6,12 @@ public class QueryConstant {
     public static final String SELECT_SELLER            = "select sellerName from seller where sellerEmail = ?";
     public static final String SELECT_BIDS              = "select * from bids where productid = ? order by amount DESC";
     public static final String SELECT_ALL_PRODUCTS      = "select * from products";
+    public static final String SELECT_ALL_JOBS          = "select * from jobs";
     
     /*              INSERT              */
     public static final String INSERT_NEW_USER      = "insert into users values(default,?,?,?)";
     public static final String INSERT_NEW_BID       = "insert into bids values(default,?,?,?,?)";
+    public static final String INSERT_NEW_JOB       = "insert into jobs values(default,?,?,?,?,?,?,?)";
     public static final String INSERT_NEW_PRODUCT   = "INSERT INTO products VALUES (default,?,?,?,?,?,?,?,?)";
     public static final String INSERT_NEW_SELLER    = "INSERT INTO seller VALUES (default,?,?,?,?)";
     

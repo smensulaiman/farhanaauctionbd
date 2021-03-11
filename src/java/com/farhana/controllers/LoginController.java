@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
             String password = request.getParameter("pass");
 
             if (password.trim().equals("1234")) {
-                if (email.equals("admin@gmail.com") && password.equals("admin")) {
+                if (email.equals("admin@gmail.com") && password.equals("1234")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("username", "Admin");
 

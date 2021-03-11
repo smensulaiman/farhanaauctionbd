@@ -1,6 +1,7 @@
 package com.farhana.db;
 
 import com.farhana.model.BidsModel;
+import com.farhana.model.JobsModel;
 import com.farhana.model.OrderModel;
 import com.farhana.model.ProductModel;
 import com.farhana.model.SellerModel;
@@ -93,8 +94,7 @@ public class QueryHelper {
         return "";
     }
 
-    
-        public String logInSeller(String email) {
+    public String logInSeller(String email) {
 
         try {
 
@@ -122,7 +122,7 @@ public class QueryHelper {
 
         return "";
     }
-    
+
     public List<BidsModel> getBids(int productid) throws SQLException {
         List<BidsModel> bidsModels = new ArrayList<>();
 
@@ -315,8 +315,8 @@ public class QueryHelper {
         return status;
 
     }
-    
-      public List<SellerModel> getAllSeller() throws SQLException {
+
+    public List<SellerModel> getAllSeller() throws SQLException {
 
         List<SellerModel> sellerModels = new ArrayList<>();
 
@@ -342,6 +342,71 @@ public class QueryHelper {
         }
         System.out.println("Retrive siz: " + sellerModels.size());
         return sellerModels;
-    } 
+    }
+
+    public boolean postJob(String jobTitle, String jobType, String jobLocation, String jobDescription, String skills, String salary, String poser) throws SQLException {
+        boolean status = false;
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_JOB);
+            pst.setString(1, jobTitle);
+            pst.setString(2, jobType);
+            pst.setString(3, jobLocation);
+            pst.setString(4, jobDescription);
+            pst.setString(5, skills);
+            pst.setString(6, salary);
+            pst.setString(7, poser);
+
+            int a = pst.executeUpdate();
+
+            if (a > 0) {
+                System.out.println("Data Inserted Successfully");
+                status = true;
+            } else {
+                status = false;
+                System.out.println("Faild");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            if (ex.getMessage().contains("Duplicate entry")) {
+                System.out.println("error : " + ex.getMessage());
+                status = false;
+            }
+        } finally {
+            pst.close();
+        }
+        return status;
+    }
+
+    public List<JobsModel> getAllJobs() throws SQLException {
+
+        List<JobsModel> jobModels = new ArrayList<>();
+        try {
+
+            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_JOBS);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                jobModels.add(new JobsModel(
+                        rs.getString("jobTitle"),
+                        rs.getString("jobType"),
+                        rs.getString("jobLocation"),
+                        rs.getString("jobDescription"),
+                        rs.getString("skills"),
+                        rs.getString("salary"),
+                        rs.getString("poser")
+                ));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            pst.close();
+            rs.close();
+        }
+        System.out.println("Retrive siz: " + jobModels.size());
+        return jobModels;
+    }
 
 }

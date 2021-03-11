@@ -29,20 +29,19 @@
                             </ul>
                         </div>
                         <div class="card-block">
-                            <form class="form-horizontal m-t-sm" action="" method="post"
-                                onsubmit="return false;">
+                            <form class="form-horizontal m-t-sm" action="../JobController" method="post">
                                 <div class="row">
                                     <div class="col-sm-7">
                                         <div class="form-group">
                                             <div class="col-xs-6">
                                                 <label for="mega-firstname">Job Title</label>
                                                 <input class="form-control input-lg" type="text" id="mega-firstname"
-                                                    name="mega-firstname" placeholder="Please Enter Job Title">
+                                                    name="jobTitle" placeholder="Please Enter Job Title">
                                             </div>
                                             <div class="col-xs-6">
                                                 <label for="mega-lastname">Job Type</label>
                                                 <input class="form-control input-lg" type="text" id="mega-lastname"
-                                                    name="mega-lastname" placeholder="Enter Job Type">
+                                                    name="jobType" placeholder="Enter Job Type">
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +50,7 @@
                                             <div class="col-xs-12">
                                                 <label for="mega-lastname">Location</label>
                                                 <input class="form-control input-lg" type="text" id="mega-username"
-                                                    name="mega-username" placeholder="Enter Location">
+                                                    name="jobLocation" placeholder="Enter Location">
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +60,7 @@
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <label for="mega-bio">Description</label>
-                                                <textarea class="form-control input-lg" id="mega-bio" name="mega-bio"
+                                                <textarea class="form-control input-lg" id="mega-bio" name="jobDescription"
                                                     rows="22"
                                                     placeholder="Enter job description"></textarea>
                                             </div>
@@ -70,15 +69,15 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <div class="col-xs-12">
-                                                <label for="mega-city">Where do you live?</label>
+                                                <label for="mega-city">Salary</label>
                                                 <input class="form-control input-lg" type="text" id="mega-city"
-                                                    name="mega-city" placeholder="Enter location...">
+                                                    name="salary" placeholder="ex. 50,000 - 60,000">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <label for="mega-skills">Skills</label>
-                                                <select class="form-control" id="mega-skills" name="mega-skills"
+                                                <select class="form-control" id="mega-skills" name="skills"
                                                     size="7" multiple="">
                                                     <option value="1">HTML</option>
                                                     <option value="2">CSS</option>
@@ -116,7 +115,7 @@
                                             Post Job</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form> 
                         </div>
                     </div>
                 </div>
