@@ -1,6 +1,17 @@
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+    <%
+
+        String title = request.getParameter("title");
+        String poster = request.getParameter("poster");
+        String description = request.getParameter("description");
+        String salary = request.getParameter("salary");
+        String type = request.getParameter("type");
+        String skill = request.getParameter("skill");
+
+    %>
     <jsp:include page="head/head.jsp"></jsp:include>
         <body class="ps-loading">
             <div class="header--sidebar"></div>
@@ -13,52 +24,21 @@
                                 <div class="ps-post--detail">
                                     <div class="ps-post__thumbnail"><img src="images/blog/11.png" alt=""></div>
                                     <div class="ps-post__header">
-                                        <h3 class="ps-post__title">Unpacking the Breaking 2 Race Strategy</h3>
-                                        <p class="ps-post__meta">Posted by <a href="blog-grid.html">Farhana</a> on August 17, 2016  in <a href="blog-grid.html">Men Shoes</a> , <a href="blog-grid.html">Stylish</a></p>
+                                        <h3 class="ps-post__title"><%= title %></h3>
+                                        <p class="ps-post__meta">Posted by <a href="#"><%= poster %></a> <%= new Date().toString() %> <a href="#"><%= type %></a> , <a href="#">####</a></p>
                                     </div>
                                     <div class="ps-post__content">
-                                        <p>No matter how far along you are in your sophistication as an amateur astronomer, there is always one fundamental moment that we all go back to. That is that very first moment that we went out where you could really see the cosmos well and you took in the night AuctionBD. For city dwellers, this is a revelation as profound as if we discovered aliens living among us. Most of us have no idea the vast panorama of lights that dot a clear night AuctionBD when there are no city lights to interfere with the view.</p>
+                                        <p><%= description %></p>
                                         <blockquote>
-                                            <p>It seems from the moment you begin to take your love of astronomy seriously, the thing that is on your mind is what kind of telescope will you get. And there is no question, investing in a good telescope can really enhance your enjoyment of your new passion in astronomy.</p>
-                                            <p class="author">Rodney <br> <span>Cannon</span></p>
+                                            <p>Salary : <%= salary %></p>
+                                            <p class="author"><%= poster %> <br> <span><%= new Date().toString() %></span></p>
                                         </blockquote>
-                                        <p>In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space   telescope known as the Hubble. While NASA has had many ups and downs, the launch and continued operation of the Hubble space telescope probably ranks next to the moon landings ace exploration accomplishments of the last hundred years.</p>
-                                    </div>
+                                     </div>
                                 </div>
-                                <div class="ps-author">
-                                    <div class="ps-author__thumbnail"><img src="images/user/1.jpg" alt=""></div>
-                                    <div class="ps-author__content">
-                                        <header>
-                                            <h4>MARK GREY</h4>
-                                            <p>WEB DESIGNER</p>
-                                        </header>
-                                        <p>The development of the mass spectrometer allowed the mass of atoms to be measured with increased accuracy. The device uses the launch and continued operation of the Hubble space telescope probably.</p>
-                                    </div>
-                                </div>
-
+                                        
                                 <form class="ps-form--comment" action="do_action" method="post">
                                     <h3>LEAVE A COMMENT</h3>
                                     <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Your Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                            <div class="form-group">
-                                                <input class="form-control" type="email" placeholder="E-mail">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Subject">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="Phone Number">
-                                            </div>
-                                        </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                             <div class="form-group">
                                                 <textarea class="form-control" rows="6" placeholder="Text your message here..."></textarea>
@@ -66,10 +46,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button class="ps-btn ps-btn--sm ps-contact__submit">Send Message<i class="ps-icon-next"></i></button>
+                                        <button class="ps-btn ps-btn--sm ps-contact__submit">Apply<i class="ps-icon-next"></i></button>
                                     </div>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>

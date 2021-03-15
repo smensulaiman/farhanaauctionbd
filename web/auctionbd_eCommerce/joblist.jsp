@@ -25,13 +25,13 @@
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                             <div class="ps-post mb-30">
                                 <div class="ps-post__thumbnail">
-                                    <a class="ps-post__overlay" href="blog-detail.jsp"></a>
+                                    <a class="ps-post__overlay" href="blog-detail.jsp?title=<%= model.getJobTitle() %>&poster=<%= model.getPoser()%>&description=<%= model.getJobDescription()%>&salary=<%= model.getSalary()%>&type=<%= model.getJobType()%>&skill=<%= model.getSkills()%>"></a>
                                     <img src="images/jobs/1.jpg" alt="">
                                 </div>
                                 <div class="ps-post__content">
-                                    <a class="ps-post__title" href="blog-detail.jsp"><%= model.getJobTitle() %></a>
+                                    <a class="ps-post__title" href="blog-detail.jsp?title=<%= model.getJobTitle() %>&poster=<%= model.getPoser()%>&description=<%= model.getJobDescription()%>&salary=<%= model.getSalary()%>&type=<%= model.getJobType()%>&skill=<%= model.getSkills()%>"><%= model.getJobTitle() %></a>
                                     <p class="ps-post__meta"><span>By:<a class="mr-5" href="#"><%= model.getPoser()%></a></span> -<span class="ml-5"><%= model.getJobTitle() %></span></p>
-                                    <p><%= model.getJobDescription()%></p><a class="ps-morelink" href="blog-detail.jsp">Read more<i class="fa fa-long-arrow-right"></i></a>
+                                    <p><%= model.getJobDescription()%></p><a class="ps-morelink" href="blog-detail.jsp?title=<%= model.getJobTitle() %>&poster=<%= model.getPoser()%>&description=<%= model.getJobDescription()%>&salary=<%= model.getSalary()%>&type=<%= model.getJobType()%>&skill=<%= model.getSkills()%>">Read more<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
