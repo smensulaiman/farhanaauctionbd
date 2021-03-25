@@ -1,6 +1,7 @@
 package com.farhana.db;
 
 import com.farhana.model.BidsModel;
+import com.farhana.model.CategoryModel;
 import com.farhana.model.JobsModel;
 import com.farhana.model.OrderModel;
 import com.farhana.model.ProductModel;
@@ -407,6 +408,29 @@ public class QueryHelper {
         }
         System.out.println("Retrive siz: " + jobModels.size());
         return jobModels;
+    }
+
+    public List<CategoryModel> getAllCategories() throws SQLException {
+        List<CategoryModel> categoryModels = new ArrayList<>();
+
+        try {
+            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_CATEGORIES);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                categoryModels.add(new CategoryModel(
+                        rs.getInt("id"),
+                        rs.getString("categoryname")
+                ));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            pst.close();
+            rs.close();
+        }
+
+        return categoryModels;
     }
 
 }

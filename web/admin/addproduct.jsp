@@ -1,3 +1,6 @@
+<%@page import="com.farhana.model.CategoryModel"%>
+<%@page import="java.util.List"%>
+<%@page import="com.farhana.db.QueryHelper"%>
 <!DOCTYPE html>
 
 <html class="app-ui">
@@ -66,15 +69,26 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            
+                                            <%
+                                            
+                                             QueryHelper queryHelper = new QueryHelper();
+                                             List<CategoryModel> categoryModels = queryHelper.getAllCategories();
+                                                
+                                            %>
+                                            
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-password2">Product Category</label>
                                                 <div class="col-xs-12">
                                                     <select class="js-select2 form-control select2-hidden-accessible" id="example-select2" name="productCategory" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
                                                         <option></option>
-                                                        <option value="1">COVID-19</option>
-                                                        <option value="2">IT AND GRAPHICS</option>
-                                                        <option value="3">GARMENTS</option>
-                                                        <option value="4">WRITTING</option>
+                                                        <%
+                                                        for(CategoryModel model : categoryModels){
+                                                        %>
+                                                        <option value="<%= model.getId() %>"><%= model.getCategoryname()%></option>
+                                                        <%
+                                                        }
+                                                        %>
                                                     </select>
                                                 </div>
                                             </div>

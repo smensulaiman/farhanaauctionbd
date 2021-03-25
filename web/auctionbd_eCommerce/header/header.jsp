@@ -74,30 +74,30 @@
                                 <div class="mega-column">
                                     <h4 class="mega-heading">COVID-19</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">MASK</a></li>
-                                        <li><a href="#">PPE</a></li>
-                                        <li><a href="#">Hand Gloves</a></li>
-                                        <li><a href="#">Hand Sanitizer</a></li>
+                                        <li><a href="product-listing.jsp?category=MASK">MASK</a></li>
+                                        <li><a href="product-listing.jsp?category=PPE">PPE</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Gloves">Hand Gloves</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Hand Sanitizer</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
                                     <h4 class="mega-heading">IT and Graphics</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">HTML Design</a></li>
-                                        <li><a href="#">Logo Design</a></li>
-                                        <li><a href="#">Plug Ins</a></li>
-                                        <li><a href="#">Graesmonkey Scripts</a></li>
-                                        <li><a href="#">Bots</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">HTML Design</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Logo Design</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Plug Ins</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Graesmonkey Scripts</a></li>
+                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Bots</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
                                     <h4 class="mega-heading">Garments</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">Shirts</a></li>
-                                        <li><a href="#">Tops & T-Shirts</a></li>
+                                        <li><a href="product-listing.jsp?category=15">Shirts</a></li>
+                                        <li><a href="#">Tops and T-Shirts</a></li>
                                         <li><a href="#">Pants</a></li>
-                                        <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                        <li><a href="#">Jackets & Vests</a></li>
+                                        <li><a href="#">Hoodies Sweatshirts</a></li>
+                                        <li><a href="#">Jackets Vests</a></li>
                                         <li><a href="#">Shorts</a></li>
                                     </ul>
                                 </div>
