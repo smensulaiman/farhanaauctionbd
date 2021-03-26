@@ -118,10 +118,7 @@
                             <li class="menu-item"><a href="joblist.jsp">Job List</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item menu-item-has-children dropdown"><a href="#">Contact</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Contact Us</a></li>
-                        </ul>
+                    <li class="menu-item menu-item-has-children dropdown"><a href="contact-us.jsp">Contact</a>
                     </li>
                 </ul>
             </div>

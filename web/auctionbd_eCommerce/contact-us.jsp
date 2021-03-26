@@ -1,19 +1,21 @@
 <%-- 
     Document   : contact-us
-    Created on : Mar 19, 2021, 11:27:59 PM
-    Author     : admin
+    Created on : Mar 26, 2021, 6:29:08 PM
+    Author     : User
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html lang="en">
-<jsp:include page="head/head.jsp"></jsp:include>
-    <body class="ps-loading">
-        <div class="header--sidebar"></div>
-    <jsp:include page="header/header.jsp"></jsp:include>
+    <jsp:include page="head/head.jsp"></jsp:include>
+        <body class="ps-loading">
+            <div class="header--sidebar"></div>
+        <jsp:include page="header/header.jsp"></jsp:include>
+        </div>
         <main class="ps-main">
             <div class="ps-contact ps-section pb-80">
-                <div id="contact-map" data-address="New York, NY" data-title="AuctionBD Store!" data-zoom="17"></div>
+                <div style="margin-top: 20px"></div>
                 <div class="ps-container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
@@ -52,51 +54,52 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
                                         <div class="ps-contact__block" data-mh="contact-block">
                                             <header>
-                                                <h3>USA <span> San Francisco</span></h3>
+                                                <h3>Northern University Bangladesh<span> Dhaka, Bangladesh</span></h3>
                                             </header>
                                             <footer>
-                                                <p><i class="fa fa-map-marker"></i> 19C Trolley Square  Wilmington, DE 19806</p>
-                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">supportShoes@shoes.net</a></p>
-                                                <p><i class="fa fa-phone"></i> ( +84 ) 9892 2324  -  9401 123 003</p>
+                                                <p><i class="fa fa-map-marker"></i>Banani, Dhaka, Bangladesh</p>
+                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">support@auctionbd.com</a></p>
+                                                <p><i class="fa fa-phone"></i>0171710101010</p>
                                             </footer>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
                                         <div class="ps-contact__block" data-mh="contact-block">
                                             <header>
-                                                <h3>Ireland  <span> Dublin</span></h3>
+                                                <h3>Northern University Bangladesh<span> Dhaka, Bangladesh</span></h3>
                                             </header>
                                             <footer>
-                                                <p><i class="fa fa-map-marker"></i> 19C Trolley Square  Wilmington, DE 19806</p>
-                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">supportShoes@shoes.net</a></p>
-                                                <p><i class="fa fa-phone"></i> ( +84 ) 9892 2324  -  9401 123 003</p>
+                                                <p><i class="fa fa-map-marker"></i>Banani, Dhaka, Bangladesh</p>
+                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">support@auctionbd.com</a></p>
+                                                <p><i class="fa fa-phone"></i>0171710101010</p>
                                             </footer>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
                                         <div class="ps-contact__block" data-mh="contact-block">
                                             <header>
-                                                <h3>Brazil <span> São Paulo</span></h3>
+                                                <h3>Northern University Bangladesh<span> Dhaka, Bangladesh</span></h3>
                                             </header>
                                             <footer>
-                                                <p><i class="fa fa-map-marker"></i> 19C Trolley Square  Wilmington, DE 19806</p>
-                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">supportShoes@shoes.net</a></p>
-                                                <p><i class="fa fa-phone"></i> ( +84 ) 9892 2324  -  9401 123 003</p>
+                                                <p><i class="fa fa-map-marker"></i>Banani, Dhaka, Bangladesh</p>
+                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">support@auctionbd.com</a></p>
+                                                <p><i class="fa fa-phone"></i>0171710101010</p>
                                             </footer>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
                                         <div class="ps-contact__block" data-mh="contact-block">
                                             <header>
-                                                <h3>Philippines <span> Quezon City</span></h3>
+                                                <h3>Northern University Bangladesh<span> Dhaka, Bangladesh</span></h3>
                                             </header>
                                             <footer>
-                                                <p><i class="fa fa-map-marker"></i> 19C Trolley Square  Wilmington, DE 19806</p>
-                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">supportShoes@shoes.net</a></p>
-                                                <p><i class="fa fa-phone"></i> ( +84 ) 9892 2324  -  9401 123 003</p>
+                                                <p><i class="fa fa-map-marker"></i>Banani, Dhaka, Bangladesh</p>
+                                                <p><i class="fa fa-envelope-o"></i><a href="mailto@supportShoes@shoes.net">support@auctionbd.com</a></p>
+                                                <p><i class="fa fa-phone"></i>0171710101010</p>
                                             </footer>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -219,8 +222,6 @@
                 </div>
             </div>
         </main>
-        <!-- JS Library-->
     <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
-    </body>
+</body>
 </html>
-

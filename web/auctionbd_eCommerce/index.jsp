@@ -1,3 +1,4 @@
+<%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.farhana.model.ProductModel"%>
@@ -126,7 +127,7 @@
                 <div class="ps-column"><a class="ps-offer" href="product-listing.html"><img src="images/banner/home-banner-1.png" alt=""></a></div>
                 <div class="ps-column"><a class="ps-offer" href="product-listing.html"><img src="images/banner/home-banner-2.png" alt=""></a></div>
             </div>
-            <div class="ps-section--sale-off ps-section pt-80 pb-40">
+            <div class="ps-section--sale-off ps-section pt-10 pb-40">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
                         <h3 class="ps-section__title" data-mask="Sale off">- Hot Deal Today</h3>
@@ -166,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="ps-section ps-section--top-sales ps-owl-root pt-80 pb-80">
+            <div class="ps-section ps-section--top-sales ps-owl-root pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
                         <div class="row">
@@ -181,16 +182,37 @@
                     <div class="ps-section__content">
                         <div class="ps-owl--colection owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on">
                             <%
-                                for (int i = 1; i < 5; i++) {
+                                if (productModels != null) {
+                                    Collections.shuffle(productModels);
+                                } else {
+                                    return;
+                                }
+
+                                int i = 0;
+
+                                for (ProductModel model : productModels) {
+                                    if (i == 9) {
+                                        break;
+                                    }
                             %>
 
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
+                                    <div class="ps-shoe__thumbnail">
+                                        <a class="ps-shoe__favorite" href="#">
+                                            <i class="ps-icon-heart"></i></a>
+                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                        <a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""></div>
+                                            <div class="ps-shoe__variant normal">
+                                                <% for (int j = 0; j < 4; j++) {%>
+
+                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+
+                                                <% }%>
+                                            </div>
                                             <select class="ps-rating ps-shoe__rating">
                                                 <option value="1">1</option>
                                                 <option value="1">2</option>
@@ -199,8 +221,10 @@
                                                 <option value="2">5</option>
                                             </select>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> Tk. 1200</span>
+                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
+                                            <p class="ps-shoe__categories">
+                                                <a href="#"><%=model.getProductCategoryID()%></a>
+                                            </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
                                         </div>
                                     </div>
                                 </div>
@@ -214,7 +238,7 @@
                 </div>
             </div>
 
-            <div class="ps-section ps-section--top-sales ps-owl-root pt-80 pb-80">
+            <div class="ps-section ps-section--top-sales ps-owl-root pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
                         <div class="row">
@@ -229,16 +253,37 @@
                     <div class="ps-section__content">
                         <div class="ps-owl--colection owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on">
                             <%
-                                for (int i = 1; i < 5; i++) {
+                                if (productModels != null) {
+                                    Collections.shuffle(productModels);
+                                } else {
+                                    return;
+                                }
+
+                                i = 0;
+
+                                for (ProductModel model : productModels) {
+                                    if (i == 9) {
+                                        break;
+                                    }
                             %>
 
                             <div class="ps-shoes--carousel">
                                 <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
+                                    <div class="ps-shoe__thumbnail">
+                                        <a class="ps-shoe__favorite" href="#">
+                                            <i class="ps-icon-heart"></i></a>
+                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                        <a class="ps-shoe__overlay" href="#"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""></div>
+                                            <div class="ps-shoe__variant normal">
+                                                <% for (int j = 0; j < 4; j++) {%>
+
+                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+
+                                                <% }%>
+                                            </div>
                                             <select class="ps-rating ps-shoe__rating">
                                                 <option value="1">1</option>
                                                 <option value="1">2</option>
@@ -247,8 +292,10 @@
                                                 <option value="2">5</option>
                                             </select>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> Tk. 1200</span>
+                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
+                                            <p class="ps-shoe__categories">
+                                                <a href="#"><%=model.getProductCategoryID()%></a>
+                                            </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
                                         </div>
                                     </div>
                                 </div>
@@ -317,7 +364,7 @@
                     </div>
                 </div>
             </div>
-            <div class="ps-section ps-home-blog pt-80 pb-80">
+            <div class="ps-section ps-home-blog pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
                         <h2 class="ps-section__title" data-mask="News">- Our Story</h2>
