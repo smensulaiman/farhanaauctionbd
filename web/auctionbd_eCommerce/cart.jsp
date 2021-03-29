@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="ps-cart__total">
-                                <h3>Total Price: <span> <%= productPrice %> </span></h3><a class="ps-btn" href="checkout.jsp">Process to checkout<i class="ps-icon-next"></i></a>
+                                <h3>Total Price: <span> <%= productPrice %> </span></h3><a class="ps-btn" href="checkout.jsp?productName=<%= productName %>&productImage=<%= productImage %>&productPrice=<%= productPrice %>&productStock=<%= productStock %>&productSeller=<%= productSeller %>">Process to checkout<i class="ps-icon-next"></i></a>
                             </div>
                         </div>
                     </div>

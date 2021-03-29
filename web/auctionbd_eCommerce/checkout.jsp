@@ -9,10 +9,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <jsp:include page="head/head.jsp"></jsp:include>
-    <body class="ps-loading">
-        <div class="header--sidebar"></div>
-    <jsp:include page="header/header.jsp"></jsp:include>
-    
+        <body class="ps-loading">
+            <div class="header--sidebar"></div>
+        <jsp:include page="header/header.jsp"></jsp:include>
+
+        <%
+            String productName = request.getParameter("productName");
+            String productImage = request.getParameter("productImage");
+            String productPrice = request.getParameter("productPrice");
+            String productStock = request.getParameter("productStock");
+            String productSeller = request.getParameter("productSeller");
+        %>
+
         <main class="ps-main">
             <div class="ps-checkout pt-80 pb-80">
                 <div class="ps-container">
@@ -32,7 +40,7 @@
                                         <input class="form-control" type="text">
                                     </div>
                                     <div class="form-group form-group--inline">
-                                        <label>Company Name<span>*</span>
+                                        <label><%= productSeller %><span>*</span>
                                         </label>
                                         <input class="form-control" type="text">
                                     </div>
@@ -42,7 +50,7 @@
                                         <input class="form-control" type="email">
                                     </div>
                                     <div class="form-group form-group--inline">
-                                        <label>Company Name<span>*</span>
+                                        <label><%= productSeller %><span>*</span>
                                         </label>
                                         <input class="form-control" type="text">
                                     </div>
@@ -84,16 +92,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>NUB</td>
-                                                    <td>Tk. 00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>NUB</td>
-                                                    <td>Tk. 00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>NUB</td>
-                                                    <td>Tk. 00</td>
+                                                    <td><%= productName %></td>
+                                                    <td>Tk.<%= productPrice %></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -247,6 +247,6 @@
             </div>
         </main>
         <!-- JS Library-->
-    <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
+        <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
     </body>
 </html>

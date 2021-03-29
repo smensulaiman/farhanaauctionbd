@@ -76,7 +76,6 @@
                                     <input type="hidden" name = "id" value="<%= model.getId()%>"/>
                                     <div class="ps-product__block ps-product__size">
                                         <h4>CHOOSE OFFER</h4>
-
                                         <select class="ps-select selectpicker" name="item">
                                             <option value="1">Select Price</option>
                                             <option value="1000">+1,000</option>
@@ -87,6 +86,7 @@
                                             <option value="100000">+1,00,000</option>
                                         </select>
                                     </div>
+                                    <input style="margin-bottom: 10px" type="text" name = "custom" value="0" placeholder="Enter Custom Amount"/><br>
                                     <button id="btnPlaceBid" class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
                                     </button>
                                 </form>

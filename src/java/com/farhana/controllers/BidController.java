@@ -25,7 +25,9 @@ public class BidController extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             int value = Integer.parseInt(request.getParameter("item"));
             String name = (String) request.getSession().getAttribute("username");
-            
+            if(value == 1){
+                value = Integer.parseInt(request.getParameter("custom"));
+            }
             System.out.println("Id : "+id+"Name : "+name+", Value : "+value+" id : "+id);
            
             QueryHelper helper = new QueryHelper();
