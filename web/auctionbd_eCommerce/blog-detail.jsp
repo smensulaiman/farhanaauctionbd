@@ -36,7 +36,7 @@
                                 </div>
                             </div>
 
-                            <form class="ps-form--comment" action="../BidController" method="post">
+                            <form class="ps-form--comment" action="../JobApplyController" method="post">
                                 <h3>LEAVE A COMMENT</h3>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
