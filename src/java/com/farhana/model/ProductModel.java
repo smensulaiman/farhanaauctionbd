@@ -98,5 +98,10 @@ public class ProductModel {
         this.productImage = productImage;
     }
 
+    @Override
+    public String toString() {
+        return "ProductModel{" + "id=" + id + ", productName=" + productName + ", productPrice=" + productPrice + ", productStock=" + productStock + ", productSeller=" + productSeller + ", productStartTime=" + productStartTime + ", productEndTime=" + productEndTime + ", productCategoryID=" + productCategoryID + ", productImage=" + productImage + '}';
+    }
+
     
 }

@@ -22,10 +22,10 @@ public class QueryHelper {
     private Connection dbConnection() {
         try {
             if (DBHelper.conn != null) {
-                System.out.println("Previous Connection");
+                //System.out.println("Previous Connection");
                 this.conn = DBHelper.conn;
             } else {
-                System.out.println("New Connection");
+                //System.out.println("New Connection");
                 this.conn = DBHelper.getConnection();
             }
         } catch (Exception e) {
@@ -211,7 +211,7 @@ public class QueryHelper {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + productModels.size());
+        //System.out.println("Retrive size: " + productModels.size());
         return productModels;
     }
 
@@ -279,7 +279,7 @@ public class QueryHelper {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + productModels.size());
+        //System.out.println("Retrive size: " + productModels.size());
         return productModels;
     }
 
@@ -341,7 +341,7 @@ public class QueryHelper {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + sellerModels.size());
+        //System.out.println("Retrive size: " + sellerModels.size());
         return sellerModels;
     }
 
@@ -406,7 +406,7 @@ public class QueryHelper {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + jobModels.size());
+        //System.out.println("Retrive size: " + jobModels.size());
         return jobModels;
     }
 

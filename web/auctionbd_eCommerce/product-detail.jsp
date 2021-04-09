@@ -16,7 +16,13 @@
 
     <%
         List<ProductModel> productModels = (List<ProductModel>) request.getSession().getAttribute("products");
-        ProductModel model = productModels.get(Integer.parseInt(request.getParameter("id")));
+        ProductModel model = null;
+        for(ProductModel pModel : productModels){
+            if(pModel.getId() == Integer.parseInt(request.getParameter("id"))){
+                model = pModel;
+                break;
+            }
+        }
         String currentUser = (String) request.getSession().getAttribute("username");
         boolean isWinner = false;
     %>

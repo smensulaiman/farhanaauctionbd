@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -48,34 +49,63 @@
                 <div class="ps-section--features-product ps-section masonry-root pt-100 pb-100">
                     <div class="ps-container">
 
-                        <div class="ps-section__header mb-50">
-                            <h3 class="ps-section__title" data-mask="features">- Covid 19 Trending Auctions</h3>
-                            <ul class="ps-masonry__filter">
-                                <li class="current"><a href="#" data-filter="*">A <sup>40</sup></a></li>
-                                <li><a href="#" data-filter=".kids">B <sup>12</sup></a></li>
-                                <li><a href="#" data-filter=".kids">C <sup>10</sup></a></li>
-                                <li><a href="#" data-filter=".kids">D <sup>6</sup></a></li>
-                                <li><a href="#" data-filter=".kids">E <sup>8</sup></a></li>
-                                <li><a href="#" data-filter=".kids">F <sup>4</sup></a></li>
-                            </ul>
-                        </div>
+                    <%
+                        int ca = 0, cb = 0, cc = 0, cd = 0, ce = 0, cf = 0;
+                        Manager manager = new Manager();
+                        List<ProductModel> productModels = new ArrayList();
+                        manager.getDemoProducts(productModels);
+                        System.out.println("Total Products: " + productModels.size());
+                        request.getSession().setAttribute("products", productModels);
+                        for (ProductModel m : productModels) {
+                            char firstLetter = Character.toLowerCase(m.getProductName().charAt(0));
+                            switch (firstLetter) {
+                                case 'k':
+                                    ca++;
+                                    break;
+                                case 'b':
+                                    cb++;
+                                    break;
+                                case 'c':
+                                    cc++;
+                                    break;
+                                case 'd':
+                                    cd++;
+                                    break;
+                                case 'e':
+                                    ce++;
+                                    break;
+                                case 'f':
+                                    cf++;
+                                    break;
 
-                        <div class="ps-section__content pb-50">
-                            <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
-                                <div class="ps-masonry">
-                                    <div class="grid-sizer"></div>
+                            }
+                        }
+                    %>
+
+                    <div class="ps-section__header mb-50">
+                        <h3 class="ps-section__title" data-mask="features">- Covid 19 Trending Auctions</h3>
+                        <ul class="ps-masonry__filter">
+                            <li class="current"><a href="#" data-filter="*">All <sup><%= productModels.size()%></sup></a></li>
+                            <li><a href="#" data-filter=".k">A <sup><%= ca%></sup></a></li>
+                            <li><a href="#" data-filter=".b">B <sup><%= cb%></sup></a></li>
+                            <li><a href="#" data-filter=".c">C <sup><%= cc%></sup></a></li>
+                            <li><a href="#" data-filter=".d">D <sup><%= cd%></sup></a></li>
+                            <li><a href="#" data-filter=".e">E <sup><%= ce%></sup></a></li>
+                            <li><a href="#" data-filter=".f">F <sup><%= cf%></sup></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ps-section__content pb-50">
+                        <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
+                            <div class="ps-masonry">
+                                <div class="grid-sizer"></div>
 
                                 <%
-                                    Manager manager = new Manager();
-                                    List<ProductModel> productModels = new ArrayList();
-                                    manager.getDemoProducts(productModels);
-                                    System.out.println("Total Products: " + productModels.size());
-                                    request.getSession().setAttribute("products", productModels);
-
                                     for (ProductModel model : productModels) {
+                                        System.out.println(model.toString());
                                 %>
 
-                                <div class="grid-item kids">
+                                <div class="grid-item <%= Character.toLowerCase(model.getProductName().charAt(0))%>">
                                     <div class="grid-item__content-wrapper">
                                         <div class="ps-shoe mb-30">
                                             <div class="ps-shoe__thumbnail">
@@ -85,7 +115,7 @@
                                                 </div>
                                                 <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
                                                 <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-                                                <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>"></a>
+                                                <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
