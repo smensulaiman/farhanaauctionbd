@@ -51,11 +51,11 @@
                         <div class="ps-section__header mb-50">
                             <h3 class="ps-section__title" data-mask="features">- Covid 19 Trending Auctions</h3>
                             <ul class="ps-masonry__filter">
-                                <li class="current"><a href="#" data-filter="*">A <sup>8</sup></a></li>
-                                <li><a href="#" data-filter=".ok">B <sup>1</sup></a></li>
-                                <li><a href="#" data-filter=".adidas">C <sup>1</sup></a></li>
-                                <li><a href="#" data-filter=".men">D <sup>1</sup></a></li>
-                                <li><a href="#" data-filter=".women">E <sup>1</sup></a></li>
+                                <li class="current"><a href="#" data-filter="*">A <sup>40</sup></a></li>
+                                <li><a href="#" data-filter=".kids">B <sup>12</sup></a></li>
+                                <li><a href="#" data-filter=".kids">C <sup>10</sup></a></li>
+                                <li><a href="#" data-filter=".kids">D <sup>6</sup></a></li>
+                                <li><a href="#" data-filter=".kids">E <sup>8</sup></a></li>
                                 <li><a href="#" data-filter=".kids">F <sup>4</sup></a></li>
                             </ul>
                         </div>
@@ -404,99 +404,10 @@
                 </div>
             </div>
 
-            <div class="ps-subscribe">
-                <div class="ps-container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
-                            <h3><i class="fa fa-envelope"></i>Sign up to Newsletter</h3>
-                        </div>
-                        <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 ">
-                            <form class="ps-subscribe__form" action="do_action" method="post">
-                                <input class="form-control" type="text" placeholder="">
-                                <button>Sign up now</button>
-                            </form>
-                        </div>
-                        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 ">
-                            <p>...and receive  <span>Tk. 200</span>  coupon for first bidding.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ps-footer bg--cover" data-background="images/background/parallax.jpg">
-                <div class="ps-footer__content">
-                    <div class="ps-container">
-                        <div class="row">
 
-                            <%= Constant.ADDRESS_FOOTER%>
+            <jsp:include page="footer/footer.jsp"></jsp:include>
 
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Find Our store</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--link">
-                                            <li><a href="#">Coupon Code</a></li>
-                                            <li><a href="#">SignUp For Email</a></li>
-                                            <li><a href="#">Site Feedback</a></li>
-                                            <li><a href="#">Careers</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Get Help</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--line">
-                                            <li><a href="#">Order Status</a></li>
-                                            <li><a href="#">Shipping and Delivery</a></li>
-                                            <li><a href="#">Returns</a></li>
-                                            <li><a href="#">Payment Options</a></li>
-                                            <li><a href="#">Contact Us</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Products</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--line">
-                                            <li><a href="#">Shoes</a></li>
-                                            <li><a href="#">Clothing</a></li>
-                                            <li><a href="#">Accessries</a></li>
-                                            <li><a href="#">Football Boots</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ps-footer__copyright">
-                    <div class="ps-container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                <p>&copy; <a href="#">AuctionBD</a>, Inc. All rights Resevered. Design by <a href="#"> Farhana</a></p>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                <ul class="ps-social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+            </main>
 
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
     </body>
