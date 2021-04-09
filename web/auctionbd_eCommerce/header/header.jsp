@@ -61,51 +61,51 @@
                                 <div class="mega-column">
                                     <ul class="mega-item mega-features">
 
-                                        <li><a href="#">NEW AUCTION</a></li>
-                                        <li><a href="#">FEATURES AUCTION</a></li>
-                                        <li><a href="#">BEST AUCTION</a></li>
-                                        <li><a href="#">NOW TRENDING AUCTION</a></li>
-                                        <li><a href="#">SUMMER ESSENTIALS AUCTION</a></li>
-                                        <li><a href="#">MUJIB BORSHO AUCTION</a></li>
-                                        <li><a href="#">FAN GEAR AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=23">NEW AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=24">FEATURES AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=25">BEST AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=26">NOW TRENDING AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=27">SUMMER ESSENTIALS AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=28">MUJIB BORSHO AUCTION</a></li>
+                                        <li><a href="product-listing.jsp?category=29">FAN GEAR AUCTION</a></li>
 
                                     </ul>
                                 </div>
                                 <div class="mega-column">
                                     <h4 class="mega-heading">COVID-19</h4>
                                     <ul class="mega-item">
-                                        <li><a href="product-listing.jsp?category=MASK">MASK</a></li>
-                                        <li><a href="product-listing.jsp?category=PPE">PPE</a></li>
-                                        <li><a href="product-listing.jsp?category=Hand Gloves">Hand Gloves</a></li>
-                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Hand Sanitizer</a></li>
+                                        <li><a href="product-listing.jsp?category=6">MASK</a></li>
+                                        <li><a href="product-listing.jsp?category=7">PPE</a></li>
+                                        <li><a href="product-listing.jsp?category=8">Hand Gloves</a></li>
+                                        <li><a href="product-listing.jsp?category=9">Hand Sanitizer</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
                                     <h4 class="mega-heading">IT and Graphics</h4>
                                     <ul class="mega-item">
-                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">HTML Design</a></li>
-                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Logo Design</a></li>
-                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Plug Ins</a></li>
-                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Graesmonkey Scripts</a></li>
-                                        <li><a href="product-listing.jsp?category=Hand Sanitizer">Bots</a></li>
+                                        <li><a href="product-listing.jsp?category=10">HTML Design</a></li>
+                                        <li><a href="product-listing.jsp?category=11">Logo Design</a></li>
+                                        <li><a href="product-listing.jsp?category=12">Plug Ins</a></li>
+                                        <li><a href="product-listing.jsp?category=13">Graesmonkey Scripts</a></li>
+                                        <li><a href="product-listing.jsp?category=14">Bots</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
                                     <h4 class="mega-heading">Garments</h4>
                                     <ul class="mega-item">
                                         <li><a href="product-listing.jsp?category=15">Shirts</a></li>
-                                        <li><a href="#">Tops and T-Shirts</a></li>
-                                        <li><a href="#">Pants</a></li>
-                                        <li><a href="#">Hoodies Sweatshirts</a></li>
-                                        <li><a href="#">Jackets Vests</a></li>
-                                        <li><a href="#">Shorts</a></li>
+                                        <li><a href="product-listing.jsp?category=16">Tops and T-Shirts</a></li>
+                                        <li><a href="product-listing.jsp?category=17">Pants</a></li>
+                                        <li><a href="product-listing.jsp?category=18">Hoodies Sweatshirts</a></li>
+                                        <li><a href="product-listing.jsp?category=19">Jackets Vests</a></li>
+                                        <li><a href="product-listing.jsp?category=20">Shorts</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-column">
                                     <h4 class="mega-heading">Writting</h4>
                                     <ul class="mega-item">
-                                        <li><a href="#">Notes</a></li>
-                                        <li><a href="#">Assignments</a></li>
+                                        <li><a href="product-listing.jsp?category=21">Notes</a></li>
+                                        <li><a href="product-listing.jsp?category=22">Assignments</a></li>
                                     </ul>
                                 </div>
                             </div>
