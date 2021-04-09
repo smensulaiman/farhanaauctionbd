@@ -51,11 +51,11 @@
                         <div class="ps-section__header mb-50">
                             <h3 class="ps-section__title" data-mask="features">- Covid 19 Trending Auctions</h3>
                             <ul class="ps-masonry__filter">
-                                <li class="current"><a href="#" data-filter="*">A <sup>8</sup></a></li>
-                                <li><a href="#" data-filter=".ok">B <sup>1</sup></a></li>
-                                <li><a href="#" data-filter=".adidas">C <sup>1</sup></a></li>
-                                <li><a href="#" data-filter=".men">D <sup>1</sup></a></li>
-                                <li><a href="#" data-filter=".women">E <sup>1</sup></a></li>
+                                <li class="current"><a href="#" data-filter="*">A <sup>40</sup></a></li>
+                                <li><a href="#" data-filter=".kids">B <sup>12</sup></a></li>
+                                <li><a href="#" data-filter=".kids">C <sup>10</sup></a></li>
+                                <li><a href="#" data-filter=".kids">D <sup>6</sup></a></li>
+                                <li><a href="#" data-filter=".kids">E <sup>8</sup></a></li>
                                 <li><a href="#" data-filter=".kids">F <sup>4</sup></a></li>
                             </ul>
                         </div>
@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
 
-                                <%}%>
+                                <% } %>
 
                             </div>
                         </div>
@@ -314,7 +314,7 @@
                 <div class="container">
                     <div class="owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/team/farhana.jpeg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -323,14 +323,14 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Farhana - CEO & Founder AuctionBD</p>
+                                <p>Farhana - Director & Founder AuctionBD</p>
                             </header>
                             <footer>
                                 <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/team/nipun.jpeg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -339,14 +339,14 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Farhana - CEO & Founder AuctionBD</p>
+                                <p>Nipun - CEO & Co-Founder AuctionBD</p>
                             </header>
                             <footer>
                                 <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/team/sharmin.jpeg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -355,7 +355,7 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Farhana - CEO & Auction BD</p>
+                                <p>Sharmin - Head. HR & Co-Founder</p>
                             </header>
                             <footer>
                                 <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
@@ -367,7 +367,7 @@
             <div class="ps-section ps-home-blog pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
-                        <h2 class="ps-section__title" data-mask="News">- Our Story</h2>
+                        <h2 class="ps-section__title" data-mask="News">Recent Blogs</h2>
                         <div class="ps-section__action"><a class="ps-morelink text-uppercase" href="#">View all post<i class="fa fa-long-arrow-right"></i></a></div>
                     </div>
                     <div class="ps-section__content">
@@ -404,99 +404,10 @@
                 </div>
             </div>
 
-            <div class="ps-subscribe">
-                <div class="ps-container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
-                            <h3><i class="fa fa-envelope"></i>Sign up to Newsletter</h3>
-                        </div>
-                        <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 ">
-                            <form class="ps-subscribe__form" action="do_action" method="post">
-                                <input class="form-control" type="text" placeholder="">
-                                <button>Sign up now</button>
-                            </form>
-                        </div>
-                        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 ">
-                            <p>...and receive  <span>Tk. 200</span>  coupon for first bidding.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ps-footer bg--cover" data-background="images/background/parallax.jpg">
-                <div class="ps-footer__content">
-                    <div class="ps-container">
-                        <div class="row">
 
-                            <%= Constant.ADDRESS_FOOTER%>
+            <jsp:include page="footer/footer.jsp"></jsp:include>
 
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Find Our store</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--link">
-                                            <li><a href="#">Coupon Code</a></li>
-                                            <li><a href="#">SignUp For Email</a></li>
-                                            <li><a href="#">Site Feedback</a></li>
-                                            <li><a href="#">Careers</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Get Help</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--line">
-                                            <li><a href="#">Order Status</a></li>
-                                            <li><a href="#">Shipping and Delivery</a></li>
-                                            <li><a href="#">Returns</a></li>
-                                            <li><a href="#">Payment Options</a></li>
-                                            <li><a href="#">Contact Us</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Products</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--line">
-                                            <li><a href="#">Shoes</a></li>
-                                            <li><a href="#">Clothing</a></li>
-                                            <li><a href="#">Accessries</a></li>
-                                            <li><a href="#">Football Boots</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ps-footer__copyright">
-                    <div class="ps-container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                <p>&copy; <a href="#">AuctionBD</a>, Inc. All rights Resevered. Design by <a href="#"> Farhana</a></p>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                <ul class="ps-social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+            </main>
 
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
     </body>

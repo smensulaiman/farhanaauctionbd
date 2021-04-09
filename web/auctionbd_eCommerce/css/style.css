@@ -860,14 +860,14 @@ body {
     position: relative;
     float: left;
     padding-right: 30px;
-    width: 270px;
-    right: calc(100% - 270px); }
+    width: 0px;
+    right: calc(100% - 0px); }
   .ps-products-wrap .ps-products {
     position: relative;
-    left: 270px;
+    left: 0px;
     padding-left: 10px;
     float: left;
-    width: calc(100% - 270px); }
+    width: calc(100% - 0px); }
   .ps-products-wrap.inverse .ps-sidebar {
     float: right;
     right: 0;

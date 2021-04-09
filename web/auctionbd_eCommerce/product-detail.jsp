@@ -65,7 +65,7 @@
                                     </select><a href="#">(Read all 8 reviews)</a>
                                 </div>
                                 <h1><%= model.getProductName()%></h1>
-                                <p class="ps-product__category"><a href="#"> <%= model.getProductSeller()%></a>,<a href="#"> MASK</a>
+                                <p class="ps-product__category"><a href="sellerProfile.jsp?name=<%= model.getProductSeller()%>"> <%= model.getProductSeller()%></a>,<a href="#"> MASK</a>
                                 <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice()%></h3>
                                 <%= model.getProductStock()%> pcs
                                 <div class="ps-product__block ps-product__quickview">
@@ -86,11 +86,14 @@
                                             <option value="100000">+1,00,000</option>
                                         </select>
                                     </div>
-                                    <input style="margin-bottom: 10px" type="text" name = "custom" value="0" placeholder="Enter Custom Amount"/><br>
+                                    <div class="form-group" style="width: 220px;">
+                                        <label for="exampleInputPassword1">Custom Input</label>
+                                        <input type="text" class="form-control" name="custom" value="0" placeholder="Enter Amount">
+                                    </div>
                                     <button id="btnPlaceBid" class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
                                     </button>
                                 </form>
-                                    <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName() %>&productImage=<%= model.getProductImage() %>&productPrice=<%= model.getProductPrice() %>&productStock=<%= model.getProductStock() %>&productSeller=<%= model.getProductSeller() %>">GOTO CHECKOUT</a>
+                                <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName()%>&productImage=<%= model.getProductImage()%>&productPrice=<%= model.getProductPrice()%>&productStock=<%= model.getProductStock()%>&productSeller=<%= model.getProductSeller()%>">GOTO CHECKOUT</a>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ps-product__content mt-50">
@@ -116,10 +119,14 @@
                                         <div class="ps-review__content">
                                             <header>
                                                 <p>By<a href=""> <%= b.getName()%> </a> - <%= b.getDate()%></p>
-                                                <% if (index == 0) { if (currentUser == b.getName()) { isWinner = true; }
+                                                <% if (index == 0) {
+                                                        if (currentUser == b.getName()) {
+                                                            isWinner = true;
+                                                        }
                                                 %>
                                                 <span style="background-color: tomato; color: white; padding: 0px 10px;"> Top Bid </span>
-                                                <% index++; }%>
+                                                <% index++;
+                                                    }%>
                                             </header>
                                             <p>bids <%= b.getAmount()%> Taka</p>
                                         </div>
@@ -156,121 +163,59 @@
                         <div class="ps-owl--colection owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on">
 
                             <%
-                                for (int i = 1; i < 5; i++) {
+                                for (ProductModel m : productModels) {
                             %>
 
-                            <div class="ps-shoes--carousel">
-                                <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
-                                    </div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
+                            <div class="grid-item kids">
+                                <div class="grid-item__content-wrapper">
+                                    <div class="ps-shoe mb-30">
+                                        <div class="ps-shoe__thumbnail">
+                                            <div class="ps-badge"><span>New</span></div>
+                                            <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                <span>20%</span>
+                                            </div>
+                                            <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
+                                            <img src="images/product/ppe/<%=m.getProductImage()%>" alt="">
+                                            <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(m)%>"></a>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Appex Shoe</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> Tk. 1200</span>
+                                        <div class="ps-shoe__content">
+                                            <div class="ps-shoe__variants">
+                                                <div class="ps-shoe__variant normal">
+
+                                                    <% for (int j = 0; j < 4; j++) {%>
+
+                                                    <img src="images/product/ppe/<%= m.getProductImage()%>" alt="">
+
+                                                    <% }%>
+
+                                                </div>
+                                                <select class="ps-rating ps-shoe__rating">
+                                                    <option value="1">1</option>
+                                                    <option value="1">2</option>
+                                                    <option value="1">3</option>
+                                                    <option value="1">4</option>
+                                                    <option value="2">5</option>
+                                                </select>
+                                            </div>
+                                            <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%= m.getProductName()%></a>
+                                                <p class="ps-shoe__categories">
+                                                    <a href="#"><%= m.getProductCategoryID()%></a>
+                                                </p><span class="ps-shoe__price">Tk. <%= m.getProductPrice()%></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <% } %>
+
+                            <% }%>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="ps-footer bg--cover" data-background="images/background/parallax.jpg">
-                <div class="ps-footer__content">
-                    <div class="ps-container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--info">
-                                    <header><a class="ps-logo" href="index.html"><img src="images/logo-white.png" alt=""></a>
-                                        <h3 class="ps-widget__title">Address Office 1</h3>
-                                    </header>
-                                    <footer>
-                                        <p><strong>NUB, BANANI, DHAKA, BANGLADESH</strong></p>
-                                        <p>Email: <a href='mailto:support@auctionbd.com'>support@auctionbd.com</a></p>
-                                        <p>Phone: +880 1640 138 206</p>
-                                        <p>Fax: ++323 32434 5333</p>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Find Our store</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--link">
-                                            <li><a href="#">Coupon Code</a></li>
-                                            <li><a href="#">SignUp For Email</a></li>
-                                            <li><a href="#">Site Feedback</a></li>
-                                            <li><a href="#">Careers</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Get Help</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--line">
-                                            <li><a href="#">Order Status</a></li>
-                                            <li><a href="#">Shipping and Delivery</a></li>
-                                            <li><a href="#">Returns</a></li>
-                                            <li><a href="#">Payment Options</a></li>
-                                            <li><a href="#">Contact Us</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
-                                <aside class="ps-widget--footer ps-widget--link">
-                                    <header>
-                                        <h3 class="ps-widget__title">Products</h3>
-                                    </header>
-                                    <footer>
-                                        <ul class="ps-list--line">
-                                            <li><a href="#">Shoes</a></li>
-                                            <li><a href="#">Clothing</a></li>
-                                            <li><a href="#">Accessries</a></li>
-                                            <li><a href="#">Football Boots</a></li>
-                                        </ul>
-                                    </footer>
-                                </aside>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ps-footer__copyright">
-                    <div class="ps-container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                <p>&copy; <a href="#">AuctionBD</a>, Inc. All rights Resevered. Design by <a href="#"> Farhana</a></p>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                                <ul class="ps-social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+            <jsp:include page="footer/footer.jsp"></jsp:include>
+
+            </main>
 
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
             <script src="js/jquery.time-to.js"></script> 
