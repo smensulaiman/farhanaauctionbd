@@ -13,7 +13,7 @@
         <jsp:include page="header/header.jsp"></jsp:include>
 
             <main class="ps-main">
-                <div class="ps-products-wrap pt-80 pb-80">
+                <div class="ps-products-wrap pt-80 pb-80 pl-80 pr-80">
                     <div class="ps-products" data-mh="product-listing">
                         <div class="ps-product-action">
                             <div class="ps-product__filter">

@@ -65,7 +65,7 @@
                                     </select><a href="#">(Read all 8 reviews)</a>
                                 </div>
                                 <h1><%= model.getProductName()%></h1>
-                                <p class="ps-product__category"><a href="#"> <%= model.getProductSeller()%></a>,<a href="#"> MASK</a>
+                                <p class="ps-product__category"><a href="sellerProfile.jsp?name=<%= model.getProductSeller()%>"> <%= model.getProductSeller()%></a>,<a href="#"> MASK</a>
                                 <h3 class="ps-product__price"><%= "Taka " + model.getProductPrice()%></h3>
                                 <%= model.getProductStock()%> pcs
                                 <div class="ps-product__block ps-product__quickview">
@@ -86,11 +86,14 @@
                                             <option value="100000">+1,00,000</option>
                                         </select>
                                     </div>
-                                    <input style="margin-bottom: 10px" type="text" name = "custom" value="0" placeholder="Enter Custom Amount"/><br>
+                                    <div class="form-group" style="width: 220px;">
+                                        <label for="exampleInputPassword1">Custom Input</label>
+                                        <input type="text" class="form-control" name="custom" value="0" placeholder="Enter Amount">
+                                    </div>
                                     <button id="btnPlaceBid" class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
                                     </button>
                                 </form>
-                                    <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName() %>&productImage=<%= model.getProductImage() %>&productPrice=<%= model.getProductPrice() %>&productStock=<%= model.getProductStock() %>&productSeller=<%= model.getProductSeller() %>">GOTO CHECKOUT</a>
+                                <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName()%>&productImage=<%= model.getProductImage()%>&productPrice=<%= model.getProductPrice()%>&productStock=<%= model.getProductStock()%>&productSeller=<%= model.getProductSeller()%>">GOTO CHECKOUT</a>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ps-product__content mt-50">
@@ -116,10 +119,14 @@
                                         <div class="ps-review__content">
                                             <header>
                                                 <p>By<a href=""> <%= b.getName()%> </a> - <%= b.getDate()%></p>
-                                                <% if (index == 0) { if (currentUser == b.getName()) { isWinner = true; }
+                                                <% if (index == 0) {
+                                                        if (currentUser == b.getName()) {
+                                                            isWinner = true;
+                                                        }
                                                 %>
                                                 <span style="background-color: tomato; color: white; padding: 0px 10px;"> Top Bid </span>
-                                                <% index++; }%>
+                                                <% index++;
+                                                    }%>
                                             </header>
                                             <p>bids <%= b.getAmount()%> Taka</p>
                                         </div>
@@ -156,31 +163,51 @@
                         <div class="ps-owl--colection owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on">
 
                             <%
-                                for (int i = 1; i < 5; i++) {
+                                for (ProductModel m : productModels){
                             %>
 
-                            <div class="ps-shoes--carousel">
-                                <div class="ps-shoe">
-                                    <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay" href="#"></a>
-                                    </div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""><img src="images/shoe/1.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Appex Shoe</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> Tk. 1200</span>
+                            <div class="grid-item kids">
+                                    <div class="grid-item__content-wrapper">
+                                        <div class="ps-shoe mb-30">
+                                            <div class="ps-shoe__thumbnail">
+                                                <div class="ps-badge"><span>New</span></div>
+                                                <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                    <span>20%</span>
+                                                </div>
+                                                <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
+                                                <img src="images/product/ppe/<%=m.getProductImage()%>" alt="">
+                                                <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(m)%>"></a>
+                                            </div>
+                                            <div class="ps-shoe__content">
+                                                <div class="ps-shoe__variants">
+                                                    <div class="ps-shoe__variant normal">
+
+                                                        <% for (int j = 0; j < 4; j++) {%>
+
+                                                        <img src="images/product/ppe/<%= m.getProductImage()%>" alt="">
+
+                                                        <% }%>
+
+                                                    </div>
+                                                    <select class="ps-rating ps-shoe__rating">
+                                                        <option value="1">1</option>
+                                                        <option value="1">2</option>
+                                                        <option value="1">3</option>
+                                                        <option value="1">4</option>
+                                                        <option value="2">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%= m.getProductName()%></a>
+                                                    <p class="ps-shoe__categories">
+                                                        <a href="#"><%= m.getProductCategoryID()%></a>
+                                                    </p><span class="ps-shoe__price">Tk. <%= m.getProductPrice()%></span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <% } %>
+                            
+                            <% }%>
                         </div>
                     </div>
                 </div>

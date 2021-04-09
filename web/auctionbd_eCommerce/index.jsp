@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
 
-                                <%}%>
+                                <% } %>
 
                             </div>
                         </div>
@@ -367,7 +367,7 @@
             <div class="ps-section ps-home-blog pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
-                        <h2 class="ps-section__title" data-mask="News">- Our Story</h2>
+                        <h2 class="ps-section__title" data-mask="News">Recent Blogs</h2>
                         <div class="ps-section__action"><a class="ps-morelink text-uppercase" href="#">View all post<i class="fa fa-long-arrow-right"></i></a></div>
                     </div>
                     <div class="ps-section__content">

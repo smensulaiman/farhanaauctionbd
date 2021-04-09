@@ -13,15 +13,19 @@
 
         <jsp:include page="./header/header.jsp"></jsp:include>
 
+        <%
+            String sellerName = (String) request.getParameter("name");
+        %>
+        
             <main class="ps-main">
                 <div class="ps-container">
-                    <div style="margin-top: 20px; margin-left: 45%; margin-bottom: 20px">
+                    <div style="margin-top: 20px; margin-left: 46%; margin-bottom: 20px">
                         <img src="images/avater.png" alt="" style="width: 100px;">
                     </div>
                 </div>
 
                 <div style="height: 2px; background-color: #2b2b2b; margin-left: 20%; margin-right: 20% "></div>
-                <h4 style="width: 100%; background-color: tomato; color: white; text-align: center" >NAME</h4>
+                <h4 style="width: 100%; padding: 5px 0px; background-color: tomato; color: white; text-align: center" ><%= sellerName %></h4>
                 <div style="height: 2px; background-color: #2b2b2b; margin-top: 10px; margin-bottom: 40px; margin-left: 20%; margin-right: 20%;"></div>
                 
             <%
@@ -32,6 +36,9 @@
             <div class="ps-product__columns" style="margin-left: 20%;margin-right: 20%">
                 <%
                     for (ProductModel model : productModels) {
+                        if(!model.getProductSeller().equals(sellerName)){
+                            continue;
+                        }
                 %>
                 <div class="ps-product__column">
                     <div class="ps-shoe mb-30">
