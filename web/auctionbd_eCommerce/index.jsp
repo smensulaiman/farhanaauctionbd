@@ -314,7 +314,7 @@
                 <div class="container">
                     <div class="owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/team/farhana.jpeg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -323,14 +323,14 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Farhana - CEO & Founder AuctionBD</p>
+                                <p>Farhana - Director & Founder AuctionBD</p>
                             </header>
                             <footer>
                                 <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/team/nipun.jpeg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -339,14 +339,14 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Farhana - CEO & Founder AuctionBD</p>
+                                <p>Nipun - CEO & Co-Founder AuctionBD</p>
                             </header>
                             <footer>
                                 <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
                             </footer>
                         </div>
                         <div class="ps-testimonial">
-                            <div class="ps-testimonial__thumbnail"><img src="images/testimonial/faru.jpg" alt=""><i class="fa fa-quote-left"></i></div>
+                            <div class="ps-testimonial__thumbnail"><img src="images/team/sharmin.jpeg" alt=""><i class="fa fa-quote-left"></i></div>
                             <header>
                                 <select class="ps-rating">
                                     <option value="1">1</option>
@@ -355,7 +355,7 @@
                                     <option value="1">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <p>Farhana - CEO & Auction BD</p>
+                                <p>Sharmin - Head. HR & Co-Founder</p>
                             </header>
                             <footer>
                                 <p>“AuctionBD is the first Bangladeshi Auction Site“</p>
