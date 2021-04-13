@@ -36,7 +36,7 @@
                                 </div>
                             </div>
 
-                            <form class="ps-form--comment" action="../JobApplyController" method="post">
+                            <form class="ps-form--comment" action="" method="post" onsubmit="event.preventDefault()">
                                 <h3>LEAVE A COMMENT</h3>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
@@ -48,7 +48,7 @@
                                 <label for="myfile">Select a file:</label>
                                 <input type="file" id="myfile" name="myfile"> <br>
                                 <div class="form-group">
-                                    <button class="ps-btn ps-btn--sm ps-contact__submit">Apply<i class="ps-icon-next"></i></button>
+                                    <button class="ps-btn ps-btn--sm ps-contact__submit" onclick="sendMail()">Apply<i class="ps-icon-next"></i></button>
                                 </div>
                             </form>
 
@@ -109,6 +109,24 @@
                 </div>
             </div>
         </main>
+
+        <script>
+
+            var sendMail = function () {
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "username",
+                    Password: "password",
+                    To: 'them@website.com',
+                    From: "you@isp.com",
+                    Subject: "This is the subject",
+                    Body: "And this is the body"
+                }).then(
+                        message => alert(message)
+                );
+            }
+
+        </script>
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
     </body>
 </html>

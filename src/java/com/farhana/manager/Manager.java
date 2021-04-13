@@ -6,25 +6,31 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 
 public class Manager {
-    
-    public void getDemoProducts(List<ProductModel> productModels){
+
+    public static void sendMail(String from, String to, String subject, String message) throws EmailException {
+        SimpleEmail email = new SimpleEmail();
+        email.setHostName("smtp.gmail.com");
+        email.setAuthentication(from, "123456");
+        email.addTo(to, to);
+        email.setFrom(from, "Me");
+        email.setSubject("Test message");
+        email.setMsg(message);
+        email.send();
+    }
+
+    public void getDemoProducts(List<ProductModel> productModels) {
         try {
-            QueryHelper queryHelper =  new QueryHelper();
+            QueryHelper queryHelper = new QueryHelper();
             productModels.addAll(queryHelper.getAllProducts());
         } catch (SQLException ex) {
             Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public static void main(String[] args) {
-        QueryHelper queryHelper =  new QueryHelper();
-        int imageNumber = 1;
-        for(int i = 0; i < 20; i++){
-            if(imageNumber > 5){
-                imageNumber = 1;
-            }
-            queryHelper.insertProduct(new ProductModel(0,"MSAAEX Disposable Face Mask",12,10000,"Farhana",String.valueOf(System.currentTimeMillis()),String.valueOf(System.currentTimeMillis()),1,String.valueOf(imageNumber++)));
-        }
     }
 }
