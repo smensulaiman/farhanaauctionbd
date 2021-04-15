@@ -1,3 +1,6 @@
+<%@page import="java.util.Date"%>
+<%@page import="com.farhana.model.BlogModel"%>
+<%@page import="com.farhana.db.QueryHelper"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
@@ -402,33 +405,27 @@
                     </div>
                     <div class="ps-section__content">
                         <div class="row">
+                            <%
+                             QueryHelper helper = new QueryHelper();
+                             List<BlogModel> blogModels = helper.getAllBlogs();
+                             
+                             for(BlogModel model : blogModels){
+
+                            %>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                                 <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title One</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"></a><img src="images/blog/<%= model.getBlogImage()%>" alt=""></div>
+                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"><%= model.getBlogTitle() %></a>
+                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Admin</a></span> -<span class="ml-5"><%= new Date(model.getDateTime()).toString() %></span></p>
+                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Read more<i class="fa fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                                <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title Two</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                                <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title Three</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <%
+                            }
+                            %>
+                            
                         </div>
                     </div>
                 </div>
