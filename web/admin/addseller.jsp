@@ -33,25 +33,25 @@
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-username">Seller Name</label>
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" id="register1-username" name="sellerName" placeholder="Enter Product Title" />
+                                                    <input class="form-control" type="text" id="register1-username" name="sellerName" placeholder="Enter Seller Name" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-email">Seller Email</label>
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" id="register1-email" name="sellerEmail" placeholder="Enter Price" />
+                                                    <input class="form-control" type="text" id="register1-email" name="sellerEmail" placeholder="Enter Email" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-password">Seller Address</label>
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" id="register1-password" name="sellerAddress" placeholder="Enter Stock" />
+                                                    <input class="form-control" type="text" id="register1-password" name="sellerAddress" placeholder="Enter Address" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-password2">Seller Phone</label>
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" id="register1-password2" name="sellerPhone" placeholder="Enter Seller Name" />
+                                                    <input class="form-control" type="text" id="register1-password2" name="sellerPhone" placeholder="Enter Seller Phone" />
                                                 </div>
                                             </div>                                          
 

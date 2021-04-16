@@ -120,8 +120,10 @@
                                             <header>
                                                 <p>By<a href=""> <%= b.getName()%> </a> - <%= b.getDate()%></p>
                                                 <% if (index == 0) {
-                                                        if (currentUser == b.getName()) {
+                                                    System.out.println("current user : "+b.getName()+" "+currentUser);
+                                                        if (currentUser.trim().equals(b.getName().trim())) {
                                                             isWinner = true;
+                                                            System.out.println("winner found");
                                                         }
                                                 %>
                                                 <span style="background-color: tomato; color: white; padding: 0px 10px;"> Top Bid </span>
@@ -236,6 +238,7 @@
                     document.getElementById("auction_status").innerHTML = 'This auction is finished';
                     document.getElementById("auction_status").style.color = 'tomato';
                     if (<%= isWinner%>) {
+                        //document.getElementById("formBid").style.visibility = 'visible';
                         document.getElementById("btnCheckout").style.visibility = 'visible';
                     }
                 });
@@ -248,6 +251,7 @@
                 document.getElementById("auction_status").innerHTML = 'This auction is finished';
                 document.getElementById("auction_status").style.color = 'tomato';
                 if (<%= isWinner%>) {
+                    //document.getElementById("formBid").style.visibility = 'visible';
                     document.getElementById("btnCheckout").style.visibility = 'visible';
                 }
 

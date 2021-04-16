@@ -24,7 +24,7 @@
         <main class="ps-main">
             <div class="ps-checkout pt-80 pb-80">
                 <div class="ps-container">
-                    <form class="ps-checkout__form" action="do_action" method="post">
+                    <form class="ps-checkout__form" action="../Success" method="post">
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
                                 <div class="ps-checkout__billing">
@@ -40,20 +40,16 @@
                                         <input class="form-control" type="text">
                                     </div>
                                     <div class="form-group form-group--inline">
-                                        <label><%= productSeller %><span>*</span>
+                                        <label>Seller<span>*</span>
                                         </label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" value="<%= productSeller %>">
                                     </div>
                                     <div class="form-group form-group--inline">
                                         <label>Email Address<span>*</span>
                                         </label>
                                         <input class="form-control" type="email">
                                     </div>
-                                    <div class="form-group form-group--inline">
-                                        <label><%= productSeller %><span>*</span>
-                                        </label>
-                                        <input class="form-control" type="text">
-                                    </div>
+                                   
                                     <div class="form-group form-group--inline">
                                         <label>Phone<span>*</span>
                                         </label>
@@ -63,12 +59,6 @@
                                         <label>Address<span>*</span>
                                         </label>
                                         <input class="form-control" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="ps-checkbox">
-                                            <input class="form-control" type="checkbox" id="cb01">
-                                            <label for="cb01">Create an account?</label>
-                                        </div>
                                     </div>
                                     <h3 class="mt-40"> Addition information</h3>
                                     <div class="form-group form-group--inline textarea">
