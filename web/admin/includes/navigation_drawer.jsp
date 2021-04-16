@@ -1,4 +1,4 @@
-<%-- 
+ <%-- 
     Document   : navigation_drawer
     Created on : Dec 31, 2020, 4:06:15 PM
     Author     : farhana
@@ -29,6 +29,10 @@
                 
                 <li class="nav-item">
                     <a href="addjob.jsp"><i class="ion-ios-monitor-outline"></i> Add Job</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="addblog.jsp"><i class="ion-ios-book-outline"></i> Add Blog</a>
                 </li>
 
                 <li class="nav-item">

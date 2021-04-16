@@ -16,7 +16,13 @@
 
     <%
         List<ProductModel> productModels = (List<ProductModel>) request.getSession().getAttribute("products");
-        ProductModel model = productModels.get(Integer.parseInt(request.getParameter("id")));
+        ProductModel model = null;
+        for (ProductModel pModel : productModels) {
+            if (pModel.getId() == Integer.parseInt(request.getParameter("id"))) {
+                model = pModel;
+                break;
+            }
+        }
         String currentUser = (String) request.getSession().getAttribute("username");
         boolean isWinner = false;
     %>
@@ -46,23 +52,17 @@
                                 <div class="ps-product__thumbnail">
                                     <div class="ps-product__image">
                                         <div class="item">
-                                            <img class="zoom" src="images/product/ppe/<%= model.getProductImage()%>" alt="" data-zoom-image="images/product/ppe/<%= model.getProductImage()%>">
+                                            <img class="zoom" src="images/product/ppe/<%= model.getProductImageOne()%>" alt="" data-zoom-image="images/product/ppe/<%= model.getProductImageOne()%>">
                                     </div>
                                 </div>
                             </div>
                             <div class="ps-product__thumbnail--mobile">
-                                <div class="ps-product__main-img"><img src="images/product/ppe/<%= model.getProductImage()%>.jpg" alt=""></div>
+                                <div class="ps-product__main-img"><img src="images/product/ppe/<%= model.getProductImageOne()%>.jpg" alt=""></div>
                                 <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"><img src="images/shoe-detail/1.jpg" alt=""><img src="images/shoe-detail/2.jpg" alt=""><img src="images/shoe-detail/3.jpg" alt=""></div>
                             </div>
                             <div class="ps-product__info">
                                 <div class="ps-product__rating">
-                                    <select class="ps-rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select><a href="#">(Read all 8 reviews)</a>
+                                    <h4 id="auction_status" style="color: #27ae60 ">Auction is running</h4>
                                 </div>
                                 <h1><%= model.getProductName()%></h1>
                                 <p class="ps-product__category"><a href="sellerProfile.jsp?name=<%= model.getProductSeller()%>"> <%= model.getProductSeller()%></a>,<a href="#"> MASK</a>
@@ -72,7 +72,7 @@
                                     <h4>QUICK REVIEW</h4>
                                     <p>Short description</p>
                                 </div>
-                                <form action="../BidController" method="POST">
+                                <form id="formBid" action="../BidController" method="POST">
                                     <input type="hidden" name = "id" value="<%= model.getId()%>"/>
                                     <div class="ps-product__block ps-product__size">
                                         <h4>CHOOSE OFFER</h4>
@@ -93,7 +93,7 @@
                                     <button id="btnPlaceBid" class="ps-btn mb-10">Place Bid<i class="ps-icon-next"></i>
                                     </button>
                                 </form>
-                                <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName()%>&productImage=<%= model.getProductImage()%>&productPrice=<%= model.getProductPrice()%>&productStock=<%= model.getProductStock()%>&productSeller=<%= model.getProductSeller()%>">GOTO CHECKOUT</a>
+                                <a id="btnCheckout" class="ps-btn mb-10" style="visibility: hidden" href="cart.jsp?productName=<%= model.getProductName()%>&productImage=<%= model.getProductImageOne()%>&productPrice=<%= model.getProductPrice()%>&productStock=<%= model.getProductStock()%>&productSeller=<%= model.getProductSeller()%>">GOTO CHECKOUT</a>
                             </div>
                             <div class="clearfix"></div>
                             <div class="ps-product__content mt-50">
@@ -175,7 +175,7 @@
                                                 <span>20%</span>
                                             </div>
                                             <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
-                                            <img src="images/product/ppe/<%=m.getProductImage()%>" alt="">
+                                            <img src="images/product/ppe/<%=m.getProductImageOne()%>" alt="">
                                             <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(m)%>"></a>
                                         </div>
                                         <div class="ps-shoe__content">
@@ -184,7 +184,7 @@
 
                                                     <% for (int j = 0; j < 4; j++) {%>
 
-                                                    <img src="images/product/ppe/<%= m.getProductImage()%>" alt="">
+                                                    <img src="images/product/ppe/<%= m.getProductImageOne()%>" alt="">
 
                                                     <% }%>
 
@@ -220,18 +220,39 @@
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
             <script src="js/jquery.time-to.js"></script> 
             <script>
+
+            <%
+                if (System.currentTimeMillis() < Long.parseLong(model.getProductEndTime())) {
+            %>
+
                 $('#countdown').timeTo({
-                    seconds: 10,
+                    seconds: <%= (Long.parseLong(model.getProductEndTime()) - System.currentTimeMillis()) / 1000%>,
                     theme: "black",
                     displayCaptions: true,
                     fontSize: 48,
                     captionSize: 14
                 }, () => {
                     document.getElementById("btnPlaceBid").style.visibility = 'hidden';
+                    document.getElementById("auction_status").innerHTML = 'This auction is finished';
+                    document.getElementById("auction_status").style.color = 'tomato';
                     if (<%= isWinner%>) {
                         document.getElementById("btnCheckout").style.visibility = 'visible';
                     }
                 });
+
+            <%
+            } else {
+            %>
+                document.getElementById("btnPlaceBid").style.visibility = 'hidden';
+                document.getElementById("formBid").style.visibility = 'hidden';
+                document.getElementById("auction_status").innerHTML = 'This auction is finished';
+                document.getElementById("auction_status").style.color = 'tomato';
+                if (<%= isWinner%>) {
+                    document.getElementById("btnCheckout").style.visibility = 'visible';
+                }
+
+            <% }%>
+
 
         </script>
 

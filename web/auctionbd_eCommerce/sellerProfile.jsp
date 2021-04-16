@@ -28,15 +28,21 @@
             <h4 style="width: 100%; padding: 5px 0px; background-color: tomato; color: white; text-align: center" ><%= sellerName%></h4>
             <div style="height: 2px; background-color: #2b2b2b; margin-top: 10px; margin-bottom: 40px; margin-left: 20%; margin-right: 20%;"></div>
 
+
             <%
                 QueryHelper queryHelper = new QueryHelper();
                 List<ProductModel> productModels = queryHelper.getAllProducts();
             %>
 
-            <div class="ps-product__columns" style="margin-left: 20%;margin-right: 20%">
+            <h4 style="width: 60%; padding: 5px 0px; margin: auto; background-color: #27ae60; color: white; text-align: center" >Running Auctions</h4>
+
+            <div class="ps-product__columns" style="margin-left: 20%;margin-right: 20%; margin-top: 10px">
                 <%
                     for (ProductModel model : productModels) {
                         if (!model.getProductSeller().equals(sellerName)) {
+                            continue;
+                        }
+                        if (Long.parseLong(model.getProductEndTime()) < System.currentTimeMillis()) {
                             continue;
                         }
                 %>
@@ -46,18 +52,73 @@
                             <a class="ps-shoe__favorite" href="#">
                                 <i class="ps-icon-heart"></i>
                             </a>
-                            <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                            <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
                             <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>""></a>
                         </div>
                         <div class="ps-shoe__content">
                             <div class="ps-shoe__variants">
                                 <div class="ps-shoe__variant normal">
 
-                                    <% for (int j = 0; j < 4; j++) {%>
+                                    <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
 
-                                    <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                </div>
+                                <select class="ps-rating ps-shoe__rating">
+                                    <option value="1">1</option>
+                                    <option value="1">2</option>
+                                    <option value="1">3</option>
+                                    <option value="1">4</option>
+                                    <option value="2">5</option>
+                                </select>
+                            </div>
+                            <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
+                                <p class="ps-shoe__categories">
+                                    <a href="#"><%=model.getProductCategoryID()%></a>
+                                </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                    <% }%>
+                <%
+                    }
+                %>
+
+            </div>
+
+
+            <h4 style="width: 60%; padding: 5px 0px; margin: auto; background-color: #3e9d96; color: white; text-align: center" >Completed Auctions</h4>
+
+            <div class="ps-product__columns" style="margin-left: 20%;margin-right: 20%; margin-top: 10px">
+                <%
+                    for (ProductModel model : productModels) {
+                        if (!model.getProductSeller().equals(sellerName)) {
+                            continue;
+                        }
+
+                        if (Long.parseLong(model.getProductEndTime()) > System.currentTimeMillis()) {
+                            continue;
+                        }
+                %>
+                <div class="ps-product__column">
+                    <div class="ps-shoe mb-30">
+                        <div class="ps-shoe__thumbnail">
+                            <a class="ps-shoe__favorite" href="#">
+                                <i class="ps-icon-heart"></i>
+                            </a>
+                            <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                            <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>""></a>
+                        </div>
+                        <div class="ps-shoe__content">
+                            <div class="ps-shoe__variants">
+                                <div class="ps-shoe__variant normal">
+
+                                    <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
 
                                 </div>
                                 <select class="ps-rating ps-shoe__rating">

@@ -1,6 +1,7 @@
 package com.farhana.db;
 
 import com.farhana.model.BidsModel;
+import com.farhana.model.BlogModel;
 import com.farhana.model.CategoryModel;
 import com.farhana.model.JobsModel;
 import com.farhana.model.OrderModel;
@@ -22,14 +23,11 @@ public class QueryHelper {
     private Connection dbConnection() {
         try {
             if (DBHelper.conn != null) {
-                System.out.println("Previous Connection");
                 this.conn = DBHelper.conn;
             } else {
-                System.out.println("New Connection");
                 this.conn = DBHelper.getConnection();
             }
         } catch (Exception e) {
-            e.printStackTrace();
         }
         return conn;
     }
@@ -38,9 +36,10 @@ public class QueryHelper {
 
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_USER);
-            pst.setString(1, name);
-            pst.setString(2, email);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.INSERT_NEW_USER);
+            pst.setString(1, email);
+            pst.setString(2, name);
             pst.setString(3, password);
 
             int a = pst.executeUpdate();
@@ -55,7 +54,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
             if (ex.getMessage().contains("Duplicate entry")) {
                 System.out.println("error : " + ex.getMessage());
                 return 2;
@@ -89,7 +87,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         }
 
         return "";
@@ -118,7 +115,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         }
 
         return "";
@@ -134,11 +130,13 @@ public class QueryHelper {
             rs = pst.executeQuery();
 
             while (rs.next()) {
-                bidsModels.add(new BidsModel(rs.getString("name"), rs.getInt("amount"), rs.getString("date"), rs.getInt("productid")));
+                bidsModels.add(new BidsModel(rs.getString("name"),
+                        rs.getInt("amount"),
+                        rs.getString("date"),
+                        rs.getInt("productid")));
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
@@ -150,7 +148,8 @@ public class QueryHelper {
     public int insertProduct(ProductModel productModel) {
 
         try {
-            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_PRODUCT);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.INSERT_NEW_PRODUCT);
             pst.setString(1, productModel.getProductName());
             pst.setInt(2, productModel.getProductPrice());
             pst.setInt(3, productModel.getProductStock());
@@ -158,7 +157,10 @@ public class QueryHelper {
             pst.setString(5, productModel.getProductStartTime());
             pst.setString(6, productModel.getProductEndTime());
             pst.setInt(7, productModel.getProductCategoryID());
-            pst.setString(8, productModel.getProductImage());
+            pst.setString(8, productModel.getProductImageOne());
+            pst.setString(9, productModel.getProductImageTwo());
+            pst.setString(10, productModel.getProductImageThree());
+            pst.setString(11, productModel.getProductImageFour());
 
             int a = pst.executeUpdate();
 
@@ -172,7 +174,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
             if (ex.getMessage().contains("Duplicate entry")) {
                 System.out.println("error : " + ex.getMessage());
                 return 2;
@@ -188,7 +189,8 @@ public class QueryHelper {
 
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
             rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -201,25 +203,28 @@ public class QueryHelper {
                         rs.getString("productStartTime"),
                         rs.getString("productEndTime"),
                         rs.getInt("productCategoryID"),
-                        rs.getString("productImage")
+                        rs.getString("productImage"),
+                        rs.getString("productImageTwo"),
+                        rs.getString("productImageThree"),
+                        rs.getString("productImageFour")
                 ));
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + productModels.size());
         return productModels;
     }
 
-    public boolean postBid(String name, int amount, String date, int productid) throws SQLException {
+    public boolean postBid(String name, int amount, String date, int productid)
+            throws SQLException {
         boolean status = false;
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_BID);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.INSERT_NEW_BID);
             pst.setString(1, name);
             pst.setInt(2, amount);
             pst.setString(3, date);
@@ -236,7 +241,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
             if (ex.getMessage().contains("Duplicate entry")) {
                 System.out.println("error : " + ex.getMessage());
                 status = false;
@@ -253,7 +257,8 @@ public class QueryHelper {
 
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.JOIN_PRODUCT_WITH_BID);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.JOIN_PRODUCT_WITH_BID);
             rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -274,21 +279,21 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + productModels.size());
         return productModels;
     }
 
-    public boolean inserSeller(String sellerName, String sellerEmail, String sellerAddress, String sellerPhone) throws SQLException {
+    public boolean inserSeller(String sellerName, String sellerEmail,
+            String sellerAddress, String sellerPhone) throws SQLException {
 
         boolean status = false;
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_SELLER);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.INSERT_NEW_SELLER);
             pst.setString(1, sellerName);
             pst.setString(2, sellerEmail);
             pst.setString(3, sellerAddress);
@@ -305,7 +310,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
             if (ex.getMessage().contains("Duplicate entry")) {
                 System.out.println("error : " + ex.getMessage());
                 status = false;
@@ -323,7 +327,8 @@ public class QueryHelper {
 
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.SELECT_ALL_PRODUCTS);
             rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -336,20 +341,21 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + sellerModels.size());
         return sellerModels;
     }
 
-    public boolean postJob(String jobTitle, String jobType, String jobLocation, String jobDescription, String skills, String salary, String poser) throws SQLException {
+    public boolean postJob(String jobTitle, String jobType, String jobLocation,
+            String jobDescription, String skills, String salary, String poser)
+            throws SQLException {
         boolean status = false;
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.INSERT_NEW_JOB);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.INSERT_NEW_JOB);
             pst.setString(1, jobTitle);
             pst.setString(2, jobType);
             pst.setString(3, jobLocation);
@@ -369,7 +375,6 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
             if (ex.getMessage().contains("Duplicate entry")) {
                 System.out.println("error : " + ex.getMessage());
                 status = false;
@@ -385,7 +390,8 @@ public class QueryHelper {
         List<JobsModel> jobModels = new ArrayList<>();
         try {
 
-            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_JOBS);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.SELECT_ALL_JOBS);
             rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -401,12 +407,10 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
         }
-        System.out.println("Retrive siz: " + jobModels.size());
         return jobModels;
     }
 
@@ -414,7 +418,8 @@ public class QueryHelper {
         List<CategoryModel> categoryModels = new ArrayList<>();
 
         try {
-            pst = dbConnection().prepareStatement(QueryConstant.SELECT_ALL_CATEGORIES);
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.SELECT_ALL_CATEGORIES);
             rs = pst.executeQuery();
             while (rs.next()) {
                 categoryModels.add(new CategoryModel(
@@ -424,13 +429,79 @@ public class QueryHelper {
             }
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
         } finally {
             pst.close();
             rs.close();
         }
 
         return categoryModels;
+    }
+
+    public boolean insertNewBlog(BlogModel blogModel) throws SQLException {
+        boolean status = false;
+        try {
+
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.CREATE_BLOG_TABLE);
+            int a = pst.executeUpdate();
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.INSERT_NEW_BLOG);
+            pst.setString(1, blogModel.getBlogTitle());
+            pst.setString(2, blogModel.getBlogType());
+            pst.setString(3, blogModel.getBlogDescription());
+            pst.setString(4, String.valueOf(blogModel.getDateTime()));
+            pst.setString(5, blogModel.getBlogImage());
+
+            a = pst.executeUpdate();
+
+            if (a > 0) {
+                System.out.println("Data Inserted Successfully");
+                status = true;
+            } else {
+                status = false;
+                System.out.println("Faild");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            if (ex.getMessage().contains("Duplicate entry")) {
+                System.out.println("error : " + ex.getMessage());
+                status = false;
+            }
+        } finally {
+            pst.close();
+        }
+        return status;
+    }
+
+    public List<BlogModel> getAllBlogs() throws SQLException {
+        List<BlogModel> blogModels = new ArrayList<>();
+
+        try {
+            pst = dbConnection()
+                    .prepareStatement(QueryConstant.SELECT_ALL_BLOGS);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+
+                blogModels.add(new BlogModel(
+                        rs.getString("blogTitle"),
+                        rs.getString("blogType"),
+                        rs.getString("blogDescription"),
+                        rs.getString("blogImage"),
+                        Long.parseLong(rs.getString("dateTime"))
+                ));
+            }
+
+        } catch (SQLException ex) {
+        } finally {
+            try {
+                pst.close();
+                rs.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return blogModels;
     }
 
 }

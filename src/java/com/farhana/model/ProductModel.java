@@ -9,12 +9,15 @@ public class ProductModel {
     private String productStartTime;
     private String productEndTime;
     private int productCategoryID;
-    private String productImage;
+    private String productImageOne;
+    private String productImageTwo;
+    private String productImageThree;
+    private String productImageFour;
 
     public ProductModel() {
     }
 
-    public ProductModel(int id, String productName, int productPrice, int productStock, String productSeller, String productStartTime, String productEndTime, int productCategoryID, String productImage) {
+    public ProductModel(int id, String productName, int productPrice, int productStock, String productSeller, String productStartTime, String productEndTime, int productCategoryID, String productImageOne, String productImageTwo, String productImageThree, String productImageFour) {
         this.id = id;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -23,7 +26,10 @@ public class ProductModel {
         this.productStartTime = productStartTime;
         this.productEndTime = productEndTime;
         this.productCategoryID = productCategoryID;
-        this.productImage = productImage;
+        this.productImageOne = productImageOne;
+        this.productImageTwo = productImageTwo;
+        this.productImageThree = productImageThree;
+        this.productImageFour = productImageFour;
     }
 
     public int getId() {
@@ -90,13 +96,41 @@ public class ProductModel {
         this.productCategoryID = productCategoryID;
     }
 
-    public String getProductImage() {
-        return productImage;
+    public String getProductImageOne() {
+        return productImageOne;
     }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
+    public void setProductImageOne(String productImageOne) {
+        this.productImageOne = productImageOne;
     }
 
-    
+    public String getProductImageTwo() {
+        return productImageTwo;
+    }
+
+    public void setProductImageTwo(String productImageTwo) {
+        this.productImageTwo = productImageTwo;
+    }
+
+    public String getProductImageThree() {
+        return productImageThree;
+    }
+
+    public void setProductImageThree(String productImageThree) {
+        this.productImageThree = productImageThree;
+    }
+
+    public String getProductImageFour() {
+        return productImageFour;
+    }
+
+    public void setProductImageFour(String productImageFour) {
+        this.productImageFour = productImageFour;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductModel{" + "id=" + id + ", productName=" + productName + ", productPrice=" + productPrice + ", productStock=" + productStock + ", productSeller=" + productSeller + ", productStartTime=" + productStartTime + ", productEndTime=" + productEndTime + ", productCategoryID=" + productCategoryID + ", productImageOne=" + productImageOne + ", productImageTwo=" + productImageTwo + ", productImageThree=" + productImageThree + ", productImageFour=" + productImageFour + '}';
+    }
+
 }

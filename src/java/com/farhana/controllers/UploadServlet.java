@@ -30,7 +30,13 @@ public class UploadServlet extends HttpServlet {
             String productSeller = request.getParameter("productSeller");
             String productTime = request.getParameter("productTime");
             String productCategory = request.getParameter("productCategory");
-            String img = request.getParameter("img");
+            String img = request.getParameter("img1");
+            String imgTwo = request.getParameter("img2");
+            imgTwo = checkImage(imgTwo, img);
+            String imgThree = request.getParameter("img3");
+            imgThree = checkImage(imgThree, img);
+            String imgFour = request.getParameter("img4");
+            imgFour = checkImage(imgFour, img);
             String productStartTime = String.valueOf(System.currentTimeMillis());
             String productEndTime = String.valueOf(System.currentTimeMillis() + (long)Integer.parseInt(productTime)*60*60*1000);
             
@@ -38,7 +44,7 @@ public class UploadServlet extends HttpServlet {
             
             System.out.println(" title : "+productTitle+" price : "+productPrice+" stock : "+productStock+" : "+productSeller+" : "+productTime+" category : "+productCategory+" img : "+img);
             
-            ProductModel productModel =  new ProductModel( 0, productTitle, Integer.parseInt(productPrice), Integer.parseInt(productStock), productSeller,  productStartTime,  productEndTime, Integer.parseInt(productCategory),  img);
+            ProductModel productModel =  new ProductModel( 0, productTitle, Integer.parseInt(productPrice), Integer.parseInt(productStock), productSeller,  productStartTime,  productEndTime, Integer.parseInt(productCategory),  img, imgTwo, imgThree, imgFour);
             QueryHelper helper = new QueryHelper();
             helper.insertProduct(productModel);
             
@@ -84,5 +90,12 @@ public class UploadServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private String checkImage(String imgTwo, String img) {
+        if(imgTwo.trim() == null || imgTwo.isEmpty()){
+            return img;
+        }
+        return imgTwo;
+    }
 
 }

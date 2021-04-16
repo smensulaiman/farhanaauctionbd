@@ -194,9 +194,6 @@ $dataEffect: 'data-effect-name';
                 @extend %transitionDefault;
             }
             @each $eff in $effectsDefault {
-                @if ($effectType=="#{$eff}") {
-                    @extend %#{$eff};
-                }
             }
         }
         // Mixin Options data
@@ -206,9 +203,7 @@ $dataEffect: 'data-effect-name';
                 @extend %transitionDefault;
             }
             @each $eff in $effectsDefault {
-                &[#{$dataEffect}="#{$eff}"] {
-                    @extend %#{$eff};
-                }
+
             }
         }
         // Mixin Effect custom
@@ -277,9 +272,7 @@ $dataEffect: 'data-effect-name';
         }
         @if ($effectType==false) {
             @if not ($effectName=='') {
-                &[#{$dataEffect}="#{$effectName}"] {
-                    @include effectCustom;
-                }
+                
             }
         }
     }

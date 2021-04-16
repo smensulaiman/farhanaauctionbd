@@ -1,3 +1,7 @@
+<%@page import="java.util.Date"%>
+<%@page import="com.farhana.model.BlogModel"%>
+<%@page import="com.farhana.db.QueryHelper"%>
+<%@page import="java.util.Arrays"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -48,34 +52,63 @@
                 <div class="ps-section--features-product ps-section masonry-root pt-100 pb-100">
                     <div class="ps-container">
 
-                        <div class="ps-section__header mb-50">
-                            <h3 class="ps-section__title" data-mask="features">- Covid 19 Trending Auctions</h3>
-                            <ul class="ps-masonry__filter">
-                                <li class="current"><a href="#" data-filter="*">A <sup>40</sup></a></li>
-                                <li><a href="#" data-filter=".kids">B <sup>12</sup></a></li>
-                                <li><a href="#" data-filter=".kids">C <sup>10</sup></a></li>
-                                <li><a href="#" data-filter=".kids">D <sup>6</sup></a></li>
-                                <li><a href="#" data-filter=".kids">E <sup>8</sup></a></li>
-                                <li><a href="#" data-filter=".kids">F <sup>4</sup></a></li>
-                            </ul>
-                        </div>
+                    <%
+                        int ca = 0, cb = 0, cc = 0, cd = 0, ce = 0, cf = 0;
+                        Manager manager = new Manager();
+                        List<ProductModel> productModels = new ArrayList();
+                        manager.getDemoProducts(productModels);
+                        System.out.println("Total Products: " + productModels.size());
+                        request.getSession().setAttribute("products", productModels);
+                        for (ProductModel m : productModels) {
+                            char firstLetter = Character.toLowerCase(m.getProductName().charAt(0));
+                            switch (firstLetter) {
+                                case 'k':
+                                    ca++;
+                                    break;
+                                case 'b':
+                                    cb++;
+                                    break;
+                                case 'c':
+                                    cc++;
+                                    break;
+                                case 'd':
+                                    cd++;
+                                    break;
+                                case 'e':
+                                    ce++;
+                                    break;
+                                case 'f':
+                                    cf++;
+                                    break;
 
-                        <div class="ps-section__content pb-50">
-                            <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
-                                <div class="ps-masonry">
-                                    <div class="grid-sizer"></div>
+                            }
+                        }
+                    %>
+
+                    <div class="ps-section__header mb-50">
+                        <h3 class="ps-section__title" data-mask="features">- Covid 19 Trending Auctions</h3>
+                        <ul class="ps-masonry__filter">
+                            <li class="current"><a href="#" data-filter="*">All <sup><%= productModels.size()%></sup></a></li>
+                            <li><a href="#" data-filter=".k">A <sup><%= ca%></sup></a></li>
+                            <li><a href="#" data-filter=".b">B <sup><%= cb%></sup></a></li>
+                            <li><a href="#" data-filter=".c">C <sup><%= cc%></sup></a></li>
+                            <li><a href="#" data-filter=".d">D <sup><%= cd%></sup></a></li>
+                            <li><a href="#" data-filter=".e">E <sup><%= ce%></sup></a></li>
+                            <li><a href="#" data-filter=".f">F <sup><%= cf%></sup></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ps-section__content pb-50">
+                        <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
+                            <div class="ps-masonry">
+                                <div class="grid-sizer"></div>
 
                                 <%
-                                    Manager manager = new Manager();
-                                    List<ProductModel> productModels = new ArrayList();
-                                    manager.getDemoProducts(productModels);
-                                    System.out.println("Total Products: " + productModels.size());
-                                    request.getSession().setAttribute("products", productModels);
-
                                     for (ProductModel model : productModels) {
+                                        System.out.println(model.toString());
                                 %>
 
-                                <div class="grid-item kids">
+                                <div class="grid-item <%= Character.toLowerCase(model.getProductName().charAt(0))%>">
                                     <div class="grid-item__content-wrapper">
                                         <div class="ps-shoe mb-30">
                                             <div class="ps-shoe__thumbnail">
@@ -84,18 +117,17 @@
                                                     <span>20%</span>
                                                 </div>
                                                 <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-                                                <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>"></a>
+                                                <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
                                                     <div class="ps-shoe__variant normal">
 
-                                                        <% for (int j = 0; j < 4; j++) {%>
-
-                                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-
-                                                        <% }%>
+                                                        <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
 
                                                     </div>
                                                     <select class="ps-rating ps-shoe__rating">
@@ -201,17 +233,16 @@
                                     <div class="ps-shoe__thumbnail">
                                         <a class="ps-shoe__favorite" href="#">
                                             <i class="ps-icon-heart"></i></a>
-                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-                                        <a class="ps-shoe__overlay" href="#"></a>
+                                        <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                        <a class="ps-shoe__overlay"  href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
                                             <div class="ps-shoe__variant normal">
-                                                <% for (int j = 0; j < 4; j++) {%>
-
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-
-                                                <% }%>
+                                                <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
                                             </div>
                                             <select class="ps-rating ps-shoe__rating">
                                                 <option value="1">1</option>
@@ -272,17 +303,16 @@
                                     <div class="ps-shoe__thumbnail">
                                         <a class="ps-shoe__favorite" href="#">
                                             <i class="ps-icon-heart"></i></a>
-                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-                                        <a class="ps-shoe__overlay" href="#"></a>
+                                        <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                        <a class="ps-shoe__overlay"  href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
                                             <div class="ps-shoe__variant normal">
-                                                <% for (int j = 0; j < 4; j++) {%>
-
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-
-                                                <% }%>
+                                                <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
                                             </div>
                                             <select class="ps-rating ps-shoe__rating">
                                                 <option value="1">1</option>
@@ -292,7 +322,7 @@
                                                 <option value="2">5</option>
                                             </select>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
+                                        <div class="ps-shoe__detail"><a class="ps-shoe__name"  href="product-detail.jsp?id=<%= model.getId()%>"><%=model.getProductName()%></a>
                                             <p class="ps-shoe__categories">
                                                 <a href="#"><%=model.getProductCategoryID()%></a>
                                             </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
@@ -372,33 +402,27 @@
                     </div>
                     <div class="ps-section__content">
                         <div class="row">
+                            <%
+                                QueryHelper helper = new QueryHelper();
+                                List<BlogModel> blogModels = helper.getAllBlogs();
+
+                                for (BlogModel model : blogModels) {
+
+                            %>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                                 <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title One</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"></a><img src="images/blog/<%= model.getBlogImage()%>" alt=""></div>
+                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"><%= model.getBlogTitle()%></a>
+                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Admin</a></span> -<span class="ml-5"><%= new Date(model.getDateTime()).toString()%></span></p>
+                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Read more<i class="fa fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                                <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title Two</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                                <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="images/blog/faru2.jpg" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Blog Title Three</a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Farhana</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further…</p><a class="ps-morelink" href="blog-detail.html">Read more<i class="fa fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <%
+                                }
+                            %>
+
                         </div>
                     </div>
                 </div>

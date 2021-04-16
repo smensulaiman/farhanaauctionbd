@@ -28,6 +28,10 @@
         <servlet-name>JobApplyController</servlet-name>
         <servlet-class>com.farhana.controllers.JobApplyController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BlogController</servlet-name>
+        <servlet-class>com.farhana.controllers.BlogController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>JobApplyController</servlet-name>
         <url-pattern>/JobApplyController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogController</servlet-name>
+        <url-pattern>/BlogController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
