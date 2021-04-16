@@ -32,7 +32,7 @@
                                         <div class="ps-user__thumbnnail"><img src="images/team/farhana.jpeg" alt="">
                                             <ul class="ps-user__social">
                                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.facebook.com/farha.islam.2k/"><i class="fa fa-facebook"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                             </ul>
                                         </div>
