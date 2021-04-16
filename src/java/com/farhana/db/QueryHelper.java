@@ -38,8 +38,8 @@ public class QueryHelper {
 
             pst = dbConnection()
                     .prepareStatement(QueryConstant.INSERT_NEW_USER);
-            pst.setString(1, name);
-            pst.setString(2, email);
+            pst.setString(1, email);
+            pst.setString(2, name);
             pst.setString(3, password);
 
             int a = pst.executeUpdate();
@@ -157,7 +157,10 @@ public class QueryHelper {
             pst.setString(5, productModel.getProductStartTime());
             pst.setString(6, productModel.getProductEndTime());
             pst.setInt(7, productModel.getProductCategoryID());
-            pst.setString(8, productModel.getProductImage());
+            pst.setString(8, productModel.getProductImageOne());
+            pst.setString(9, productModel.getProductImageTwo());
+            pst.setString(10, productModel.getProductImageThree());
+            pst.setString(11, productModel.getProductImageFour());
 
             int a = pst.executeUpdate();
 
@@ -200,7 +203,10 @@ public class QueryHelper {
                         rs.getString("productStartTime"),
                         rs.getString("productEndTime"),
                         rs.getInt("productCategoryID"),
-                        rs.getString("productImage")
+                        rs.getString("productImage"),
+                        rs.getString("productImageTwo"),
+                        rs.getString("productImageThree"),
+                        rs.getString("productImageFour")
                 ));
             }
 
@@ -487,8 +493,12 @@ public class QueryHelper {
 
         } catch (SQLException ex) {
         } finally {
-            pst.close();
-            rs.close();
+            try {
+                pst.close();
+                rs.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         return blogModels;

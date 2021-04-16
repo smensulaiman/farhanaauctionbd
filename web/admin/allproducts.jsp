@@ -55,7 +55,7 @@
                                             
                                             <tr>
                                                 <td class="text-center">
-                                                    <img class="img-avatar img-avatar-48" src="../auctionbd_eCommerce/images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                                    <img class="img-avatar img-avatar-48" src="../auctionbd_eCommerce/images/product/ppe/<%=model.getProductImageOne()%>" alt="">
                                                 </td>
                                                 <td class="font-500"><%= model.getProductName() %></td>
                                                 <td class="font-500"><%= model.getProductSeller()%></td>

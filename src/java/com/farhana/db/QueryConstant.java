@@ -20,10 +20,10 @@ public class QueryConstant {
     
     
     /*              INSERT              */
-    public static final String INSERT_NEW_USER      = "insert into users values(default,?,?,?)";
+    public static final String INSERT_NEW_USER      = "insert into users (id,email,name,password) values(default,?,?,?)";
     public static final String INSERT_NEW_BID       = "insert into bids values(default,?,?,?,?)";
     public static final String INSERT_NEW_JOB       = "insert into jobs values(default,?,?,?,?,?,?,?)";
-    public static final String INSERT_NEW_PRODUCT   = "INSERT INTO products VALUES (default,?,?,?,?,?,?,?,?)";
+    public static final String INSERT_NEW_PRODUCT   = "INSERT INTO products VALUES (default,?,?,?,?,?,?,?,?,?,?,?)";
     public static final String INSERT_NEW_SELLER    = "INSERT INTO seller VALUES (default,?,?,?,?)";
     public static final String INSERT_NEW_BLOG      = "INSERT INTO blogs VALUES (default,?,?,?,?,?)";
     

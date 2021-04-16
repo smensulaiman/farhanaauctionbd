@@ -117,18 +117,17 @@
                                                     <span>20%</span>
                                                 </div>
                                                 <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
                                                 <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                             </div>
                                             <div class="ps-shoe__content">
                                                 <div class="ps-shoe__variants">
                                                     <div class="ps-shoe__variant normal">
 
-                                                        <% for (int j = 0; j < 4; j++) {%>
-
-                                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-
-                                                        <% }%>
+                                                        <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                                        <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
 
                                                     </div>
                                                     <select class="ps-rating ps-shoe__rating">
@@ -234,17 +233,16 @@
                                     <div class="ps-shoe__thumbnail">
                                         <a class="ps-shoe__favorite" href="#">
                                             <i class="ps-icon-heart"></i></a>
-                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-                                        <a class="ps-shoe__overlay" href="#"></a>
+                                        <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                        <a class="ps-shoe__overlay"  href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
                                             <div class="ps-shoe__variant normal">
-                                                <% for (int j = 0; j < 4; j++) {%>
-
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-
-                                                <% }%>
+                                                <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
                                             </div>
                                             <select class="ps-rating ps-shoe__rating">
                                                 <option value="1">1</option>
@@ -305,17 +303,16 @@
                                     <div class="ps-shoe__thumbnail">
                                         <a class="ps-shoe__favorite" href="#">
                                             <i class="ps-icon-heart"></i></a>
-                                        <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-                                        <a class="ps-shoe__overlay" href="#"></a>
+                                        <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                        <a class="ps-shoe__overlay"  href="product-detail.jsp?id=<%= model.getId()%>"></a>
                                     </div>
                                     <div class="ps-shoe__content">
                                         <div class="ps-shoe__variants">
                                             <div class="ps-shoe__variant normal">
-                                                <% for (int j = 0; j < 4; j++) {%>
-
-                                                <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
-
-                                                <% }%>
+                                                <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageTwo()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageThree()%>" alt="">
+                                                <img src="images/product/ppe/<%=model.getProductImageFour()%>" alt="">
                                             </div>
                                             <select class="ps-rating ps-shoe__rating">
                                                 <option value="1">1</option>
@@ -325,7 +322,7 @@
                                                 <option value="2">5</option>
                                             </select>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#"><%=model.getProductName()%></a>
+                                        <div class="ps-shoe__detail"><a class="ps-shoe__name"  href="product-detail.jsp?id=<%= model.getId()%>"><%=model.getProductName()%></a>
                                             <p class="ps-shoe__categories">
                                                 <a href="#"><%=model.getProductCategoryID()%></a>
                                             </p><span class="ps-shoe__price">Tk. <%=model.getProductPrice()%></span>
@@ -406,26 +403,26 @@
                     <div class="ps-section__content">
                         <div class="row">
                             <%
-                             QueryHelper helper = new QueryHelper();
-                             List<BlogModel> blogModels = helper.getAllBlogs();
-                             
-                             for(BlogModel model : blogModels){
+                                QueryHelper helper = new QueryHelper();
+                                List<BlogModel> blogModels = helper.getAllBlogs();
+
+                                for (BlogModel model : blogModels) {
 
                             %>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
                                 <div class="ps-post">
-                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"></a><img src="images/blog/<%= model.getBlogImage()%>" alt=""></div>
-                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"><%= model.getBlogTitle() %></a>
-                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Admin</a></span> -<span class="ml-5"><%= new Date(model.getDateTime()).toString() %></span></p>
-                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.jsp?title=<%= model.getBlogTitle() %>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Read more<i class="fa fa-long-arrow-right"></i></a>
+                                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"></a><img src="images/blog/<%= model.getBlogImage()%>" alt=""></div>
+                                    <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>"><%= model.getBlogTitle()%></a>
+                                        <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Admin</a></span> -<span class="ml-5"><%= new Date(model.getDateTime()).toString()%></span></p>
+                                        <p>This is blog title one...</p><a class="ps-morelink" href="blog-detail.jsp?title=<%= model.getBlogTitle()%>&type=<%= model.getBlogType()%>&image=<%= model.getBlogImage()%>&time=<%= model.getDateTime()%>&description=<%= model.getBlogDescription()%>">Read more<i class="fa fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
 
                             <%
-                            }
+                                }
                             %>
-                            
+
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+<%@page import="com.farhana.model.OrderModel"%>
 <%@page import="java.util.List"%>
 <%@page import="com.farhana.model.ProductModel"%>
 <%@page import="com.farhana.db.QueryHelper"%>
@@ -15,16 +16,6 @@
             <main class="ps-main">
                 <div class="ps-products-wrap pt-80 pb-80 pl-80 pr-80">
                     <div class="ps-products" data-mh="product-listing">
-                        <div class="ps-product-action">
-                            <div class="ps-product__filter">
-                                <select class="ps-select selectpicker">
-                                    <option value="1">Shortby</option>
-                                    <option value="2">Name</option>
-                                    <option value="3">Price (Low to High)</option>
-                                    <option value="3">Price (High to Low)</option>
-                                </select>
-                            </div>
-                        </div>
 
                     <%
                         String category = (String) request.getParameter("category");
@@ -34,9 +25,29 @@
 
                     <div class="ps-product__columns">
                         <%
+                            
+                            int index = 0;
+                            
                             for (ProductModel model : productModels) {
-                                if (model.getProductCategoryID() != Integer.parseInt(category)) {
-                                    continue;
+                                if (Integer.parseInt(category) == 1000) {
+                                      List<OrderModel> orderModels = queryHelper.getAllOrders();
+                                      if(orderModels.size() <9){
+                                          break;
+                                      }else{
+                                          if(index == 10){
+                                              break;
+                                          }
+                                          for(OrderModel om : orderModels){
+                                              if(om.getProductCategoryID() == model.getProductCategoryID()){
+                                                  index++;
+                                                  break;
+                                              }
+                                          }
+                                      }
+                                } else {
+                                    if (model.getProductCategoryID() != Integer.parseInt(category)) {
+                                        continue;
+                                    }
                                 }
                         %>
                         <div class="ps-product__column">
@@ -45,7 +56,7 @@
                                     <a class="ps-shoe__favorite" href="#">
                                         <i class="ps-icon-heart"></i>
                                     </a>
-                                    <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                    <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
                                     <a class="ps-shoe__overlay" href="product-detail.jsp?id=<%=productModels.indexOf(model)%>""></a>
                                 </div>
                                 <div class="ps-shoe__content">
@@ -54,7 +65,7 @@
 
                                             <% for (int j = 0; j < 4; j++) {%>
 
-                                            <img src="images/product/ppe/<%=model.getProductImage()%>" alt="">
+                                            <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">
 
                                             <% }%>
 

@@ -7,9 +7,13 @@
 
     <jsp:include page="./includes/head.jsp"></jsp:include>
 
-        <body class="app-ui layout-has-drawer layout-has-fixed-header">
-            <div class="app-layout-canvas">
-                <div class="app-layout-container">
+    <%
+        String name = (String) request.getSession().getAttribute("username");
+    %>
+
+    <body class="app-ui layout-has-drawer layout-has-fixed-header">
+        <div class="app-layout-canvas">
+            <div class="app-layout-container">
 
                 <jsp:include page="./includes/navigation_drawer.jsp"/>
                 <jsp:include page="./includes/header.jsp"/>
@@ -54,7 +58,7 @@
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-password2">Product Seller</label>
                                                 <div class="col-xs-12">
-                                                    <input class="form-control" type="text" id="register1-password2" name="productSeller" placeholder="Enter Seller Name" />
+                                                    <input class="form-control" type="text" id="register1-password2" name="productSeller" placeholder="Enter Seller Name" value="<%= name%>" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -69,34 +73,57 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            
+
                                             <%
-                                            
-                                             QueryHelper queryHelper = new QueryHelper();
-                                             List<CategoryModel> categoryModels = queryHelper.getAllCategories();
-                                                
+
+                                                QueryHelper queryHelper = new QueryHelper();
+                                                List<CategoryModel> categoryModels = queryHelper.getAllCategories();
+
                                             %>
-                                            
+
                                             <div class="form-group">
                                                 <label class="col-xs-12" for="register1-password2">Product Category</label>
                                                 <div class="col-xs-12">
                                                     <select class="js-select2 form-control select2-hidden-accessible" id="example-select2" name="productCategory" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
                                                         <option></option>
-                                                        <%
-                                                        for(CategoryModel model : categoryModels){
+                                                        <%                                                            for (CategoryModel model : categoryModels) {
                                                         %>
-                                                        <option value="<%= model.getId() %>"><%= model.getCategoryname()%></option>
+                                                        <option value="<%= model.getId()%>"><%= model.getCategoryname()%></option>
                                                         <%
-                                                        }
+                                                            }
                                                         %>
                                                     </select>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <div class="card">
+                                                <div class="">
                                                     <div class="card-block card-block-full">
-                                                        <input style="margin-top: 10px;" type="file" id="img" name="img" accept="image/*">  
+                                                        <input  type="file" id="img" name="img1" accept="image/*">  
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="">
+                                                    <div class="card-block card-block-full">
+                                                        <input  type="file" id="img" name="img2" accept="image/*">  
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="">
+                                                    <div class="card-block card-block-full">
+                                                        <input type="file" id="img" name="img3" accept="image/*">  
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="">
+                                                    <div class="card-block card-block-full">
+                                                        <input type="file" id="img" name="img4" accept="image/*">  
                                                     </div>
                                                 </div>
                                             </div>

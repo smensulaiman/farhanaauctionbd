@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="menu-item"><a href="#">TOP 10 AUCTIONS</a></li>
+                    <li class="menu-item"><a href="product-listing.jsp?category=1000">TOP 10 AUCTIONS</a></li>
                     <li class="menu-item"><a href="about.jsp">ABOUT US</a></li>
                     <li class="menu-item menu-item-has-children dropdown"><a href="joblist.jsp">JOBS</a>
                     </li>
