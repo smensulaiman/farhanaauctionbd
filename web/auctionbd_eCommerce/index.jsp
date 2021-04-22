@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="com.farhana.model.BlogModel"%>
 <%@page import="com.farhana.db.QueryHelper"%>
@@ -112,9 +113,33 @@
                                     <div class="grid-item__content-wrapper">
                                         <div class="ps-shoe mb-30">
                                             <div class="ps-shoe__thumbnail">
-                                                <div class="ps-badge"><span>New</span></div>
+                                                <%
+                                                    if (Long.parseLong(model.getProductEndTime().trim()) < System.currentTimeMillis()) {
+                                                %>
+                                                <div class="ps-badge"><span>FINISHED</span></div>
+                                                <%
+                                                } else {
+                                                %>
+                                                <div class="ps-badge"><span>RUNNING</span></div>
+                                                <%
+                                                    }
+                                                %>
                                                 <div class="ps-badge ps-badge--sale ps-badge--2nd">
-                                                    <span>20%</span>
+                                                    <%
+                                                        if (Long.parseLong(model.getProductEndTime().trim()) < System.currentTimeMillis()) {
+                                                    %>
+                                                    
+                                                    <span>00:00:00</span>
+
+                                                    <%
+                                                        }else{
+                                                    %>
+                                                    
+                                                    <span><%= new SimpleDateFormat("hh:mm:ss").format(new Date((Long.parseLong(model.getProductEndTime().trim()) - System.currentTimeMillis()))) %></span>
+                                                    
+                                                    <%
+                                                        }
+                                                    %>
                                                 </div>
                                                 <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a>
                                                 <img src="images/product/ppe/<%=model.getProductImageOne()%>" alt="">

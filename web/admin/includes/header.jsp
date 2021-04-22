@@ -56,7 +56,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- .navbar-left -->
 
                 <ul class="nav navbar-nav navbar-right navbar-toolbar hidden-sm hidden-xs">
                     <li>
