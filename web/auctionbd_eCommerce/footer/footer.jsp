@@ -55,18 +55,13 @@
                         </footer>
                     </aside>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 ">
+                <div class="col-md-5">
                     <aside class="ps-widget--footer ps-widget--link">
                         <header>
-                            <h3 class="ps-widget__title">Products</h3>
+                            <h3 class="ps-widget__title">Location</h3>
                         </header>
                         <footer>
-                            <ul class="ps-list--line">
-                                <li><a href="product-listing.jsp?category=MASK">MASK</a></li>
-                                <li><a href="product-listing.jsp?category=PPE">PPE</a></li>
-                                <li><a href="product-listing.jsp?category=Hand Gloves">Hand Gloves</a></li>
-                                <li><a href="product-listing.jsp?category=Hand Sanitizer">Hand Sanitizer</a></li>
-                            </ul>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.705827389285!2d90.40159711495481!3d23.79348758456827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70e1333b05f%3A0x9d90383de26ac0fb!2z4Kao4Kaw4KeN4Kam4Ka-4Kaw4KeN4KaoIOCmh-CmieCmqOCmv-CmreCmvuCmsOCnjeCmuOCmv-Cmn-CmvyDgpqzgpr7gpoLgprLgpr7gpqbgp4fgprY!5e0!3m2!1sbn!2sbd!4v1619869603526!5m2!1sbn!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>    
                         </footer>
                     </aside>
                 </div>
