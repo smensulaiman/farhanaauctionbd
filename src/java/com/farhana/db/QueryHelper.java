@@ -20,12 +20,12 @@ public class QueryHelper {
     private PreparedStatement pst;
     private ResultSet rs;
 
-    private Connection dbConnection() {
+    private Connection dbConnection() {// THis method is called to check is the conncetion is alive or not. If not then create a new instance.
         try {
-            if (DBHelper.conn != null) {
+            if (DBHelper.conn != null) {// This indicates the connection is alive.
                 this.conn = DBHelper.conn;
             } else {
-                this.conn = DBHelper.getConnection();
+                this.conn = DBHelper.getConnection();// create a new instance
             }
         } catch (Exception e) {
         }
@@ -183,7 +183,7 @@ public class QueryHelper {
         return 0;
     }
 
-    public List<ProductModel> getAllProducts() throws SQLException {
+    public List<ProductModel> getAllProducts() throws SQLException {//This method is called from index.jsp to get all product
 
         List<ProductModel> productModels = new ArrayList<>();
 

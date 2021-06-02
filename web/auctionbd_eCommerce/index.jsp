@@ -57,13 +57,13 @@
                         int ca = 0, cb = 0, cc = 0, cd = 0, ce = 0, cf = 0;
                         Manager manager = new Manager();
                         List<ProductModel> productModels = new ArrayList();
-                        manager.getDemoProducts(productModels);
+                        manager.getDemoProducts(productModels);// get all products from database
                         System.out.println("Total Products: " + productModels.size());
-                        request.getSession().setAttribute("products", productModels);
+                        request.getSession().setAttribute("products", productModels);// set all product to brower seesion
                         for (ProductModel m : productModels) {
                             char firstLetter = Character.toLowerCase(m.getProductName().charAt(0));
                             switch (firstLetter) {
-                                case 'k':
+                                case 'a':
                                     ca++;
                                     break;
                                 case 'b':
@@ -223,7 +223,8 @@
                     </div>
                 </div>
             </div>
-
+            
+            <%-- top sells section end--%>
             <div class="ps-section ps-section--top-sales ps-owl-root pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
@@ -293,7 +294,9 @@
                     </div>
                 </div>
             </div>
-
+            <%-- top sells section end--%>
+                        
+            <%-- sponsored section start--%>
             <div class="ps-section ps-section--top-sales ps-owl-root pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
@@ -363,8 +366,9 @@
                     </div>
                 </div>
             </div>
+            <%-- sponsored section end --%>
 
-
+            <%-- middle banner section start--%>        
             <div class="ps-home-testimonial bg--parallax pb-40" data-background="images/background/parallax.jpg">
                 <div class="container">
                     <div class="owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
@@ -419,6 +423,9 @@
                     </div>
                 </div>
             </div>
+            <%-- middle banner section start--%>
+            
+            <%-- blog section start--%>
             <div class="ps-section ps-home-blog pt-10 pb-80">
                 <div class="ps-container">
                     <div class="ps-section__header mb-50">
@@ -452,12 +459,14 @@
                     </div>
                 </div>
             </div>
+            <%-- blog section end--%>
 
-
+            <%-- footer section start--%>
             <jsp:include page="footer/footer.jsp"></jsp:include>
 
             </main>
 
         <jsp:include page="footer/bottomJavascripts.jsp"></jsp:include>
+        <%-- footer section start--%>
     </body>
 </html>

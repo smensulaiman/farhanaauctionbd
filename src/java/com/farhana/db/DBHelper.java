@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 
 public class DBHelper {
 
-    public static Connection conn;
+    public static Connection conn;// This is a connection instance
     public static Connection getConnection() {
         try {
             String url = "jdbc:mysql://localhost:3306/auctionbd";

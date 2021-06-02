@@ -14,7 +14,7 @@ public class QueryConstant {
     /*              CREATE              */
     public static final String CREATE_BLOG_TABLE          = "CREATE TABLE IF NOT EXISTS blogs "
                                                             + "(id INT not null auto_increment, blogTitle varchar(255), blogType varchar(255),"
-                                                            + " blogDescription varchar(255), dateTime varchar(255),"
+                                                            + " blogDescription varchar(5000), dateTime varchar(255),"
                                                             + " blogImage varchar(255),"
                                                             + "primary key (id));";
     
